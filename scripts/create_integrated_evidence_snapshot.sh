@@ -65,10 +65,10 @@ for path in "${required_paths[@]}"; do
   cp -a "${repo_root}/${path}" "${destination}/"
 done
 
-# Publishable evidence must not expose workstation identifiers. TensorBoard
-# event filenames contain the host and are redundant with the sealed tables.
+# Publishable evidence must not expose workstation identifiers. Runtime logs
+# and TensorBoard event files are redundant with the sealed result tables.
 find "${snapshot_root}/artifacts" -type f \
-  -name 'events.out.tfevents.*' -delete
+  \( -name 'events.out.tfevents.*' -o -name '*.log' \) -delete
 
 while IFS= read -r -d '' artifact; do
   if grep -Iq . "${artifact}"; then

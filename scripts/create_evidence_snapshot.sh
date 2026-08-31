@@ -40,10 +40,11 @@ for source_path in "${source_paths[@]}"; do
     "${snapshot_root}/artifacts/outputs/"
 done
 
-# Raw TensorBoard event names embed the training host. They are not required
-# for the sealed result tables and are excluded from publishable snapshots.
+# Runtime logs are not required for the sealed result tables. TensorBoard event
+# names also embed the training host, so neither class belongs in a publishable
+# snapshot.
 find "${snapshot_root}/artifacts" -type f \
-  -name 'events.out.tfevents.*' -delete
+  \( -name 'events.out.tfevents.*' -o -name '*.log' \) -delete
 
 # Make copied text artifacts portable and remove workstation paths. Stable-
 # Baselines archives store the TensorBoard path inside their `data` member, so
