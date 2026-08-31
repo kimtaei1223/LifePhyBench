@@ -79,6 +79,20 @@ On the current workstation an equivalent environment is already available at
 Results are printed as JSON.  To save them, redirect stdout to a file under
 `outputs/` (ignored by Git).
 
+The sealed Pusher--Reacher publication package can be verified without
+retraining. The command checks repository privacy, snapshot and protocol
+hashes, loads both retained RecurrentPPO archives on CPU, regenerates all final
+publication artifacts, compares their hashes, and optionally runs the complete
+test suite:
+
+```bash
+python scripts/reproduce_clean_checkout.py --run-tests \
+  --report clean_checkout_reproduction.json
+```
+
+The verified clean-checkout result is documented in
+[`docs/CLEAN_CHECKOUT_REPRODUCTION_2026-08-31.md`](docs/CLEAN_CHECKOUT_REPRODUCTION_2026-08-31.md).
+
 The completed v10 result can be reanalyzed and rendered without retraining:
 
 ```bash

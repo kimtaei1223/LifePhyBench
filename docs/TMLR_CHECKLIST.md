@@ -57,7 +57,7 @@ item here does not close the broader paper-level item above.
 - [ ] Clock/counting, latent-health inference, and action-history adaptation are
       independently controlled under stochastic variation.
 - [ ] The main conclusion replicates across tasks, mechanisms, or morphologies.
-- [ ] The full raw-data and environment-fingerprint release reproduces the
+- [x] The full raw-data and environment-fingerprint release reproduces the
       publication tables and figures from a clean checkout.
 
 ### v12.2/v12.3 belief-supervision checkpoint (2026-08-30)
@@ -81,7 +81,7 @@ This is the authoritative checkpoint for the current scoped paper claim.
 - [x] A depth-two literature audit was refreshed on 2026-08-30 and explicitly
       screened direct thermal-RL, thermal-supervision, hidden-dynamics,
       belief-safety, and uncertainty-aware shielding work.
-- [ ] The low-level controller checkpoint and a clean-checkout reproduction
+- [x] The low-level controller checkpoint and a clean-checkout reproduction
       script are included in a review-compatible artifact package.
 - [x] The scoped result is replicated on Reacher as a second task/morphology;
       the inherited safety-gate failure and post-confirmatory task-specific
@@ -102,13 +102,16 @@ This is the authoritative checkpoint for the current scoped paper claim.
       positive mean effect coexists with only 52/100 positive lifetime effects.
 - [x] The recurrent baseline result is bounded to the tested RecurrentPPO
       architecture, training budget, and model-selection procedure.
-- [ ] The final anonymous artifact is reproduced from a clean checkout and
-      packaged below the current review-system size limit.
+- [x] The final anonymous artifact is reproduced from a clean checkout; the
+      tracked-tree archive is 19,092,310 bytes.
+- [ ] Reconfirm the review-system upload limit immediately before submission.
 
 Current result and claim boundary:
 [`PHYSICS_RESIDUAL_V12_FINAL_RESULTS.md`](PHYSICS_RESIDUAL_V12_FINAL_RESULTS.md)
 and
 [`REACHER_REPLICATION_FINAL_RESULTS.md`](REACHER_REPLICATION_FINAL_RESULTS.md).
+Clean-checkout evidence:
+[`CLEAN_CHECKOUT_REPRODUCTION_2026-08-31.md`](CLEAN_CHECKOUT_REPRODUCTION_2026-08-31.md).
 
 ## Submission-policy checklist
 
