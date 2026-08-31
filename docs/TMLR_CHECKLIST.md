@@ -1,6 +1,6 @@
-# TMLR Submission Checklist
+# TMLR submission checklist
 
-Policy checkpoint: 2026-08-03.
+Policy checkpoint: 2026-08-31.
 
 Official sources:
 
@@ -8,141 +8,163 @@ Official sources:
 - [Author guidelines](https://www.jmlr.org/tmlr/author-guide.html)
 - [Acceptance criteria](https://www.jmlr.org/tmlr/acceptance-criteria.html)
 
-## Scope strategy
+## Decision rule
 
-TMLR explicitly considers new learning-task formalizations, evaluation methods,
-algorithms with sound validation, and empirical studies that reveal strengths or
-weaknesses of learning systems.  The paper therefore leads with the controlled
-latent-state problem and causal factorial study.  Robot manipulation is an
-important validation tier, not the entire contribution.
+TMLR's primary questions are whether the paper's claims have accurate,
+convincing evidence and whether some of its audience would find the clearly
+communicated findings useful. Method novelty or a new state of the art is not
+itself required. The submission is therefore gated by evidence for the narrow
+two-task claim below, not by every benchmark extension considered earlier.
 
-## Evidence checklist
+Status labels:
 
-- [ ] Claims are frozen before final test execution.
-- [ ] Closest-work ledger is updated through the submission date.
-- [ ] Persistence, endogeneity, and observability are independently controlled.
-- [ ] At least one analytic/diagnostic environment has a planning oracle.
-- [ ] At least one general-control and one embodied-control family agree on the
-      main conclusion.
-- [ ] Strong recurrent, meta-RL/system-ID, and online-learning baselines are
-      included in the correct deployment track.
-- [ ] Hyperparameter and interaction budgets are matched and reported.
-- [ ] Independent training seeds, hierarchical confidence intervals, effect
-      sizes, and corrected primary tests are reported.
-- [ ] Negative runs and failed seeds remain in the analysis.
-- [ ] Code, generator, seed manifest, raw lifetime rows, and environment
-      fingerprints reproduce every table and figure.
-- [ ] Limitations distinguish phenomenological simulation from calibrated
-      physical lifetime prediction.
+- **Complete**: evidence exists and was reproduced.
+- **Open**: required before submission.
+- **Out of scope**: would support a broader paper, but is not required for the
+  present claim and must instead appear as a limitation.
+- **Historical**: useful provenance from an earlier study, but not evidence for
+  the current primary claim unless explicitly reused.
 
-### v10 hierarchical-thermal checkpoint (2026-08-27)
+## Frozen paper claim
 
-This subsection tracks only the completed single-diagnostic study; a checked
-item here does not close the broader paper-level item above.
+> Under hidden action-driven thermal dynamics that persist across task resets,
+> an uncertainty margin around an explicit belief supervisor can improve mean
+> risk-sensitive lifetime utility on two MuJoCo manipulation tasks. A margin
+> transferred between tasks can miss a fixed trip-rate tolerance; target-task
+> development-only calibration can recover that tolerance on a fresh test set
+> without a detectable loss in mean utility.
 
-- [x] Physical design, disjoint seed sets, primary estimand, test, interval,
-      and success rule were frozen in a local manifest before held-out training.
-- [x] A transparent planning oracle and exhaustive task-reactive rule search
-      were retained from calibration.
-- [x] Twenty independent training seeds, paired seed effects, a seed-bootstrap
-      interval, and both specified seed-level tests were reported.
-- [x] The negative seed, zero-effect seeds, and collapsed task policies were
-      retained and disclosed.
-- [x] The learned-comparator claim was separated from the stronger unsupported
-      claim that lifetime memory is representationally necessary.
-- [ ] The plan was externally preregistered or cryptographically bound to a
-      complete public commit before training.
-- [ ] A learned task-reactive baseline reaches the transparent reactive anchor
-      and is beaten on new held-out seeds.
-- [ ] Clock/counting, latent-health inference, and action-history adaptation are
-      independently controlled under stochastic variation.
-- [ ] The main conclusion replicates across tasks, mechanisms, or morphologies.
-- [x] The full raw-data and environment-fingerprint release reproduces the
-      publication tables and figures from a clean checkout.
+This is a claim about expected risk-sensitive utility in a controlled,
+phenomenological two-task simulation. It is not a hardware-valid thermal model,
+a formal safety guarantee, a majority-lifetime improvement, or a universal
+control result.
 
-### v12.2/v12.3 belief-supervision checkpoint (2026-08-30)
+## Current scoped-paper evidence gate
 
-This is the authoritative checkpoint for the current scoped paper claim.
+| Status | Requirement | Evidence or disposition |
+|---|---|---|
+| **Complete** | Claims and protocols were frozen before each designated final test. | Pusher v12.2/v12.3 and the inherited Reacher test were locally frozen; the later Reacher calibration is preserved as a separately frozen post-confirmatory extension on disjoint seeds. |
+| **Complete** | Persistence, endogeneity, and partial observability are explicit in the environment and evaluation. | Task state resets while hidden thermal state persists; thermal change depends on actions; deployed policies receive a noisy sensor rather than exact health. |
+| **Complete** | The causal source of the main effect is separated. | The fresh Pusher 2 x 2 residual-by-uncertainty factorial attributes the robust gain primarily to the uncertainty margin, not the learned residual. |
+| **Complete** | Cross-task evidence preserves failures instead of rewriting them. | The inherited Reacher margin's 2.3% trip rate remains a failure against the frozen 2.0% boundary; its later calibration result is reported separately. |
+| **Complete** | Independent analysis units, fresh seeds, intervals, effect sizes, and prespecified tests are used. | Each 20-task lifetime is one unit; the principal Pusher, inherited Reacher, and calibrated Reacher tests each use 100 fresh lifetimes with paired estimates and bootstrap intervals. |
+| **Complete** | Negative and ambiguous evidence is retained. | Residual-attribution failure, Reacher zero-shot gate failure, non-significant exact sign tests, negative recurrent result, and reward-preference dependence are disclosed. |
+| **Complete** | Comparator claims are bounded to the actual experiment. | The privileged comparator is described as a current-state threshold baseline, not a planning oracle; the learned comparison is limited to the tested RecurrentPPO family and budget. |
+| **Complete** | Artifacts regenerate the reported results. | Protocol hashes, raw lifetime rows, models, tables, figures, manifests, and dependency lock reproduce from a clean Python 3.11 environment; 154 tests pass. |
+| **Complete** | Limitations distinguish simulated degradation from physical prediction. | The evidence audit explicitly excludes hardware validity, physical-unit calibration, formal safety, universal reward preferences, and cross-simulator generalization. |
+| **Open** | Closest-work and novelty ledger are current on the submission date. | Depth-two audit is current through 2026-08-30; run one final targeted update immediately before submission. |
+| **Open** | The manuscript states the contribution as an empirical deployment lesson rather than component novelty. | Enforce while drafting Abstract, Introduction, Related Work, and Conclusion. |
+| **Open** | All main-paper numbers and claims are traceable to immutable artifacts. | Use the manuscript blueprint and run a final claim-to-evidence audit after typesetting. |
 
-- [x] The v12.2 checkpoint, policy specifications, OOD conditions, 100 held-out
-      seeds, estimands, and success criteria were locally frozen before final
-      evaluation.
-- [x] The v12.3 residual-by-uncertainty factorial used 100 disjoint fresh seeds
+## Explicitly out of scope for this paper
+
+These are worthwhile extensions, but leaving them undone is not a hidden
+submission failure because the paper does not make the corresponding claims.
+
+| Item | Why it is not a current gate | Required manuscript treatment |
+|---|---|---|
+| A planning oracle or optimal privileged policy | The current privileged threshold policy is diagnostic, not an upper bound. | Do not call it an oracle; state this limitation. |
+| A general-control family outside embodied MuJoCo | The claim is deliberately limited to Pusher and Reacher under one simulator and thermal law. | Do not claim general-control or cross-simulator validity. |
+| Exhaustive meta-RL, system-identification, and online-adaptation baselines | One recurrent family is diagnostic evidence, not an exhaustive algorithm ranking. | Bound the comparison and identify stronger adaptive baselines as future work. |
+| Real-robot thermal validation | No physical calibration or hardware experiment was performed. | Use “phenomenological thermal dynamics,” never “realistic motor wear” or a hardware safety claim. |
+| External preregistration | Protocols were locally frozen and hash-bound, but not externally preregistered. | Say “prespecified” or “locally frozen,” never “preregistered.” |
+| Universal reward robustness | Recorded-trajectory sensitivity shows the utility advantage depends on trip cost. | Report the break-even analysis and its fixed-trajectory limitation. |
+
+## Completed experiment checkpoints
+
+### Pusher v12.2/v12.3 belief supervision
+
+- [x] Policies, OOD conditions, 100 held-out seeds, estimands, and success
+      criteria were frozen before v12.2 evaluation.
+- [x] A fresh 2 x 2 residual-by-uncertainty factorial used 100 disjoint seeds
       and retained every lifetime.
-- [x] Raw lifetime rows, protocol hashes, result files, the selected residual
-      checkpoint, environment metadata, and paper-artifact hashes are preserved
-      in the private Git evidence snapshot.
-- [x] Reward decomposition separates base-task return, throughput bonus, and
-      thermal-trip penalty without treating tasks as independent samples.
-- [x] Post-hoc reward sensitivity is explicitly labeled as fixed-trajectory
-      accounting rather than policy retraining.
-- [x] The final claim attributes the robust benefit primarily to uncertainty-
-      aware trip avoidance, not to an independently established residual gain.
-- [x] A depth-two literature audit was refreshed on 2026-08-30 and explicitly
-      screened direct thermal-RL, thermal-supervision, hidden-dynamics,
-      belief-safety, and uncertainty-aware shielding work.
-- [x] The low-level controller checkpoint and a clean-checkout reproduction
-      script are included in a review-compatible artifact package.
-- [x] The scoped result is replicated on Reacher as a second task/morphology;
-      the inherited safety-gate failure and post-confirmatory task-specific
-      calibration are reported separately.
-- [ ] The final novelty ledger is updated through the submission date.
+- [x] The uncertainty effect without residual was `+0.965` reward/task with
+      bootstrap 95% CI `[0.733, 1.196]`; maximum treatment trip rate was below
+      the 2% gate.
+- [x] Reward decomposition and fixed-trajectory sensitivity distinguish lower
+      immediate task return from avoided thermal-trip cost.
+- [x] The residual gain at matched `z=1.5` was not independently established
+      and is not presented as the central mechanism.
 
-### Reacher replication checkpoint (2026-08-31)
+### Reacher replication and calibration
 
-- [x] Development, inherited-margin confirmatory, and post-confirmatory fresh
-      test seeds are mutually separated by role.
-- [x] The inherited `z=1.5` primary result remains a failure because 2.3%
-      exceeded the frozen 2.0% safety boundary.
-- [x] The follow-up cutoff/margin grid, buffered selection rule, fresh seeds,
-      tests, and criteria were locally frozen before extension evaluation.
-- [x] Development-only calibration selected cutoff 0.06 and `z=2.0`; all fresh
-      extension criteria passed with a 1.6% maximum trip rate.
-- [x] Magnitude-sensitive and direction-count evidence are both disclosed: the
-      positive mean effect coexists with only 52/100 positive lifetime effects.
-- [x] The recurrent baseline result is bounded to the tested RecurrentPPO
-      architecture, training budget, and model-selection procedure.
-- [x] The final anonymous artifact is reproduced from a clean checkout; the
-      tracked-tree archive is 19,092,310 bytes.
-- [x] The exact CPU-only dependency lock installs in a new Python 3.11 venv;
-      `pip check`, both model loads, artifact regeneration, and all 154 tests
-      pass without inheriting the development `PYTHONPATH`.
-- [ ] Reconfirm the review-system upload limit immediately before submission.
+- [x] Development, inherited-margin confirmation, and calibrated-margin test
+      seeds are mutually separated by role.
+- [x] Inherited `z=1.5` improved mean utility by `+0.721`, but its 2.3% maximum
+      trip rate failed the frozen 2.0% boundary.
+- [x] Development-only selection chose cutoff `0.06`, `z=2.0` under a buffered
+      rule, then evaluated it once on 100 new lifetimes.
+- [x] The calibrated setting improved mean utility by `+0.692`, bootstrap 95%
+      CI `[+0.434, +0.962]`, with maximum trip rate 1.6%.
+- [x] Only 52/100 calibrated lifetime effects were positive; the exact sign
+      test was non-significant. The claim is about the paired mean, not a
+      majority of lifetimes.
+- [x] The calibrated and inherited policies had no detectable mean-utility
+      difference. Calibration is credited with tolerance recovery, not reward
+      superiority.
 
-Current result and claim boundary:
-[`PHYSICS_RESIDUAL_V12_FINAL_RESULTS.md`](PHYSICS_RESIDUAL_V12_FINAL_RESULTS.md)
-and
-[`REACHER_REPLICATION_FINAL_RESULTS.md`](REACHER_REPLICATION_FINAL_RESULTS.md).
-Clean-checkout evidence:
-[`CLEAN_CHECKOUT_REPRODUCTION_2026-08-31.md`](CLEAN_CHECKOUT_REPRODUCTION_2026-08-31.md).
+### Artifact and clean-environment reproduction
 
-## Submission-policy checklist
+- [x] Protocol/result/model hashes and artifact manifests are preserved.
+- [x] Pusher and Reacher paper artifacts regenerate hash-identically.
+- [x] The exact CPU dependency lock installs in a clean Python 3.11 venv.
+- [x] `pip check`, both model loads, 154 tests, and artifact regeneration pass
+      without inheriting the development `PYTHONPATH`.
+- [x] The anonymous tracked-tree archive is below the current 100 MB supplement
+      limit; recheck its final size immediately before submission.
 
-- [ ] Manuscript uses the official TMLR LaTeX template without format changes.
-- [ ] Manuscript and supplement are anonymized for double-blind review.
-- [ ] Every author's OpenReview profile is complete and active.
-- [ ] Submission quota is available for every author.
-- [ ] Work is not under review at another archival venue.
-- [ ] No text, figure, or result is reused from an archival conference paper;
-      TMLR does not accept ordinary conference extensions.
-- [ ] Any prior workshop is explicitly non-archival; an arXiv preprint is allowed.
-- [ ] Important results are in the main paper because appendix review is
-      optional.
-- [ ] Broader-impact discussion covers resource use, unsafe degradation
-      policies, and limits of simulated health signals.
-- [ ] Anonymous code/supplement is below the current 100 MB upload limit or is
-      linked using a review-compatible archival mechanism.
+Evidence:
+
+- [`PHYSICS_RESIDUAL_V12_FINAL_RESULTS.md`](PHYSICS_RESIDUAL_V12_FINAL_RESULTS.md)
+- [`REACHER_REPLICATION_FINAL_RESULTS.md`](REACHER_REPLICATION_FINAL_RESULTS.md)
+- [`INTEGRATED_PUSHER_REACHER_AUDIT.md`](INTEGRATED_PUSHER_REACHER_AUDIT.md)
+- [`CLEAN_CHECKOUT_REPRODUCTION_2026-08-31.md`](CLEAN_CHECKOUT_REPRODUCTION_2026-08-31.md)
+
+## Historical v10 diagnostic study
+
+The v10 hierarchical-thermal experiment remains provenance, not a current
+submission gate. It established useful workflow elements—disjoint seeds,
+paired lifetime analysis, retained failures, and clean reproduction—but it
+does not supply the current Pusher–Reacher primary claim. Its unfinished
+aspirations (external preregistration, exhaustive clocks/action histories,
+additional mechanisms, and a stronger learned anchor) must not be silently
+represented as completed evidence.
+
+## Submission-policy gate
+
+- [ ] Use the official TMLR LaTeX style and template without format changes.
+- [ ] Keep the manuscript and every supplement anonymous during double-blind
+      review.
+- [ ] Ensure every author has a complete, active OpenReview profile and all
+      required conflicts and disclosures are entered.
+- [ ] Confirm every author has sufficient annual submission quota.
+- [ ] Confirm the work is not under review at another archival venue.
+- [ ] Confirm no text, figure, or result is reused from an archival paper or a
+      paper simultaneously under review; ordinary conference extensions are
+      not accepted.
+- [ ] Identify any prior public version only if it is a preprint or explicitly
+      non-archival workshop version, and do not link the anonymous submission
+      to an identified copy.
+- [ ] Put every result needed to understand the main claim in the paper body;
+      appendix and supplement review are discretionary.
+- [ ] Include a concise broader-impact discussion of unsafe degradation
+      policies, resource use, simulated health signals, and mitigations.
+- [ ] Keep anonymized supplementary material in PDF or ZIP format and at or
+      below the current 100 MB limit.
+- [ ] Recheck the official policy pages immediately before submission.
 
 ## Writing guardrails
 
 Use:
 
-> selective-reset controlled latent-state POMDP with endogenous physical
-> degradation
+> selective-reset latent-state control with endogenous, persistent thermal
+> dynamics
 
 Avoid:
 
 - “the world is intrinsically non-Markovian”;
 - “continual learning” for a frozen recurrent policy;
 - “physically realistic wear” without calibration;
-- universal or first-of-kind claims not supported by the novelty ledger.
+- “oracle” for the privileged current-state threshold baseline;
+- “safe” or “safety guarantee” for an empirical trip-rate tolerance;
+- universal or first-of-kind claims unsupported by the novelty ledger.
