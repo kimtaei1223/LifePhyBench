@@ -80,8 +80,16 @@ while IFS= read -r -d '' archive; do
     "${repo_root}/scripts/sanitize_sb3_archive.py" \
     --archive "${archive}" --project-root "${repo_root}"
 done < <(find "${snapshot_root}/artifacts" -type f -name '*.zip' -print0)
+while IFS= read -r -d '' protocol; do
+  "${repo_root}/.venv-mujoco/bin/python" \
+    "${repo_root}/scripts/seal_privacy_redaction.py" --protocol "${protocol}"
+done < <(find "${snapshot_root}/artifacts" -type f \
+  \( -name 'FROZEN_PROTOCOL.json' -o -name 'FROZEN_FRESH_PROTOCOL.json' \) \
+  -print0)
 
 source_files=(
+  "scripts/audit_repository_privacy.py"
+  "scripts/reproduce_clean_checkout.py"
   "scripts/render_physics_residual_v12_3_artifacts.py"
   "scripts/render_reacher_replication_artifacts.py"
   "scripts/run_reacher_low_level_replication.py"
@@ -89,6 +97,8 @@ source_files=(
   "scripts/run_reacher_monolithic_baseline.py"
   "scripts/run_reacher_confirmatory.py"
   "scripts/run_reacher_margin_extension.py"
+  "scripts/sanitize_sb3_archive.py"
+  "scripts/seal_privacy_redaction.py"
 )
 mkdir -p "${snapshot_root}/artifacts/scripts"
 for path in "${source_files[@]}"; do

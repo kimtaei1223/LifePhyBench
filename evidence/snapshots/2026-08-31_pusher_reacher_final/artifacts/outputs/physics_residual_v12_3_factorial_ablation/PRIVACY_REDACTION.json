@@ -1,0 +1,7 @@
+{
+  "original_protocol_sha256": "9c67f858870d19ca6487ff78f96b867b99ba9e4ae3a8913d7f01690ac3f98bad",
+  "phase": "publication_privacy_redaction",
+  "redaction_scope": "local absolute repository paths only",
+  "result_values_changed": false,
+  "sanitized_protocol_sha256": "a2feab2974a62e17021bf9b633a6ed73af319a73eb7a1e18a144a21cc80c7385"
+}

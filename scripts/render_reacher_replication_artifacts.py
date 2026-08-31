@@ -63,6 +63,27 @@ def sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
+def validate_protocol_binding(
+    protocol_path: Path, stored_hash: str, result_hash: str
+) -> str:
+    require(sha256(protocol_path) == stored_hash, "protocol hash mismatch")
+    if result_hash == stored_hash:
+        return result_hash
+    ledger_path = protocol_path.with_name("PRIVACY_REDACTION.json")
+    require(ledger_path.is_file(), "result hash mismatch without redaction ledger")
+    ledger = read_json(ledger_path)
+    require(
+        ledger.get("original_protocol_sha256") == result_hash,
+        "redaction ledger original hash mismatch",
+    )
+    require(
+        ledger.get("sanitized_protocol_sha256") == stored_hash,
+        "redaction ledger sanitized hash mismatch",
+    )
+    require(ledger.get("result_values_changed") is False, "result-changing redaction")
+    return result_hash
+
+
 def validate(root: Path) -> dict[str, Any]:
     confirmatory = root / "confirmatory"
     extension = root / "margin_extension"
@@ -74,16 +95,16 @@ def validate(root: Path) -> dict[str, Any]:
 
     confirm_hash = (confirmatory / "FROZEN_PROTOCOL.sha256").read_text().strip()
     fresh_hash = (extension / "FROZEN_FRESH_PROTOCOL.sha256").read_text().strip()
-    require(
-        sha256(confirmatory / "FROZEN_PROTOCOL.json") == confirm_hash,
-        "confirmatory protocol hash mismatch",
+    confirm_public_hash = validate_protocol_binding(
+        confirmatory / "FROZEN_PROTOCOL.json",
+        confirm_hash,
+        str(confirm_result["protocol_sha256"]),
     )
-    require(
-        sha256(extension / "FROZEN_FRESH_PROTOCOL.json") == fresh_hash,
-        "extension protocol hash mismatch",
+    fresh_public_hash = validate_protocol_binding(
+        extension / "FROZEN_FRESH_PROTOCOL.json",
+        fresh_hash,
+        str(fresh_result["protocol_sha256"]),
     )
-    require(confirm_result["protocol_sha256"] == confirm_hash, "confirmatory binding")
-    require(fresh_result["protocol_sha256"] == fresh_hash, "extension binding")
     require(confirm_result["wiring_passed"] is True, "confirmatory wiring failed")
     require(confirm_result["primary_success"] is False, "original result changed")
     require(
@@ -129,8 +150,8 @@ def validate(root: Path) -> dict[str, Any]:
         "fresh_result": fresh_result,
         "fresh_cells": fresh_cells,
         "selection": selection,
-        "confirm_hash": confirm_hash,
-        "fresh_hash": fresh_hash,
+        "confirm_hash": confirm_public_hash,
+        "fresh_hash": fresh_public_hash,
     }
 
 

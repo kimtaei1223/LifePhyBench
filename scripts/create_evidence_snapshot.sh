@@ -58,6 +58,12 @@ while IFS= read -r -d '' archive; do
     "${repo_root}/scripts/sanitize_sb3_archive.py" \
     --archive "${archive}" --project-root "${repo_root}"
 done < <(find "${snapshot_root}/artifacts" -type f -name '*.zip' -print0)
+while IFS= read -r -d '' protocol; do
+  "${repo_root}/.venv-mujoco/bin/python" \
+    "${repo_root}/scripts/seal_privacy_redaction.py" --protocol "${protocol}"
+done < <(find "${snapshot_root}/artifacts" -type f \
+  \( -name 'FROZEN_PROTOCOL.json' -o -name 'FROZEN_FRESH_PROTOCOL.json' \) \
+  -print0)
 
 {
   echo "snapshot_id=${snapshot_id}"

@@ -99,6 +99,27 @@ def sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
+def validate_protocol_binding(
+    protocol_path: Path, stored_hash: str, result_hash: str
+) -> None:
+    actual_hash = sha256(protocol_path)
+    require(actual_hash == stored_hash, "protocol hash mismatch")
+    if result_hash == stored_hash:
+        return
+    ledger_path = protocol_path.with_name("PRIVACY_REDACTION.json")
+    require(ledger_path.is_file(), "result hash mismatch without redaction ledger")
+    ledger = read_json(ledger_path)
+    require(
+        ledger.get("original_protocol_sha256") == result_hash,
+        "redaction ledger original hash mismatch",
+    )
+    require(
+        ledger.get("sanitized_protocol_sha256") == stored_hash,
+        "redaction ledger sanitized hash mismatch",
+    )
+    require(ledger.get("result_values_changed") is False, "result-changing redaction")
+
+
 def read_json(path: Path) -> dict[str, Any]:
     document = json.loads(path.read_text(encoding="utf-8"))
     require(isinstance(document, dict), f"JSON root must be an object: {path}")
@@ -213,8 +234,9 @@ def validate(
         "protocol was not frozen before evaluation",
     )
     stored_hash = protocol_hash_path.read_text(encoding="utf-8").strip()
-    require(sha256(protocol_path) == stored_hash, "protocol hash mismatch")
-    require(result.get("protocol_sha256") == stored_hash, "result hash mismatch")
+    validate_protocol_binding(
+        protocol_path, stored_hash, str(result.get("protocol_sha256"))
+    )
     require(
         result.get("phase") == "physics_residual_v12_3_factorial_mechanism_ablation",
         "unexpected result phase",
