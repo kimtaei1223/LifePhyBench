@@ -93,6 +93,18 @@ python scripts/reproduce_clean_checkout.py --run-tests \
 The verified clean-checkout result is documented in
 [`docs/CLEAN_CHECKOUT_REPRODUCTION_2026-08-31.md`](docs/CLEAN_CHECKOUT_REPRODUCTION_2026-08-31.md).
 
+For a fully empty Python 3.11 environment, the validated CPU-only dependency
+lock and bootstrap command are:
+
+```bash
+LIFEPHYBENCH_PYTHON=python3.11 \
+  ./scripts/bootstrap_reproduction_env.sh .venv-reproduction
+```
+
+This installs [`requirements-reproduction.txt`](requirements-reproduction.txt),
+checks dependency consistency, installs LifePhyBench without re-resolving
+dependencies, and executes the full clean-checkout reproduction audit.
+
 The completed v10 result can be reanalyzed and rendered without retraining:
 
 ```bash
