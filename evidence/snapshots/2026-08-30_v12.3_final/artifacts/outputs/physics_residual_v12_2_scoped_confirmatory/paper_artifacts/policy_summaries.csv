@@ -1,0 +1,26 @@
+condition,policy,policy_label,n_seeds,mean_reward_per_task,trip_rate,mixed_mode_lifetime_rate
+in_domain,current_sensor,Current sensor,100,-43.3785047163005,0.046,1.0
+in_domain,ema_history,EMA history,100,-43.46032070724939,0.051,1.0
+in_domain,physics_belief,Physics belief,100,-41.614577158211134,0.018,1.0
+in_domain,hybrid_belief,Physics + residual,100,-41.56902339129127,0.001,0.98
+in_domain,privileged_oracle,Privileged oracle,100,-40.7136632402659,0.004,1.0
+ood_sensor_noise,current_sensor,Current sensor,100,-50.260921150825055,0.2035,1.0
+ood_sensor_noise,ema_history,EMA history,100,-49.2478504385376,0.188,1.0
+ood_sensor_noise,physics_belief,Physics belief,100,-43.09496401167054,0.0405,1.0
+ood_sensor_noise,hybrid_belief,Physics + residual,100,-41.975407641949104,0.0055,0.97
+ood_sensor_noise,privileged_oracle,Privileged oracle,100,-40.7136632402659,0.004,1.0
+ood_cooling,current_sensor,Current sensor,100,-43.37380779162498,0.0155,0.84
+ood_cooling,ema_history,EMA history,100,-43.53879775020622,0.021,0.82
+ood_cooling,physics_belief,Physics belief,100,-43.72047554718303,0.025,0.88
+ood_cooling,hybrid_belief,Physics + residual,100,-42.9858694653594,0.001,0.62
+ood_cooling,privileged_oracle,Privileged oracle,100,-42.697215752508406,0.0,0.73
+ood_combined,current_sensor,Current sensor,100,-47.54969603984924,0.135,0.98
+ood_combined,ema_history,EMA history,100,-46.42293793453464,0.101,0.97
+ood_combined,physics_belief,Physics belief,100,-44.57384050016945,0.045,0.9
+ood_combined,hybrid_belief,Physics + residual,100,-43.43198260558855,0.01,0.68
+ood_combined,privileged_oracle,Privileged oracle,100,-42.860806507561804,0.002,0.73
+ood_shocks,current_sensor,Current sensor,100,-43.57069764292219,0.042,0.99
+ood_shocks,ema_history,EMA history,100,-43.736464027623775,0.047,0.98
+ood_shocks,physics_belief,Physics belief,100,-42.65239864860702,0.026,1.0
+ood_shocks,hybrid_belief,Physics + residual,100,-42.52815249049244,0.009,0.9
+ood_shocks,privileged_oracle,Privileged oracle,100,-41.81316471332574,0.012,0.99

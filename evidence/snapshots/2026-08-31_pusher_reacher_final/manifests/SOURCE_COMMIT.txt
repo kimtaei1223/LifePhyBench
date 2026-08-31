@@ -1,0 +1,7 @@
+commit d98d115ecf73173cc387aa1f2d7c6fed8ecf7aaf
+Author:     LifePhyBench Contributors <noreply@users.noreply.github.com>
+AuthorDate: Mon Aug 31 16:14:28 2026 +0900
+Commit:     LifePhyBench Contributors <noreply@users.noreply.github.com>
+CommitDate: Mon Aug 31 16:14:28 2026 +0900
+
+    fix: make Reacher artifacts deterministic

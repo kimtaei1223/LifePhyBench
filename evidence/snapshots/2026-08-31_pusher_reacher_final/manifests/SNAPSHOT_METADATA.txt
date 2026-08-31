@@ -1,0 +1,6 @@
+snapshot_id=2026-08-31_pusher_reacher_final
+created_at=2026-08-31T16:14:29+09:00
+source_commit=d98d115ecf73173cc387aa1f2d7c6fed8ecf7aaf
+source_branch=research/lifephybench
+python=Python 3.11.15
+kernel=Linux 5.15.0-139-generic x86_64

@@ -1,0 +1,37 @@
+# Protocol v0 is a design contract, not the final paper configuration.
+protocol_version: 0
+lifetime:
+  train_lifetimes: 100
+  validation_lifetimes: 30
+  test_lifetimes: 50
+  episodes_per_lifetime: 100
+  hidden_state_carries_across_episodes: true
+  policy_memory_carries_across_episodes: method_dependent
+  task_state_resets_each_episode: true
+
+splits:
+  unit: lifetime
+  train:
+    law_families: [power]
+    wear_exponents: [1.0, 2.0]
+  validation:
+    law_families: [power]
+    wear_exponents: [1.5]
+  test_interpolation:
+    law_families: [power]
+    wear_exponents: [1.25, 1.75]
+  test_extrapolation:
+    law_families: [threshold, stochastic_shock, recovery]
+
+reporting:
+  seeds_fixed_before_final_run: true
+  confidence_interval: bootstrap_lifetime_95
+  paired_comparisons: true
+  primary_metric: normalized_area_under_lifetime_curve
+  secondary_metrics:
+    - success_auc
+    - mean_episode_return
+    - worst_window_success
+    - cumulative_damage
+    - recovery_time
+    - calibration_error

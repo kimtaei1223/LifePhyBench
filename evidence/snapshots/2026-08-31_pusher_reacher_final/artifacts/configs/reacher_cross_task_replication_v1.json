@@ -1,0 +1,48 @@
+{
+  "protocol": "reacher_cross_task_replication_v1",
+  "status": "frozen_before_reacher_training",
+  "scope": "Cross-task replication of uncertainty-aware hidden thermal-state supervision",
+  "task": {
+    "environment_id": "Reacher-v5",
+    "canonical_task_seed": 811,
+    "episode_steps": 100,
+    "tasks_per_lifetime": 20
+  },
+  "low_level_development": {
+    "algorithm": "RecurrentPPO",
+    "memory_mode": "task",
+    "seeds": [5100, 5101, 5102, 5103, 5104],
+    "total_timesteps_per_seed": 2000000,
+    "evaluation_task_episodes": 1000,
+    "selection_rule": "highest mean task reward; development-only selection"
+  },
+  "inherited_without_reselection": {
+    "trip_load": 0.1,
+    "low_power_scale": 0.4,
+    "trip_penalty": 75.0,
+    "high_power_bonus": 2.0,
+    "thermal_heat_rate": 0.05,
+    "uncertainty_multiplier": 1.5,
+    "belief_cutoff": 0.06
+  },
+  "data_and_seed_split": {
+    "transition_and_residual_development": [25000, 25029],
+    "controller_calibration": [25100, 25119],
+    "confirmatory_untouched": [25200, 25299]
+  },
+  "required_baselines": [
+    "current_noisy_sensor",
+    "physics_model_limiter_without_uncertainty",
+    "physics_model_limiter_with_inherited_uncertainty",
+    "privileged_measured_temperature_oracle",
+    "monolithic_temperature_aware_recurrent_policy"
+  ],
+  "primary_confirmatory_contrast": "physics_z1_5 minus physics_z0, averaged over prespecified OOD conditions",
+  "success_criteria": {
+    "paired_mean_reward_difference_above": 0.0,
+    "paired_bootstrap_95_ci_lower_above": 0.0,
+    "paired_sign_flip_two_sided_p_below": 0.05,
+    "maximum_trip_rate_each_condition": 0.02
+  },
+  "failure_policy": "Retain and report every run; do not change confirmatory seeds, inherited z, or primary criteria after observing results."
+}

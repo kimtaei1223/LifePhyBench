@@ -1,0 +1,3697 @@
+{
+  "in_domain": {
+    "hybrid_belief": {
+      "spec": {
+        "cutoff": 0.06,
+        "name": "hybrid_belief",
+        "residual_scale": 1.0,
+        "type": "hybrid_belief",
+        "uncertainty_multiplier": 1.5
+      },
+      "summary": {
+        "lifetime_rows": [
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.52722389523878,
+            "seed": 13000,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.58738686937411,
+            "seed": 13001,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -46.426521961027895,
+            "seed": 13002,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.578315606432724,
+            "seed": 13003,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.690939681635534,
+            "seed": 13004,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.65842260653912,
+            "seed": 13005,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.569503482536014,
+            "seed": 13006,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.60632221415782,
+            "seed": 13007,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.5527957661985,
+            "seed": 13008,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.55221296934119,
+            "seed": 13009,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.66186873600925,
+            "seed": 13010,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.57867222702366,
+            "seed": 13011,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.56568863916395,
+            "seed": 13012,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.64763399753577,
+            "seed": 13013,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.645898554590026,
+            "seed": 13014,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.622776195023775,
+            "seed": 13015,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.64376748491434,
+            "seed": 13016,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.660186307893255,
+            "seed": 13017,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.56157748475742,
+            "seed": 13018,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.66298002805825,
+            "seed": 13019,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.54175222081028,
+            "seed": 13020,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.55976437242283,
+            "seed": 13021,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.69449589572271,
+            "seed": 13022,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.589692143256045,
+            "seed": 13023,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.70939045830486,
+            "seed": 13024,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.702996560734846,
+            "seed": 13025,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.564973235308344,
+            "seed": 13026,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.62040810601119,
+            "seed": 13027,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.568010587149516,
+            "seed": 13028,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.63752468619466,
+            "seed": 13029,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.591056480299336,
+            "seed": 13030,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.68552698574764,
+            "seed": 13031,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.61448466533288,
+            "seed": 13032,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.5662543167426,
+            "seed": 13033,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.644745246846874,
+            "seed": 13034,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.55413244754793,
+            "seed": 13035,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.54109825419567,
+            "seed": 13036,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.57496662866238,
+            "seed": 13037,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.60687260267603,
+            "seed": 13038,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.561847188678705,
+            "seed": 13039,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.556042882887155,
+            "seed": 13040,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.57313533658211,
+            "seed": 13041,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.57451810390914,
+            "seed": 13042,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.573291417904485,
+            "seed": 13043,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.61223403166339,
+            "seed": 13044,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.639284636813414,
+            "seed": 13045,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.56215358097223,
+            "seed": 13046,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.66653940128445,
+            "seed": 13047,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.68765103744634,
+            "seed": 13048,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.611093788418,
+            "seed": 13049,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          }
+        ],
+        "lifetimes": 50,
+        "low_level_rollout_audit_observations": 1000,
+        "mean_reward_per_task": -41.66373264015954,
+        "mixed_mode_lifetime_rate": 1.0,
+        "tasks": 1000,
+        "trip_rate": 0.001
+      }
+    },
+    "physics_belief": {
+      "spec": {
+        "cutoff": 0.06,
+        "name": "physics_belief",
+        "type": "physics_belief",
+        "uncertainty_multiplier": 0.0
+      },
+      "summary": {
+        "lifetime_rows": [
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -39.55186069042559,
+            "seed": 13000,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -44.306929634651645,
+            "seed": 13001,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -47.89058683921553,
+            "seed": 13002,
+            "trip_rate": 0.1,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -43.225425180072115,
+            "seed": 13003,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.66119542979312,
+            "seed": 13004,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.63960292468415,
+            "seed": 13005,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -39.55137064799495,
+            "seed": 13006,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.6304703326498,
+            "seed": 13007,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -39.5632145904747,
+            "seed": 13008,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -39.547730060849375,
+            "seed": 13009,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -45.064052443228036,
+            "seed": 13010,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.57169543752943,
+            "seed": 13011,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -43.274747454107086,
+            "seed": 13012,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.669702530174575,
+            "seed": 13013,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.62233019821788,
+            "seed": 13014,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.59789451922276,
+            "seed": 13015,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -45.28951323346486,
+            "seed": 13016,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.66507324255246,
+            "seed": 13017,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -43.2618247413156,
+            "seed": 13018,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.68030207146201,
+            "seed": 13019,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -39.54857641354168,
+            "seed": 13020,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -39.561190245869376,
+            "seed": 13021,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -48.25812217489839,
+            "seed": 13022,
+            "trip_rate": 0.1,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -39.52571735249059,
+            "seed": 13023,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -43.65980273821806,
+            "seed": 13024,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.67939014553946,
+            "seed": 13025,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -39.55811330481058,
+            "seed": 13026,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.62876725087534,
+            "seed": 13027,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -39.545656062187234,
+            "seed": 13028,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -45.27447467562526,
+            "seed": 13029,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.65525606483656,
+            "seed": 13030,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.66683810157776,
+            "seed": 13031,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.564171504770044,
+            "seed": 13032,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.57960661335446,
+            "seed": 13033,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.62108207106444,
+            "seed": 13034,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.60111414757034,
+            "seed": 13035,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -39.52540858205264,
+            "seed": 13036,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.583453551627805,
+            "seed": 13037,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.62180383333962,
+            "seed": 13038,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -39.54893380435858,
+            "seed": 13039,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -39.5548318640361,
+            "seed": 13040,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -39.56101769203918,
+            "seed": 13041,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -43.04119069112117,
+            "seed": 13042,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -43.22959723210614,
+            "seed": 13043,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.64665254632483,
+            "seed": 13044,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.63986524432781,
+            "seed": 13045,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -39.52546594480908,
+            "seed": 13046,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.682495605395516,
+            "seed": 13047,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -47.8851944763156,
+            "seed": 13048,
+            "trip_rate": 0.1,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -39.545637758611925,
+            "seed": 13049,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          }
+        ],
+        "lifetimes": 50,
+        "low_level_rollout_audit_observations": 1000,
+        "mean_reward_per_task": -41.57569899791564,
+        "mixed_mode_lifetime_rate": 1.0,
+        "tasks": 1000,
+        "trip_rate": 0.016
+      }
+    }
+  },
+  "ood_combined": {
+    "hybrid_belief": {
+      "spec": {
+        "cutoff": 0.06,
+        "name": "hybrid_belief",
+        "residual_scale": 1.0,
+        "type": "hybrid_belief",
+        "uncertainty_multiplier": 1.5
+      },
+      "summary": {
+        "lifetime_rows": [
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.74685208668883,
+            "seed": 13000,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.76769405149715,
+            "seed": 13001,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.81726249746525,
+            "seed": 13002,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.735145889174746,
+            "seed": 13003,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -44.65471614763929,
+            "seed": 13004,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.81250620378468,
+            "seed": 13005,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -45.21004255771228,
+            "seed": 13006,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.73928352265141,
+            "seed": 13007,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.74045721117108,
+            "seed": 13008,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.64993625456839,
+            "seed": 13009,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.882952800661094,
+            "seed": 13010,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.780644324458585,
+            "seed": 13011,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.68799673151899,
+            "seed": 13012,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.788889070001986,
+            "seed": 13013,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.80684905734924,
+            "seed": 13014,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.78426417085357,
+            "seed": 13015,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -46.40254194100109,
+            "seed": 13016,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -45.79651328343575,
+            "seed": 13017,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -45.16936366775486,
+            "seed": 13018,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.846790530633896,
+            "seed": 13019,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.700524776401146,
+            "seed": 13020,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -43.642330101436045,
+            "seed": 13021,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.86456430904716,
+            "seed": 13022,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.7470846710564,
+            "seed": 13023,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -45.85642169273392,
+            "seed": 13024,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.84771657147651,
+            "seed": 13025,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -45.20211393893871,
+            "seed": 13026,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.723306873741485,
+            "seed": 13027,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.75428083769101,
+            "seed": 13028,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -45.870736481841526,
+            "seed": 13029,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.81616216480593,
+            "seed": 13030,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.874293085129096,
+            "seed": 13031,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.728833737492444,
+            "seed": 13032,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.76339334142678,
+            "seed": 13033,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.81162782141273,
+            "seed": 13034,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.821985880859366,
+            "seed": 13035,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.659846176984125,
+            "seed": 13036,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.768279699544784,
+            "seed": 13037,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.816955716400415,
+            "seed": 13038,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.758759832854054,
+            "seed": 13039,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.7056888986621,
+            "seed": 13040,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.73080668403224,
+            "seed": 13041,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.725444936177105,
+            "seed": 13042,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.695602328838156,
+            "seed": 13043,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.80754411018101,
+            "seed": 13044,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.806961673467654,
+            "seed": 13045,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -45.418962732670515,
+            "seed": 13046,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.82970154305711,
+            "seed": 13047,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.76805977782698,
+            "seed": 13048,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -46.39757017709327,
+            "seed": 13049,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          }
+        ],
+        "lifetimes": 50,
+        "low_level_rollout_audit_observations": 1000,
+        "mean_reward_per_task": -43.49472525146605,
+        "mixed_mode_lifetime_rate": 0.66,
+        "tasks": 1000,
+        "trip_rate": 0.011
+      }
+    },
+    "physics_belief": {
+      "spec": {
+        "cutoff": 0.06,
+        "name": "physics_belief",
+        "type": "physics_belief",
+        "uncertainty_multiplier": 0.0
+      },
+      "summary": {
+        "lifetime_rows": [
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -45.41987102611508,
+            "seed": 13000,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -44.66009017132222,
+            "seed": 13001,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -46.21215235649326,
+            "seed": 13002,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -43.56249550411434,
+            "seed": 13003,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -44.63917821202939,
+            "seed": 13004,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.802498140902685,
+            "seed": 13005,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -45.21004255771228,
+            "seed": 13006,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -43.451049265652756,
+            "seed": 13007,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.74045721117108,
+            "seed": 13008,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.654032317483015,
+            "seed": 13009,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -46.326746413409026,
+            "seed": 13010,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -45.026861340913015,
+            "seed": 13011,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.763462032727425,
+            "seed": 13012,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -46.34168640911456,
+            "seed": 13013,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -44.61498876814614,
+            "seed": 13014,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -44.6328887432567,
+            "seed": 13015,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -46.51608250135265,
+            "seed": 13016,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -45.77182459268723,
+            "seed": 13017,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -47.01219501135883,
+            "seed": 13018,
+            "trip_rate": 0.1,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.846790530633896,
+            "seed": 13019,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.733233517835686,
+            "seed": 13020,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -43.6499097629202,
+            "seed": 13021,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -45.63200863317597,
+            "seed": 13022,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -45.411260800170865,
+            "seed": 13023,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -45.85642169273392,
+            "seed": 13024,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.84771657147651,
+            "seed": 13025,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -43.5648056515411,
+            "seed": 13026,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -44.674064022762465,
+            "seed": 13027,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -43.70965052470223,
+            "seed": 13028,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -47.68378127750159,
+            "seed": 13029,
+            "trip_rate": 0.1,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -44.690635343018734,
+            "seed": 13030,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -45.500197592208536,
+            "seed": 13031,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.79743197582588,
+            "seed": 13032,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -44.6943652260663,
+            "seed": 13033,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -45.67014893246231,
+            "seed": 13034,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.83532712791677,
+            "seed": 13035,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -43.641663214378205,
+            "seed": 13036,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.763256009488316,
+            "seed": 13037,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -44.48111753034318,
+            "seed": 13038,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -43.83370555851614,
+            "seed": 13039,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -43.714442689902526,
+            "seed": 13040,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -43.42491620963848,
+            "seed": 13041,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -43.35457939112111,
+            "seed": 13042,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -45.288972637444786,
+            "seed": 13043,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -46.40645163586602,
+            "seed": 13044,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -46.30748138113532,
+            "seed": 13045,
+            "trip_rate": 0.1,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.71578824516811,
+            "seed": 13046,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.82970154305711,
+            "seed": 13047,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -46.530864368040596,
+            "seed": 13048,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -44.74449508920899,
+            "seed": 13049,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          }
+        ],
+        "lifetimes": 50,
+        "low_level_rollout_audit_observations": 1000,
+        "mean_reward_per_task": -44.44387574524447,
+        "mixed_mode_lifetime_rate": 0.94,
+        "tasks": 1000,
+        "trip_rate": 0.041
+      }
+    }
+  },
+  "ood_cooling": {
+    "hybrid_belief": {
+      "spec": {
+        "cutoff": 0.06,
+        "name": "hybrid_belief",
+        "residual_scale": 1.0,
+        "type": "hybrid_belief",
+        "uncertainty_multiplier": 1.5
+      },
+      "summary": {
+        "lifetime_rows": [
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.777864362828126,
+            "seed": 13000,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.79988255626435,
+            "seed": 13001,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.80599049743891,
+            "seed": 13002,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.77284857575175,
+            "seed": 13003,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.744780229785896,
+            "seed": 13004,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.77320044139923,
+            "seed": 13005,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.79577506581767,
+            "seed": 13006,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.701355247709856,
+            "seed": 13007,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.77166915175421,
+            "seed": 13008,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.654117806904516,
+            "seed": 13009,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.84983325686097,
+            "seed": 13010,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.80617391643453,
+            "seed": 13011,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.714668714003516,
+            "seed": 13012,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.791526090772656,
+            "seed": 13013,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.76634398033319,
+            "seed": 13014,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.78426417085357,
+            "seed": 13015,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.780881830644965,
+            "seed": 13016,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.857241091638556,
+            "seed": 13017,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.763801245638916,
+            "seed": 13018,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.89197764371873,
+            "seed": 13019,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.713306672293534,
+            "seed": 13020,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.75976633576009,
+            "seed": 13021,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.82678805397764,
+            "seed": 13022,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.70928332342123,
+            "seed": 13023,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.922759894185766,
+            "seed": 13024,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.8541658917375,
+            "seed": 13025,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.71066517339304,
+            "seed": 13026,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.740561949307796,
+            "seed": 13027,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.780240833518604,
+            "seed": 13028,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.88936125350323,
+            "seed": 13029,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.77933385121993,
+            "seed": 13030,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.8901290484285,
+            "seed": 13031,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.728833737492444,
+            "seed": 13032,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.73599235967729,
+            "seed": 13033,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.7412822335377,
+            "seed": 13034,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.73299261338269,
+            "seed": 13035,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.65960578314374,
+            "seed": 13036,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.77727300130885,
+            "seed": 13037,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.75552088841181,
+            "seed": 13038,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.680877320468014,
+            "seed": 13039,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.75884265395026,
+            "seed": 13040,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.717705380808596,
+            "seed": 13041,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.70831991454855,
+            "seed": 13042,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.725909734624295,
+            "seed": 13043,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.80810103005009,
+            "seed": 13044,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.806961673467654,
+            "seed": 13045,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.71157654279008,
+            "seed": 13046,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.843166027440404,
+            "seed": 13047,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.768440526853524,
+            "seed": 13048,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.77675459479927,
+            "seed": 13049,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          }
+        ],
+        "lifetimes": 50,
+        "low_level_rollout_audit_observations": 1000,
+        "mean_reward_per_task": -42.89237428348113,
+        "mixed_mode_lifetime_rate": 0.6,
+        "tasks": 1000,
+        "trip_rate": 0.0
+      }
+    },
+    "physics_belief": {
+      "spec": {
+        "cutoff": 0.06,
+        "name": "physics_belief",
+        "type": "physics_belief",
+        "uncertainty_multiplier": 0.0
+      },
+      "summary": {
+        "lifetime_rows": [
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -43.680401073415815,
+            "seed": 13000,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -44.736653546389064,
+            "seed": 13001,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -45.977795557045354,
+            "seed": 13002,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.77284857575175,
+            "seed": 13003,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.77448109364114,
+            "seed": 13004,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.81531034537174,
+            "seed": 13005,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.79577506581767,
+            "seed": 13006,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.71372020607919,
+            "seed": 13007,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -43.67785789035714,
+            "seed": 13008,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.677049287799996,
+            "seed": 13009,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.84983325686097,
+            "seed": 13010,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -44.73187490372719,
+            "seed": 13011,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.72534262724011,
+            "seed": 13012,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -46.20958323867084,
+            "seed": 13013,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.77465688328674,
+            "seed": 13014,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.80049062002994,
+            "seed": 13015,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -46.376535535302565,
+            "seed": 13016,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -45.77182459268723,
+            "seed": 13017,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -47.01219501135883,
+            "seed": 13018,
+            "trip_rate": 0.1,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -45.788533002434875,
+            "seed": 13019,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.76627146828758,
+            "seed": 13020,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -43.632183404911025,
+            "seed": 13021,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -45.850443302755096,
+            "seed": 13022,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -45.411260800170865,
+            "seed": 13023,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -45.809883000123364,
+            "seed": 13024,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.8541658917375,
+            "seed": 13025,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.73406619688536,
+            "seed": 13026,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.80388975190199,
+            "seed": 13027,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -43.700629861588894,
+            "seed": 13028,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -45.7822820307437,
+            "seed": 13029,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -44.68326876309236,
+            "seed": 13030,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -45.703850112590246,
+            "seed": 13031,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.79743197582588,
+            "seed": 13032,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -44.70443493385325,
+            "seed": 13033,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.776502057120894,
+            "seed": 13034,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.77232782481839,
+            "seed": 13035,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -43.642432617208875,
+            "seed": 13036,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.79636726674278,
+            "seed": 13037,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.7746422669049,
+            "seed": 13038,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -44.39063490850695,
+            "seed": 13039,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -43.697064221252546,
+            "seed": 13040,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.717705380808596,
+            "seed": 13041,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.70831991454855,
+            "seed": 13042,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -45.27490083773273,
+            "seed": 13043,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.73364933473367,
+            "seed": 13044,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -44.69182088181991,
+            "seed": 13045,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.74018739175527,
+            "seed": 13046,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.843166027440404,
+            "seed": 13047,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -46.533772776300516,
+            "seed": 13048,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -44.91601667108208,
+            "seed": 13049,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          }
+        ],
+        "lifetimes": 50,
+        "low_level_rollout_audit_observations": 1000,
+        "mean_reward_per_task": -43.818126683730256,
+        "mixed_mode_lifetime_rate": 0.94,
+        "tasks": 1000,
+        "trip_rate": 0.027
+      }
+    }
+  },
+  "ood_sensor_noise": {
+    "hybrid_belief": {
+      "spec": {
+        "cutoff": 0.06,
+        "name": "hybrid_belief",
+        "residual_scale": 1.0,
+        "type": "hybrid_belief",
+        "uncertainty_multiplier": 1.5
+      },
+      "summary": {
+        "lifetime_rows": [
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.54568241188417,
+            "seed": 13000,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.60593817750894,
+            "seed": 13001,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.67092048319823,
+            "seed": 13002,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -43.013034169483646,
+            "seed": 13003,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -47.4536214592447,
+            "seed": 13004,
+            "trip_rate": 0.1,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.61780205225439,
+            "seed": 13005,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.550477014328166,
+            "seed": 13006,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.610584052212396,
+            "seed": 13007,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -39.51642845904956,
+            "seed": 13008,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.55221296934119,
+            "seed": 13009,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.61395640653993,
+            "seed": 13010,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.543984174497666,
+            "seed": 13011,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.51688092076288,
+            "seed": 13012,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.687175891477054,
+            "seed": 13013,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.645898554590026,
+            "seed": 13014,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.640209726746775,
+            "seed": 13015,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.699067195279596,
+            "seed": 13016,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.611502295398495,
+            "seed": 13017,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -44.283601957419975,
+            "seed": 13018,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.65103583588627,
+            "seed": 13019,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.564060190628126,
+            "seed": 13020,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.55944572463075,
+            "seed": 13021,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.69449589572271,
+            "seed": 13022,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.53491693310824,
+            "seed": 13023,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -44.679686047481404,
+            "seed": 13024,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.702996560734846,
+            "seed": 13025,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.56731024066227,
+            "seed": 13026,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.6087747654112,
+            "seed": 13027,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.568010587149516,
+            "seed": 13028,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -45.05091670601293,
+            "seed": 13029,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -43.966644061303825,
+            "seed": 13030,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.68552698574764,
+            "seed": 13031,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.62133406709111,
+            "seed": 13032,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.5289696317302,
+            "seed": 13033,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.61110077079149,
+            "seed": 13034,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.59240844860357,
+            "seed": 13035,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.50490070134607,
+            "seed": 13036,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.61848694706981,
+            "seed": 13037,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.60865009026876,
+            "seed": 13038,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.53079585211633,
+            "seed": 13039,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.58649696158757,
+            "seed": 13040,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.5279612135008,
+            "seed": 13041,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.57451810390914,
+            "seed": 13042,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.5838074766797,
+            "seed": 13043,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.65406406999275,
+            "seed": 13044,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.64350753566631,
+            "seed": 13045,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.56775956586759,
+            "seed": 13046,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.70581732444032,
+            "seed": 13047,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.68765103744634,
+            "seed": 13048,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.57223355713509,
+            "seed": 13049,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          }
+        ],
+        "lifetimes": 50,
+        "low_level_rollout_audit_observations": 1000,
+        "mean_reward_per_task": -41.978665245218814,
+        "mixed_mode_lifetime_rate": 1.0,
+        "tasks": 1000,
+        "trip_rate": 0.007
+      }
+    },
+    "physics_belief": {
+      "spec": {
+        "cutoff": 0.06,
+        "name": "physics_belief",
+        "type": "physics_belief",
+        "uncertainty_multiplier": 0.0
+      },
+      "summary": {
+        "lifetime_rows": [
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -43.307710370879335,
+            "seed": 13000,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -44.306929634651645,
+            "seed": 13001,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -48.0266858017359,
+            "seed": 13002,
+            "trip_rate": 0.1,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.25,
+            "mean_reward_per_task": -45.370537773495,
+            "seed": 13003,
+            "trip_rate": 0.1,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -47.488915613411855,
+            "seed": 13004,
+            "trip_rate": 0.1,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.60714142389019,
+            "seed": 13005,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -39.52398786373896,
+            "seed": 13006,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -42.5340102536161,
+            "seed": 13007,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.25,
+            "mean_reward_per_task": -38.49441986918486,
+            "seed": 13008,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -39.547730060849375,
+            "seed": 13009,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -45.272597896434576,
+            "seed": 13010,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -44.14599807835613,
+            "seed": 13011,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -43.02395441927238,
+            "seed": 13012,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.669702530174575,
+            "seed": 13013,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -49.881857654045504,
+            "seed": 13014,
+            "trip_rate": 0.15,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.605603253624324,
+            "seed": 13015,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -47.31540734079364,
+            "seed": 13016,
+            "trip_rate": 0.1,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -44.19659393923746,
+            "seed": 13017,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.25,
+            "mean_reward_per_task": -45.58155058128759,
+            "seed": 13018,
+            "trip_rate": 0.1,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.66599337253264,
+            "seed": 13019,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -39.499492130100215,
+            "seed": 13020,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.25,
+            "mean_reward_per_task": -45.81502656319283,
+            "seed": 13021,
+            "trip_rate": 0.1,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -49.043881370179605,
+            "seed": 13022,
+            "trip_rate": 0.1,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.58020399492032,
+            "seed": 13023,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -51.11408945902695,
+            "seed": 13024,
+            "trip_rate": 0.15,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.65955502417957,
+            "seed": 13025,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -42.96733441602592,
+            "seed": 13026,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.62876725087534,
+            "seed": 13027,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -39.526846698184215,
+            "seed": 13028,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -47.700818514506466,
+            "seed": 13029,
+            "trip_rate": 0.1,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -45.90238309599182,
+            "seed": 13030,
+            "trip_rate": 0.1,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -51.4697123367881,
+            "seed": 13031,
+            "trip_rate": 0.15,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.64298378010558,
+            "seed": 13032,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.54466557894437,
+            "seed": 13033,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.59378306056935,
+            "seed": 13034,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.59434562128589,
+            "seed": 13035,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.54109825419567,
+            "seed": 13036,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.635015556310634,
+            "seed": 13037,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.61724905238903,
+            "seed": 13038,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -43.19922791651213,
+            "seed": 13039,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.25,
+            "mean_reward_per_task": -45.700056759240056,
+            "seed": 13040,
+            "trip_rate": 0.1,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.25,
+            "mean_reward_per_task": -42.14764162174753,
+            "seed": 13041,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -43.12833133569951,
+            "seed": 13042,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -43.239693596888074,
+            "seed": 13043,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -45.24797611863512,
+            "seed": 13044,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.25,
+            "mean_reward_per_task": -44.99911568488626,
+            "seed": 13045,
+            "trip_rate": 0.1,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -39.552950058103775,
+            "seed": 13046,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -48.705305726709625,
+            "seed": 13047,
+            "trip_rate": 0.1,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -48.940496070109866,
+            "seed": 13048,
+            "trip_rate": 0.1,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.55879429924927,
+            "seed": 13049,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          }
+        ],
+        "lifetimes": 50,
+        "low_level_rollout_audit_observations": 1000,
+        "mean_reward_per_task": -43.60128337353532,
+        "mixed_mode_lifetime_rate": 1.0,
+        "tasks": 1000,
+        "trip_rate": 0.048
+      }
+    }
+  },
+  "ood_shocks": {
+    "hybrid_belief": {
+      "spec": {
+        "cutoff": 0.06,
+        "name": "hybrid_belief",
+        "residual_scale": 1.0,
+        "type": "hybrid_belief",
+        "uncertainty_multiplier": 1.5
+      },
+      "summary": {
+        "lifetime_rows": [
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.6206671940518,
+            "seed": 13000,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.59507812863468,
+            "seed": 13001,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -46.38774958880899,
+            "seed": 13002,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.65656464297121,
+            "seed": 13003,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.774355437209245,
+            "seed": 13004,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.746589746242265,
+            "seed": 13005,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -45.36140234061383,
+            "seed": 13006,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.696278322489654,
+            "seed": 13007,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.625018784296785,
+            "seed": 13008,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.54995884393652,
+            "seed": 13009,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.67016715113185,
+            "seed": 13010,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.63543323880886,
+            "seed": 13011,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.64033823955428,
+            "seed": 13012,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.687849188382195,
+            "seed": 13013,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.675983862720955,
+            "seed": 13014,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.622776195023775,
+            "seed": 13015,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -46.26660832119746,
+            "seed": 13016,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.660186307893255,
+            "seed": 13017,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.56157748475742,
+            "seed": 13018,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.72353260903556,
+            "seed": 13019,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.62329080771686,
+            "seed": 13020,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.574882886775015,
+            "seed": 13021,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.86253320748288,
+            "seed": 13022,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.589692143256045,
+            "seed": 13023,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.7861811008407,
+            "seed": 13024,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.71075015252977,
+            "seed": 13025,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.586756804702794,
+            "seed": 13026,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.629062664003285,
+            "seed": 13027,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.585172111926,
+            "seed": 13028,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.63752468619466,
+            "seed": 13029,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.75419777011031,
+            "seed": 13030,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.72617526790707,
+            "seed": 13031,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.61448466533288,
+            "seed": 13032,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.5662543167426,
+            "seed": 13033,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.68963011916681,
+            "seed": 13034,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.700626780727355,
+            "seed": 13035,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.54104692377568,
+            "seed": 13036,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.68249973336978,
+            "seed": 13037,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -44.92018318763634,
+            "seed": 13038,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -44.113947154793806,
+            "seed": 13039,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -43.74501611430546,
+            "seed": 13040,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.59108226629258,
+            "seed": 13041,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.52063826653695,
+            "seed": 13042,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.577817738170296,
+            "seed": 13043,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -46.32793738924158,
+            "seed": 13044,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.639284636813414,
+            "seed": 13045,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.56215358097223,
+            "seed": 13046,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.0,
+            "mean_reward_per_task": -43.792102590954855,
+            "seed": 13047,
+            "trip_rate": 0.0,
+            "used_both_modes": false
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -46.24586563981074,
+            "seed": 13048,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.6104729146144,
+            "seed": 13049,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          }
+        ],
+        "lifetimes": 50,
+        "low_level_rollout_audit_observations": 1000,
+        "mean_reward_per_task": -42.55330758500925,
+        "mixed_mode_lifetime_rate": 0.88,
+        "tasks": 1000,
+        "trip_rate": 0.008
+      }
+    },
+    "physics_belief": {
+      "spec": {
+        "cutoff": 0.06,
+        "name": "physics_belief",
+        "type": "physics_belief",
+        "uncertainty_multiplier": 0.0
+      },
+      "summary": {
+        "lifetime_rows": [
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -39.565795233954766,
+            "seed": 13000,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -44.32162268227431,
+            "seed": 13001,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -45.3976662583281,
+            "seed": 13002,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -43.223858372273,
+            "seed": 13003,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.716538578726514,
+            "seed": 13004,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.72405630251777,
+            "seed": 13005,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -47.2348103177214,
+            "seed": 13006,
+            "trip_rate": 0.1,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.651547597329305,
+            "seed": 13007,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.641857705316696,
+            "seed": 13008,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -39.550974535428466,
+            "seed": 13009,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -45.2252135937636,
+            "seed": 13010,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -44.37291268363548,
+            "seed": 13011,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.59969624303172,
+            "seed": 13012,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.66811959699679,
+            "seed": 13013,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -44.07416600842136,
+            "seed": 13014,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.59789451922276,
+            "seed": 13015,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -44.70948085211455,
+            "seed": 13016,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.66507324255246,
+            "seed": 13017,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -43.2618247413156,
+            "seed": 13018,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.72766920019728,
+            "seed": 13019,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.62012897880631,
+            "seed": 13020,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -39.57104030819013,
+            "seed": 13021,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -45.70744762859659,
+            "seed": 13022,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -39.52571735249059,
+            "seed": 13023,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -48.459064634443564,
+            "seed": 13024,
+            "trip_rate": 0.1,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.669576094446136,
+            "seed": 13025,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -39.55107557628061,
+            "seed": 13026,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.63455879987025,
+            "seed": 13027,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -39.553380547580154,
+            "seed": 13028,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -45.27447467562526,
+            "seed": 13029,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -45.09938198701238,
+            "seed": 13030,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -42.75085321159841,
+            "seed": 13031,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.564171504770044,
+            "seed": 13032,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.57960661335446,
+            "seed": 13033,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.678952131629536,
+            "seed": 13034,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -45.37845795966327,
+            "seed": 13035,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -39.525358362201665,
+            "seed": 13036,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.68857164852114,
+            "seed": 13037,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -41.65115216757187,
+            "seed": 13038,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -46.29863836684218,
+            "seed": 13039,
+            "trip_rate": 0.1,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -43.34639349359516,
+            "seed": 13040,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -39.59529648780444,
+            "seed": 13041,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -42.5104602489218,
+            "seed": 13042,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.59600880756612,
+            "seed": 13043,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.1,
+            "mean_reward_per_task": -45.28944422538399,
+            "seed": 13044,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.63986524432781,
+            "seed": 13045,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.2,
+            "mean_reward_per_task": -39.52546594480908,
+            "seed": 13046,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.05,
+            "mean_reward_per_task": -45.928153111433886,
+            "seed": 13047,
+            "trip_rate": 0.05,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -50.826388691460316,
+            "seed": 13048,
+            "trip_rate": 0.15,
+            "used_both_modes": true
+          },
+          {
+            "high_rate": 0.15,
+            "mean_reward_per_task": -40.60612446906102,
+            "seed": 13049,
+            "trip_rate": 0.0,
+            "used_both_modes": true
+          }
+        ],
+        "lifetimes": 50,
+        "low_level_rollout_audit_observations": 1000,
+        "mean_reward_per_task": -42.551519750779605,
+        "mixed_mode_lifetime_rate": 1.0,
+        "tasks": 1000,
+        "trip_rate": 0.025
+      }
+    }
+  }
+}

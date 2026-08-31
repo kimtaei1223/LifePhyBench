@@ -1,0 +1,11 @@
+name: lifephybench
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      # Install the tested simulator MVP first.  The RL learner stack receives
+      # a separate lock after the environment semantics are validated.
+      - -e .[dev,analysis,mujoco]
+

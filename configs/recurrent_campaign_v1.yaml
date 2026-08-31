@@ -1,0 +1,22 @@
+protocol_version: 1
+purpose: frozen_adaptation_recurrent_development_campaign_not_final_result
+
+environment:
+  id: Pusher-v5
+  mechanism: wear
+  degradation_mode: endogenous_action
+  episode_steps: 100
+  episodes_per_lifetime: 20
+
+training:
+  algorithm: RecurrentPPO
+  policy: MlpLstmPolicy
+  workers: 8
+  total_timesteps: 1000000
+  learning_rate: 0.0003
+  development_seeds: [1000, 1001]
+  memory_modes: [episode, lifetime]
+
+reporting:
+  unit_of_uncertainty: lifetime
+  label: frozen_adaptation_not_online_parameter_learning

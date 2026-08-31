@@ -1,0 +1,30 @@
+{
+  "protocol": "reacher_margin_extension_v1",
+  "status": "post_confirmatory_extension_frozen_before_margin_calibration",
+  "motivation": "The inherited Pusher z=1.5 margin produced a positive Reacher utility effect but missed the 2% maximum trip-rate gate at 2.3%.",
+  "interpretation": "Morphology-specific calibration extension; does not replace the inherited-margin confirmatory result.",
+  "calibration": {
+    "seeds": [25100, 25119],
+    "cutoffs": [0.055, 0.06, 0.065],
+    "uncertainty_multipliers": [1.5, 1.75, 2.0, 2.25],
+    "selection_safety_buffer_max_trip_rate": 0.015,
+    "selection_rule": "Among buffered-safe candidates, maximize mean reward over target OOD conditions; if none are buffered-safe, minimize maximum trip rate then maximize target-OOD reward."
+  },
+  "fresh_evaluation": {
+    "seeds": [25300, 25399],
+    "target_ood": ["ood_sensor_noise", "ood_cooling", "ood_combined"],
+    "comparators": ["physics_z0", "inherited_physics_z1_5", "hybrid_z1_5", "current_sensor", "privileged_state_threshold"]
+  },
+  "success_criteria": {
+    "selected_minus_physics_z0_mean_above": 0.0,
+    "paired_bootstrap_95_ci_lower_above": 0.0,
+    "paired_sign_flip_two_sided_p_below": 0.05,
+    "maximum_selected_trip_rate_each_condition": 0.02
+  },
+  "guardrails": [
+    "Do not change or relabel the failed inherited-margin primary gate.",
+    "Do not use seeds 25200-25299 for selection.",
+    "Select exactly one margin before touching seeds 25300-25399.",
+    "Report calibration and fresh evaluation separately."
+  ]
+}

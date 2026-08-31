@@ -1,0 +1,215 @@
+{
+  "checkpoint": {
+    "path": "${PROJECT_ROOT}/outputs/physics_residual_v12_refinement/residual_model.pt",
+    "sha256": "c38734683b1aeebebd709a543354b14bc7bc12c440a3ef6ee0622ab882ea07f2"
+  },
+  "created_utc": "2026-08-30T11:51:12.642881+00:00",
+  "designs": {
+    "in_domain": {
+      "sensor_noise_sd": 0.01,
+      "shock_probability": 0.0005,
+      "shock_size": 0.01,
+      "thermal_episode_cooling": 0.15
+    },
+    "ood_combined": {
+      "sensor_noise_sd": 0.03,
+      "shock_probability": 0.001,
+      "shock_size": 0.02,
+      "thermal_episode_cooling": 0.1
+    },
+    "ood_cooling": {
+      "sensor_noise_sd": 0.01,
+      "shock_probability": 0.0005,
+      "shock_size": 0.01,
+      "thermal_episode_cooling": 0.1
+    },
+    "ood_sensor_noise": {
+      "sensor_noise_sd": 0.03,
+      "shock_probability": 0.0005,
+      "shock_size": 0.01,
+      "thermal_episode_cooling": 0.15
+    },
+    "ood_shocks": {
+      "sensor_noise_sd": 0.01,
+      "shock_probability": 0.001,
+      "shock_size": 0.02,
+      "thermal_episode_cooling": 0.15
+    }
+  },
+  "environment": {
+    "numpy": "2.4.6",
+    "python": "3.11.15",
+    "torch": "2.11.0+cu128"
+  },
+  "evidence_scope": "fresh-seed post-confirmatory mechanism ablation",
+  "factorial_design": {
+    "cutoff": 0.06,
+    "residual": [
+      "off",
+      "on"
+    ],
+    "residual_scale_when_on": 1.0,
+    "uncertainty_multiplier": [
+      0.0,
+      1.5
+    ]
+  },
+  "low_level_model": {
+    "path": "${PROJECT_ROOT}/outputs/canonical_thermal_probe/canonical-thermal-static-task-seed4003-steps2000k/model.zip",
+    "sha256": "4e10e871d48b823133784a9c8410ddae7cadae7ade0fd24f6ad51b478f434fd3"
+  },
+  "phase": "physics_residual_v12_3_frozen_factorial_protocol",
+  "policy_specs": [
+    {
+      "cutoff": 0.06,
+      "name": "physics_z0",
+      "type": "physics_belief",
+      "uncertainty_multiplier": 0.0
+    },
+    {
+      "cutoff": 0.06,
+      "name": "physics_z1_5",
+      "type": "physics_belief",
+      "uncertainty_multiplier": 1.5
+    },
+    {
+      "cutoff": 0.06,
+      "name": "hybrid_z0",
+      "residual_scale": 1.0,
+      "type": "hybrid_belief",
+      "uncertainty_multiplier": 0.0
+    },
+    {
+      "cutoff": 0.06,
+      "name": "hybrid_z1_5",
+      "residual_scale": 1.0,
+      "type": "hybrid_belief",
+      "uncertainty_multiplier": 1.5
+    }
+  ],
+  "primary_criteria": {
+    "bootstrap_95_ci_lower_above": 0.0,
+    "maximum_hybrid_z1_5_trip_rate_each_condition": 0.02,
+    "mean_at_least": 0.1,
+    "paired_sign_flip_p_below": 0.05
+  },
+  "primary_estimand": "target-OOD aggregate hybrid_z1_5 minus physics_z1_5 reward/task",
+  "refinement_result": {
+    "path": "${PROJECT_ROOT}/outputs/physics_residual_v12_refinement/PILOT_RESULTS.json",
+    "sha256": "489b1911e6d5ca874901ab6f64b67efd2f50ab119b7d71d64e30b4a897475a3a"
+  },
+  "reward_decomposition": "base task return excluding discrete mode bonus and trip penalty, throughput bonus, and trip penalty",
+  "seeds": [
+    23000,
+    23001,
+    23002,
+    23003,
+    23004,
+    23005,
+    23006,
+    23007,
+    23008,
+    23009,
+    23010,
+    23011,
+    23012,
+    23013,
+    23014,
+    23015,
+    23016,
+    23017,
+    23018,
+    23019,
+    23020,
+    23021,
+    23022,
+    23023,
+    23024,
+    23025,
+    23026,
+    23027,
+    23028,
+    23029,
+    23030,
+    23031,
+    23032,
+    23033,
+    23034,
+    23035,
+    23036,
+    23037,
+    23038,
+    23039,
+    23040,
+    23041,
+    23042,
+    23043,
+    23044,
+    23045,
+    23046,
+    23047,
+    23048,
+    23049,
+    23050,
+    23051,
+    23052,
+    23053,
+    23054,
+    23055,
+    23056,
+    23057,
+    23058,
+    23059,
+    23060,
+    23061,
+    23062,
+    23063,
+    23064,
+    23065,
+    23066,
+    23067,
+    23068,
+    23069,
+    23070,
+    23071,
+    23072,
+    23073,
+    23074,
+    23075,
+    23076,
+    23077,
+    23078,
+    23079,
+    23080,
+    23081,
+    23082,
+    23083,
+    23084,
+    23085,
+    23086,
+    23087,
+    23088,
+    23089,
+    23090,
+    23091,
+    23092,
+    23093,
+    23094,
+    23095,
+    23096,
+    23097,
+    23098,
+    23099
+  ],
+  "seeds_untouched_before_freeze": true,
+  "source_hashes": {
+    "scripts/qualify_hierarchical_v11.py": "a006ef81ddcc89725980a026d332ffb6c6524800fdb866befcc31150e31e22c6",
+    "scripts/qualify_physics_belief_v12.py": "d74f0d053d811ac3635c24720311740e6a20eadcf4daa6085d483cd824e57b3c",
+    "scripts/run_physics_residual_v12_3_factorial_ablation.py": "3cacdcfdbb4a3c1b791a2602d04463035148ccea3d4fb169c869d11cc08b1f27",
+    "scripts/run_physics_residual_v12_pilot.py": "7c8e5ecb64fe2c3aaa1e539fb2c3c955940754bb88c18e6b77540f1ad78ec40c",
+    "src/lifephybench/envs/hierarchical_thermal_v11.py": "206cbfed87f3e0a22a605b0f44f9ca4a85859c94a1049876f15bdae7623b0986",
+    "src/lifephybench/envs/mujoco_pusher.py": "5ff49418ffe1b133976363c4dd27bd8f83b897920265effbefacb59034538c79",
+    "src/lifephybench/envs/thermal_commitment.py": "8019427aab65174768fe8b29fc02ca646165b854b465aa66ded44624930505d4"
+  },
+  "status": "frozen_before_any_v12_3_factorial_evaluation"
+}

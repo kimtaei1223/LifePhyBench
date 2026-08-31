@@ -1,0 +1,23 @@
+{
+  "artifacts": {
+    "PAPER_RESULTS_EN.md": "2430e76009a4a90f7bd01f363d7d424fc9fa130be92ac31321fd92b9d9a57ae6",
+    "PAPER_RESULTS_KO.md": "c98818dce70b42be734ae7a9f4000ed6e842edf5ab74b62e833a34409d2593dc",
+    "condition_effects.csv": "3a9478a5adbbd4e6502cb411d4635c374642133ecabd1ca0387fb1778d8dfa78",
+    "figure_v12_2_effects_and_safety.png": "6307ba04578ae9f4d1471d0692d0b794b82e2b4fd1f789afbbac853cf9db2352",
+    "figure_v12_2_effects_and_safety.svg": "a615dce63efd3e765ba49bc2cd9c90e5d6614d9d18201ffb00872dfd85da8ae7",
+    "figure_v12_2_seed_effects.png": "fae8b76f8cf522edc0647b867a41ec645fb3ca6f82c6ba77161e6db6731354b1",
+    "figure_v12_2_seed_effects.svg": "1c218aea86a190be1ed962424997e0c9f27c68b6dc09c054eac6fddd73ed5489",
+    "paired_seed_effects.csv": "d75d565440a8b62497dcefe72d16d490f3ea43cf40ad28e7e4a6d06dc529d65b",
+    "policy_summaries.csv": "5481e48fb9924bd67b98f16416dd9f929a0194fced8fb2f3a5779b97428119c9"
+  },
+  "confirmatory_passed": true,
+  "inputs": {
+    "cells": "ca66b738a5124f3427b7e9b2ffc2875b9ff773f6f3bd0b7e048884d78e046882",
+    "protocol": "24c72ce43ccfca7414795a4d4480d866eaedf13ce0d1441d65e647bb6646918b",
+    "result": "5d73536dafaea59d3c9cafe5499004278c083d30c5671c3610a5107bf6b61fe7"
+  },
+  "phase": "physics_residual_v12_2_publication_artifacts",
+  "protocol_sha256": "24c72ce43ccfca7414795a4d4480d866eaedf13ce0d1441d65e647bb6646918b",
+  "status": "complete",
+  "validation_passed": true
+}

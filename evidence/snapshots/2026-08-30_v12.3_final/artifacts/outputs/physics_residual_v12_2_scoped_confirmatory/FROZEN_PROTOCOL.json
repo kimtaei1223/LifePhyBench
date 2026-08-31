@@ -1,0 +1,235 @@
+{
+  "checkpoint": {
+    "path": "${PROJECT_ROOT}/outputs/physics_residual_v12_refinement/residual_model.pt",
+    "sha256": "c38734683b1aeebebd709a543354b14bc7bc12c440a3ef6ee0622ab882ea07f2"
+  },
+  "confirmatory_evidence": true,
+  "created_utc": "2026-08-30T11:04:12.603491+00:00",
+  "designs": {
+    "in_domain": {
+      "sensor_noise_sd": 0.01,
+      "shock_probability": 0.0005,
+      "shock_size": 0.01,
+      "thermal_episode_cooling": 0.15
+    },
+    "ood_combined": {
+      "sensor_noise_sd": 0.03,
+      "shock_probability": 0.001,
+      "shock_size": 0.02,
+      "thermal_episode_cooling": 0.1
+    },
+    "ood_cooling": {
+      "sensor_noise_sd": 0.01,
+      "shock_probability": 0.0005,
+      "shock_size": 0.01,
+      "thermal_episode_cooling": 0.1
+    },
+    "ood_sensor_noise": {
+      "sensor_noise_sd": 0.03,
+      "shock_probability": 0.0005,
+      "shock_size": 0.01,
+      "thermal_episode_cooling": 0.15
+    },
+    "ood_shocks": {
+      "sensor_noise_sd": 0.01,
+      "shock_probability": 0.001,
+      "shock_size": 0.02,
+      "thermal_episode_cooling": 0.15
+    }
+  },
+  "development_evidence": {
+    "focused_search": {
+      "path": "${PROJECT_ROOT}/outputs/physics_residual_v12_1_recovery/SEARCH_ANALYSIS.json",
+      "sha256": "03809c435afb34d0a6b79c93a4095e461ece9ea104019493db579a3d0b4ef958"
+    },
+    "fresh_audit": {
+      "path": "${PROJECT_ROOT}/outputs/physics_residual_v12_1_recovery/FRESH_DEVELOPMENT_AUDIT.json",
+      "sha256": "660209832d66a770629a0b7242e21d2e7e79dc97331732ba329f41bff82e9b21"
+    }
+  },
+  "environment": {
+    "numpy": "2.4.6",
+    "python": "3.11.15",
+    "torch": "2.11.0+cu128"
+  },
+  "heldout_evaluation_seeds": [
+    22000,
+    22001,
+    22002,
+    22003,
+    22004,
+    22005,
+    22006,
+    22007,
+    22008,
+    22009,
+    22010,
+    22011,
+    22012,
+    22013,
+    22014,
+    22015,
+    22016,
+    22017,
+    22018,
+    22019,
+    22020,
+    22021,
+    22022,
+    22023,
+    22024,
+    22025,
+    22026,
+    22027,
+    22028,
+    22029,
+    22030,
+    22031,
+    22032,
+    22033,
+    22034,
+    22035,
+    22036,
+    22037,
+    22038,
+    22039,
+    22040,
+    22041,
+    22042,
+    22043,
+    22044,
+    22045,
+    22046,
+    22047,
+    22048,
+    22049,
+    22050,
+    22051,
+    22052,
+    22053,
+    22054,
+    22055,
+    22056,
+    22057,
+    22058,
+    22059,
+    22060,
+    22061,
+    22062,
+    22063,
+    22064,
+    22065,
+    22066,
+    22067,
+    22068,
+    22069,
+    22070,
+    22071,
+    22072,
+    22073,
+    22074,
+    22075,
+    22076,
+    22077,
+    22078,
+    22079,
+    22080,
+    22081,
+    22082,
+    22083,
+    22084,
+    22085,
+    22086,
+    22087,
+    22088,
+    22089,
+    22090,
+    22091,
+    22092,
+    22093,
+    22094,
+    22095,
+    22096,
+    22097,
+    22098,
+    22099
+  ],
+  "heldout_untouched_before_freeze": true,
+  "low_level_model": {
+    "path": "${PROJECT_ROOT}/outputs/canonical_thermal_probe/canonical-thermal-static-task-seed4003-steps2000k/model.zip",
+    "sha256": "4e10e871d48b823133784a9c8410ddae7cadae7ade0fd24f6ad51b478f434fd3"
+  },
+  "phase": "physics_residual_v12_2_scoped_frozen_protocol",
+  "policy_specs": [
+    {
+      "cutoff": 0.055,
+      "name": "current_sensor",
+      "type": "current_sensor"
+    },
+    {
+      "alpha": 0.6,
+      "cutoff": 0.06,
+      "name": "ema_history",
+      "type": "ema"
+    },
+    {
+      "cutoff": 0.06,
+      "name": "physics_belief",
+      "type": "physics_belief",
+      "uncertainty_multiplier": 0.0
+    },
+    {
+      "cutoff": 0.06,
+      "name": "hybrid_belief",
+      "residual_scale": 1.0,
+      "type": "hybrid_belief",
+      "uncertainty_multiplier": 1.5
+    },
+    {
+      "cutoff": 0.06,
+      "name": "privileged_oracle",
+      "type": "privileged_oracle"
+    }
+  ],
+  "primary_comparison": "hybrid_belief_minus_physics_belief",
+  "primary_criteria": {
+    "each_target_ood_bootstrap_lower_above": 0.0,
+    "each_target_ood_mean_at_least": 0.25,
+    "in_domain_bootstrap_lower_above": -0.5,
+    "in_domain_mean_at_least": -0.25,
+    "maximum_hybrid_trip_rate_each_condition": 0.02,
+    "target_ood_aggregate_bootstrap_lower_above": 0.0,
+    "target_ood_aggregate_mean_at_least": 0.25,
+    "target_ood_aggregate_sign_flip_p_below": 0.05
+  },
+  "primary_scope": [
+    "ood_sensor_noise",
+    "ood_cooling",
+    "ood_combined"
+  ],
+  "primary_unit": "paired independent lifetime seed",
+  "refinement_result": {
+    "path": "${PROJECT_ROOT}/outputs/physics_residual_v12_refinement/PILOT_RESULTS.json",
+    "sha256": "489b1911e6d5ca874901ab6f64b67efd2f50ab119b7d71d64e30b4a897475a3a"
+  },
+  "scope_rationale": "Fresh development evidence supported sensor-noise, cooling-model, and combined shifts; physical shocks were null and are therefore reported only as a secondary boundary condition.",
+  "secondary_boundary_conditions": [
+    "ood_shocks"
+  ],
+  "selected_spec": {
+    "cutoff": 0.06,
+    "name": "hybrid-c0.0600-s1.00-z1.50",
+    "residual_scale": 1.0,
+    "type": "hybrid_belief",
+    "uncertainty_multiplier": 1.5
+  },
+  "source_hashes": {
+    "scripts/qualify_hierarchical_v11.py": "a006ef81ddcc89725980a026d332ffb6c6524800fdb866befcc31150e31e22c6",
+    "scripts/qualify_physics_belief_v12.py": "d74f0d053d811ac3635c24720311740e6a20eadcf4daa6085d483cd824e57b3c",
+    "scripts/run_physics_residual_v12_2_scoped_confirmatory.py": "a6e69f9dbc0d026e3d7915a8cf220e7c879a99dd8eabfe684760a49f21cbb417",
+    "scripts/run_physics_residual_v12_confirmatory_pipeline.py": "d69d1810966afa61283b8773318ca73287bd24efa08af8699481a0dffc9e75ea",
+    "scripts/run_physics_residual_v12_pilot.py": "7c8e5ecb64fe2c3aaa1e539fb2c3c955940754bb88c18e6b77540f1ad78ec40c",
+    "src/lifephybench/envs/hierarchical_thermal_v11.py": "206cbfed87f3e0a22a605b0f44f9ca4a85859c94a1049876f15bdae7623b0986"
+  },
+  "status": "frozen_before_any_v12_2_heldout_evaluation"
+}

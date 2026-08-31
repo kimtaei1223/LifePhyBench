@@ -1,0 +1,24 @@
+protocol_version: 1
+purpose: recoverable_thermal_health_semantic_pilot_not_final_comparison
+
+environment:
+  id: Pusher-v5
+  simulator: mujoco
+  episode_steps: 100
+  episodes_per_lifetime: 10
+
+thermal:
+  enabled: true
+  thermal_heat_rate: 0.005
+  thermal_exponent: 2.0
+  thermal_cooling_rate: 0.01
+  thermal_episode_cooling: 0.10
+  thermal_minimum_efficiency: 0.60
+  degradation_mode: endogenous_action
+  exogenous_dose_per_step: 0.25
+
+go_no_go:
+  require_episode_reset_preserves_nonzero_thermal_load: true
+  require_lifetime_reset_clears_thermal_load: true
+  require_thermal_derating_changes_runtime_dynamics: true
+  require_action_dependent_heating_differs_from_exogenous_clock_control: true

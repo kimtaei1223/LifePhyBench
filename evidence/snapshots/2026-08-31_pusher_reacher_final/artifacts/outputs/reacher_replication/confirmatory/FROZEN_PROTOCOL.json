@@ -1,0 +1,231 @@
+{
+  "analytic_policy_specs": [
+    {
+      "cutoff": 0.06,
+      "name": "current_sensor",
+      "type": "current_sensor"
+    },
+    {
+      "alpha": 0.6,
+      "cutoff": 0.06,
+      "name": "ema_history",
+      "type": "ema"
+    },
+    {
+      "cutoff": 0.06,
+      "name": "physics_z0",
+      "type": "physics_belief",
+      "uncertainty_multiplier": 0.0
+    },
+    {
+      "cutoff": 0.06,
+      "name": "physics_z1_5",
+      "type": "physics_belief",
+      "uncertainty_multiplier": 1.5
+    },
+    {
+      "cutoff": 0.06,
+      "name": "hybrid_z1_5",
+      "residual_scale": 1.0,
+      "type": "hybrid_belief",
+      "uncertainty_multiplier": 1.5
+    },
+    {
+      "cutoff": 0.06,
+      "name": "privileged_oracle",
+      "type": "privileged_oracle"
+    }
+  ],
+  "checkpoints": {
+    "low_level": {
+      "path": "${PROJECT_ROOT}/outputs/reacher_replication/low_level/reacher-static-task-seed5100-steps2000k/model.zip",
+      "sha256": "2439af85dd37d4774d77c2edd471acd5a3a675d8a8fcd8002ce3a90f61dcc13d"
+    },
+    "monolithic": {
+      "path": "${PROJECT_ROOT}/outputs/reacher_replication/monolithic_baseline/reacher-monolithic-lifetime-seed25100-decisions100k/model.zip",
+      "sha256": "351b72b7e9bd782b7703514355606b358f09f813c11dee71373639e6a82af8b5"
+    },
+    "residual": {
+      "path": "${PROJECT_ROOT}/outputs/reacher_replication/belief_development/residual_model.pt",
+      "sha256": "9703fa48331fecb15edee806ffe1f2da2cc8496f260551b45869ad821d1113c5"
+    }
+  },
+  "conditions": {
+    "in_domain": {
+      "sensor_noise_sd": 0.01,
+      "shock_probability": 0.0005,
+      "shock_size": 0.01,
+      "thermal_episode_cooling": 0.15
+    },
+    "ood_combined": {
+      "sensor_noise_sd": 0.03,
+      "shock_probability": 0.001,
+      "shock_size": 0.02,
+      "thermal_episode_cooling": 0.1
+    },
+    "ood_cooling": {
+      "sensor_noise_sd": 0.01,
+      "shock_probability": 0.0005,
+      "shock_size": 0.01,
+      "thermal_episode_cooling": 0.1
+    },
+    "ood_sensor_noise": {
+      "sensor_noise_sd": 0.03,
+      "shock_probability": 0.0005,
+      "shock_size": 0.01,
+      "thermal_episode_cooling": 0.15
+    },
+    "ood_shocks": {
+      "sensor_noise_sd": 0.01,
+      "shock_probability": 0.001,
+      "shock_size": 0.02,
+      "thermal_episode_cooling": 0.15
+    }
+  },
+  "created_utc": "2026-08-31T05:52:47.844556+00:00",
+  "environment": {
+    "numpy": "2.4.6",
+    "python": "3.11.15",
+    "torch": "2.11.0+cu128"
+  },
+  "git_commit": "b7e102fd50e6d1d836e22f8bc02b6ec6f4f7da8d",
+  "monolithic_policy": {
+    "high_power_selection_rate": 0.502,
+    "mean_task_episode_reward": -3.6286502927659026,
+    "model": "${PROJECT_ROOT}/outputs/reacher_replication/monolithic_baseline/reacher-monolithic-lifetime-seed25100-decisions100k/model.zip",
+    "run_name": "reacher-monolithic-lifetime-seed25100-decisions100k",
+    "seed": 25100,
+    "thermal_trip_rate": 0.004
+  },
+  "parent_protocols": {
+    "configs/reacher_cross_task_replication_v1.json": "4c1bbbeae5b5a28a0691e6b3f12c4d20a0443ef6a3b14c0e934fa90a1e7f509d",
+    "configs/reacher_cross_task_stage2_v1.json": "520058ce41af8e925dccc986129e18a01e39945fc3d30427e0ec616d0c732ff9"
+  },
+  "phase": "reacher_cross_task_frozen_confirmatory_protocol",
+  "primary_criteria": {
+    "maximum_physics_z1_5_trip_rate_each_condition": 0.02,
+    "paired_bootstrap_95_ci_lower_above": 0.0,
+    "paired_mean_reward_difference_above": 0.0,
+    "paired_sign_flip_two_sided_p_below": 0.05
+  },
+  "primary_estimand": "target-OOD paired physics_z1_5 minus physics_z0 reward per task",
+  "seeds": [
+    25200,
+    25201,
+    25202,
+    25203,
+    25204,
+    25205,
+    25206,
+    25207,
+    25208,
+    25209,
+    25210,
+    25211,
+    25212,
+    25213,
+    25214,
+    25215,
+    25216,
+    25217,
+    25218,
+    25219,
+    25220,
+    25221,
+    25222,
+    25223,
+    25224,
+    25225,
+    25226,
+    25227,
+    25228,
+    25229,
+    25230,
+    25231,
+    25232,
+    25233,
+    25234,
+    25235,
+    25236,
+    25237,
+    25238,
+    25239,
+    25240,
+    25241,
+    25242,
+    25243,
+    25244,
+    25245,
+    25246,
+    25247,
+    25248,
+    25249,
+    25250,
+    25251,
+    25252,
+    25253,
+    25254,
+    25255,
+    25256,
+    25257,
+    25258,
+    25259,
+    25260,
+    25261,
+    25262,
+    25263,
+    25264,
+    25265,
+    25266,
+    25267,
+    25268,
+    25269,
+    25270,
+    25271,
+    25272,
+    25273,
+    25274,
+    25275,
+    25276,
+    25277,
+    25278,
+    25279,
+    25280,
+    25281,
+    25282,
+    25283,
+    25284,
+    25285,
+    25286,
+    25287,
+    25288,
+    25289,
+    25290,
+    25291,
+    25292,
+    25293,
+    25294,
+    25295,
+    25296,
+    25297,
+    25298,
+    25299
+  ],
+  "seeds_untouched_before_freeze": true,
+  "source_hashes": {
+    "scripts/qualify_hierarchical_v11.py": "d38dff1b90c98d84ef32a79274f135c317dfcf50f0103542714638c91165c7be",
+    "scripts/qualify_physics_belief_v12.py": "d74f0d053d811ac3635c24720311740e6a20eadcf4daa6085d483cd824e57b3c",
+    "scripts/run_physics_residual_v12_pilot.py": "c5e1d01d34f5cbb3c94a87c2c80659a6354becb67735198385fc684a63273656",
+    "scripts/run_reacher_belief_development.py": "a6e6e2591c35085b02b12c5ac41d10a7cda55d8dad8632d59e5d898f5253cb00",
+    "scripts/run_reacher_confirmatory.py": "3a5108ec3736c8f0b85ee1d68820e4b0b1bd02dce954d48c918f2f0328c8111b",
+    "src/lifephybench/envs/hierarchical_thermal_v11.py": "f5f4df4653b87385e7798299280d2953da2e8bc066406502f9b215b05d51c640",
+    "src/lifephybench/envs/mujoco_pusher.py": "5ff49418ffe1b133976363c4dd27bd8f83b897920265effbefacb59034538c79",
+    "src/lifephybench/envs/thermal_commitment.py": "8019427aab65174768fe8b29fc02ca646165b854b465aa66ded44624930505d4"
+  },
+  "status": "frozen_before_any_25200_25299_evaluation",
+  "target_ood": [
+    "ood_sensor_noise",
+    "ood_cooling",
+    "ood_combined"
+  ]
+}

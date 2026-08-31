@@ -1,0 +1,7 @@
+commit a8c0307c8655e6dfd82a21249ee34a20e82b01e0
+Author:     LifePhyBench Contributors <noreply@users.noreply.github.com>
+AuthorDate: Sun Aug 30 21:43:14 2026 +0900
+Commit:     LifePhyBench Contributors <noreply@users.noreply.github.com>
+CommitDate: Sun Aug 30 21:43:14 2026 +0900
+
+    fix: capture source state before snapshot writes

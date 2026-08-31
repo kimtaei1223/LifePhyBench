@@ -1,0 +1,49 @@
+{
+  "candidates": [
+    {
+      "mean_task_episode_reward": -2.9576675945955992,
+      "model": "${PROJECT_ROOT}/outputs/reacher_replication/low_level/reacher-static-task-seed5100-steps2000k/model.zip",
+      "run_name": "reacher-static-task-seed5100-steps2000k",
+      "seed": 5100,
+      "std_task_episode_reward": 0.0
+    },
+    {
+      "mean_task_episode_reward": -2.990969934150809,
+      "model": "${PROJECT_ROOT}/outputs/reacher_replication/low_level/reacher-static-task-seed5101-steps2000k/model.zip",
+      "run_name": "reacher-static-task-seed5101-steps2000k",
+      "seed": 5101,
+      "std_task_episode_reward": 0.0
+    },
+    {
+      "mean_task_episode_reward": -3.0708434891192793,
+      "model": "${PROJECT_ROOT}/outputs/reacher_replication/low_level/reacher-static-task-seed5102-steps2000k/model.zip",
+      "run_name": "reacher-static-task-seed5102-steps2000k",
+      "seed": 5102,
+      "std_task_episode_reward": 0.0
+    },
+    {
+      "mean_task_episode_reward": -3.264083934379805,
+      "model": "${PROJECT_ROOT}/outputs/reacher_replication/low_level/reacher-static-task-seed5103-steps2000k/model.zip",
+      "run_name": "reacher-static-task-seed5103-steps2000k",
+      "seed": 5103,
+      "std_task_episode_reward": 0.0
+    },
+    {
+      "mean_task_episode_reward": -4.0096773875236495,
+      "model": "${PROJECT_ROOT}/outputs/reacher_replication/low_level/reacher-static-task-seed5104-steps2000k/model.zip",
+      "run_name": "reacher-static-task-seed5104-steps2000k",
+      "seed": 5104,
+      "std_task_episode_reward": 0.0
+    }
+  ],
+  "confirmatory_evidence": false,
+  "phase": "reacher_cross_task_low_level_development_selection",
+  "selected": {
+    "mean_task_episode_reward": -2.9576675945955992,
+    "model": "${PROJECT_ROOT}/outputs/reacher_replication/low_level/reacher-static-task-seed5100-steps2000k/model.zip",
+    "run_name": "reacher-static-task-seed5100-steps2000k",
+    "seed": 5100,
+    "std_task_episode_reward": 0.0
+  },
+  "selection_rule": "highest mean task reward; development-only selection"
+}

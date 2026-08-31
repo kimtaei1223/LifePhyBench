@@ -1,0 +1,43 @@
+{
+  "analysis_unit": "independent lifetime seed",
+  "artifacts": {
+    "PAPER_RESULTS_EN.md": "ed1eb7962ea987e0faf1c26e435ea3a93d390dfe139520a0408e60aa7c3071e9",
+    "PAPER_RESULTS_KO.md": "1fdbd2b572acbab740ffb1a1fca71709b7b53936593c3c387a33c15b3c7b254e",
+    "factorial_contrasts.csv": "dd74a6afcf9be12e12d1aa8b4461e5e0b2e8cbe1f5b07607a38f250514d8a5ed",
+    "figure_v12_3_factorial.png": "0ff62385f304f48ecce289e2f217f1f3df0341b8dffef3df5ad04d47208d6e43",
+    "figure_v12_3_factorial.svg": "377c317f980fadf5bbd77f2c4e81929b0598ed934c04f2b2c4f17909d4ac11aa",
+    "figure_v12_3_reward_sensitivity.png": "ec585ce472ca628045d421843b20fcf9d55aadc85213ed999dd7614df788b77b",
+    "figure_v12_3_reward_sensitivity.svg": "b8f8f2545ead9f7cc2756b5af77ba7607f650c7c67ce21392188ed44924da283",
+    "paired_seed_contrasts.csv": "0d2cdc4c378f58e3c078c141b5eaec5c5a8c7c40491240e28e0096fbb1b578fc",
+    "policy_summaries.csv": "3ccd52111654d12999e21154ed8d8d03e0e4cbfc677819f65dbb67bced56b310",
+    "reward_break_even.csv": "edb1c66e88b7501f96a09194d407fbf660460968dd16125a2377920278443434",
+    "reward_sensitivity.csv": "325aaaabf8e364f9c8ee4bf04cc7b992f02498869353605cb501750139b73d16"
+  },
+  "inputs": {
+    "cells": "3004f8d1a00e40b9b3560d3fae842c127d638cea91a817a58a3804b401466a1b",
+    "protocol": "9c67f858870d19ca6487ff78f96b867b99ba9e4ae3a8913d7f01690ac3f98bad",
+    "result": "8e56b011c09024a28910c8b764aebe188ab794552e0ccdca3768d6dff849112d"
+  },
+  "phase": "physics_residual_v12_3_publication_artifacts",
+  "protocol_sha256": "9c67f858870d19ca6487ff78f96b867b99ba9e4ae3a8913d7f01690ac3f98bad",
+  "reward_sensitivity": {
+    "policy_retraining_performed": false,
+    "status": "post_hoc_fixed_trajectory_accounting_sensitivity",
+    "throughput_bonus_values": [
+      0.0,
+      1.0,
+      2.0,
+      3.0,
+      4.0
+    ],
+    "trip_penalty_values": [
+      25.0,
+      50.0,
+      75.0,
+      100.0,
+      150.0
+    ]
+  },
+  "status": "complete",
+  "validation_passed": true
+}

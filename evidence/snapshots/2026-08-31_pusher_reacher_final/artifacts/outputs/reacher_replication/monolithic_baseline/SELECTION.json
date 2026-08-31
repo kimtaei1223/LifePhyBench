@@ -1,0 +1,55 @@
+{
+  "candidates": [
+    {
+      "high_power_selection_rate": 0.502,
+      "mean_task_episode_reward": -3.6286502927659026,
+      "model": "${PROJECT_ROOT}/outputs/reacher_replication/monolithic_baseline/reacher-monolithic-lifetime-seed25100-decisions100k/model.zip",
+      "run_name": "reacher-monolithic-lifetime-seed25100-decisions100k",
+      "seed": 25100,
+      "thermal_trip_rate": 0.004
+    },
+    {
+      "high_power_selection_rate": 0.498,
+      "mean_task_episode_reward": -3.758633222460175,
+      "model": "${PROJECT_ROOT}/outputs/reacher_replication/monolithic_baseline/reacher-monolithic-lifetime-seed25101-decisions100k/model.zip",
+      "run_name": "reacher-monolithic-lifetime-seed25101-decisions100k",
+      "seed": 25101,
+      "thermal_trip_rate": 0.0055
+    },
+    {
+      "high_power_selection_rate": 0.499,
+      "mean_task_episode_reward": -3.866643582297471,
+      "model": "${PROJECT_ROOT}/outputs/reacher_replication/monolithic_baseline/reacher-monolithic-lifetime-seed25102-decisions100k/model.zip",
+      "run_name": "reacher-monolithic-lifetime-seed25102-decisions100k",
+      "seed": 25102,
+      "thermal_trip_rate": 0.007
+    },
+    {
+      "high_power_selection_rate": 0.4985,
+      "mean_task_episode_reward": -3.8323948746535486,
+      "model": "${PROJECT_ROOT}/outputs/reacher_replication/monolithic_baseline/reacher-monolithic-lifetime-seed25103-decisions100k/model.zip",
+      "run_name": "reacher-monolithic-lifetime-seed25103-decisions100k",
+      "seed": 25103,
+      "thermal_trip_rate": 0.0065
+    },
+    {
+      "high_power_selection_rate": 0.5405,
+      "mean_task_episode_reward": -3.749841443357601,
+      "model": "${PROJECT_ROOT}/outputs/reacher_replication/monolithic_baseline/reacher-monolithic-lifetime-seed25104-decisions100k/model.zip",
+      "run_name": "reacher-monolithic-lifetime-seed25104-decisions100k",
+      "seed": 25104,
+      "thermal_trip_rate": 0.008
+    }
+  ],
+  "confirmatory_evidence": false,
+  "phase": "reacher_monolithic_baseline_development_selection",
+  "selected": {
+    "high_power_selection_rate": 0.502,
+    "mean_task_episode_reward": -3.6286502927659026,
+    "model": "${PROJECT_ROOT}/outputs/reacher_replication/monolithic_baseline/reacher-monolithic-lifetime-seed25100-decisions100k/model.zip",
+    "run_name": "reacher-monolithic-lifetime-seed25100-decisions100k",
+    "seed": 25100,
+    "thermal_trip_rate": 0.004
+  },
+  "selection_rule": "highest calibration mean reward among models with trip rate at most 0.02; if none are safe, lowest trip rate then highest reward"
+}

@@ -1,0 +1,33 @@
+{
+  "protocol_version": 1,
+  "purpose": "cpu_only_semantic_validation_not_final_paper_evaluation",
+  "unit_of_independence": "complete_lifetime",
+  "tasks": ["Pusher-v5", "Reacher-v5"],
+  "mechanisms": {
+    "wear": {
+      "persistent": true,
+      "runtime_mapping": "actuator_gainprm",
+      "endogenous_law": "squared_normalized_action_dose"
+    },
+    "thermal": {
+      "persistent": "partial_recovery_only",
+      "runtime_mapping": "multiplicative_actuator_gainprm_derating",
+      "endogenous_law": "squared_normalized_action_dose_with_transition_and_boundary_cooling"
+    },
+    "joint_aging": {
+      "persistent": true,
+      "runtime_mapping": "actuated_dof_damping",
+      "endogenous_law": "squared_normalized_action_dose"
+    }
+  },
+  "causal_controls": ["endogenous_action", "exogenous_clock"],
+  "reset_controls": ["persistent_lifetime", "episode_physics_reset"],
+  "scripted_controllers": ["zero", "low_constant", "high_constant", "random_uniform"],
+  "pilot_seed_list": [1000, 1001, 1002],
+  "reporting": {
+    "record_format": "one JSONL object per lifetime",
+    "paired_keys": ["environment_id", "mechanism", "degradation_mode", "controller", "seed"],
+    "uncertainty": "paired percentile bootstrap over lifetimes"
+  },
+  "guardrail": "This manifest validates environment semantics only. Learned-policy protocol and held-out degradation-law families remain frozen at the GPU-learning stage."
+}

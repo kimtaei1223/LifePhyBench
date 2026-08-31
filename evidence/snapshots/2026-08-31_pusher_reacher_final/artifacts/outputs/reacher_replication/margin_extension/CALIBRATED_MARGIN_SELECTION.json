@@ -1,0 +1,145 @@
+{
+  "confirmatory_evidence": false,
+  "frontier": [
+    {
+      "buffered_safe": true,
+      "maximum_trip_rate": 0.0025,
+      "spec": {
+        "cutoff": 0.055,
+        "name": "physics_c0.055_z1.5",
+        "type": "physics_belief",
+        "uncertainty_multiplier": 1.5
+      },
+      "target_ood_mean_reward_per_task": -5.055382649121602
+    },
+    {
+      "buffered_safe": true,
+      "maximum_trip_rate": 0.005,
+      "spec": {
+        "cutoff": 0.055,
+        "name": "physics_c0.055_z1.75",
+        "type": "physics_belief",
+        "uncertainty_multiplier": 1.75
+      },
+      "target_ood_mean_reward_per_task": -5.174907013532141
+    },
+    {
+      "buffered_safe": true,
+      "maximum_trip_rate": 0.0025,
+      "spec": {
+        "cutoff": 0.055,
+        "name": "physics_c0.055_z2",
+        "type": "physics_belief",
+        "uncertainty_multiplier": 2.0
+      },
+      "target_ood_mean_reward_per_task": -5.168866329897933
+    },
+    {
+      "buffered_safe": true,
+      "maximum_trip_rate": 0.0,
+      "spec": {
+        "cutoff": 0.055,
+        "name": "physics_c0.055_z2.25",
+        "type": "physics_belief",
+        "uncertainty_multiplier": 2.25
+      },
+      "target_ood_mean_reward_per_task": -5.141907905489468
+    },
+    {
+      "buffered_safe": false,
+      "maximum_trip_rate": 0.0225,
+      "spec": {
+        "cutoff": 0.06,
+        "name": "physics_c0.060_z1.5",
+        "type": "physics_belief",
+        "uncertainty_multiplier": 1.5
+      },
+      "target_ood_mean_reward_per_task": -5.316630385176586
+    },
+    {
+      "buffered_safe": true,
+      "maximum_trip_rate": 0.0075000000000000015,
+      "spec": {
+        "cutoff": 0.06,
+        "name": "physics_c0.060_z1.75",
+        "type": "physics_belief",
+        "uncertainty_multiplier": 1.75
+      },
+      "target_ood_mean_reward_per_task": -4.999955575262179
+    },
+    {
+      "buffered_safe": true,
+      "maximum_trip_rate": 0.0075000000000000015,
+      "spec": {
+        "cutoff": 0.06,
+        "name": "physics_c0.060_z2",
+        "type": "physics_belief",
+        "uncertainty_multiplier": 2.0
+      },
+      "target_ood_mean_reward_per_task": -4.931701318377773
+    },
+    {
+      "buffered_safe": true,
+      "maximum_trip_rate": 0.005,
+      "spec": {
+        "cutoff": 0.06,
+        "name": "physics_c0.060_z2.25",
+        "type": "physics_belief",
+        "uncertainty_multiplier": 2.25
+      },
+      "target_ood_mean_reward_per_task": -4.980937977267661
+    },
+    {
+      "buffered_safe": false,
+      "maximum_trip_rate": 0.05250000000000001,
+      "spec": {
+        "cutoff": 0.065,
+        "name": "physics_c0.065_z1.5",
+        "type": "physics_belief",
+        "uncertainty_multiplier": 1.5
+      },
+      "target_ood_mean_reward_per_task": -6.003838234188248
+    },
+    {
+      "buffered_safe": false,
+      "maximum_trip_rate": 0.0425,
+      "spec": {
+        "cutoff": 0.065,
+        "name": "physics_c0.065_z1.75",
+        "type": "physics_belief",
+        "uncertainty_multiplier": 1.75
+      },
+      "target_ood_mean_reward_per_task": -5.801929029193872
+    },
+    {
+      "buffered_safe": false,
+      "maximum_trip_rate": 0.04000000000000001,
+      "spec": {
+        "cutoff": 0.065,
+        "name": "physics_c0.065_z2",
+        "type": "physics_belief",
+        "uncertainty_multiplier": 2.0
+      },
+      "target_ood_mean_reward_per_task": -5.793726867769159
+    },
+    {
+      "buffered_safe": false,
+      "maximum_trip_rate": 0.03250000000000001,
+      "spec": {
+        "cutoff": 0.065,
+        "name": "physics_c0.065_z2.25",
+        "type": "physics_belief",
+        "uncertainty_multiplier": 2.25
+      },
+      "target_ood_mean_reward_per_task": -5.458603686907149
+    }
+  ],
+  "phase": "post_confirmatory_reacher_margin_calibration",
+  "selected": {
+    "cutoff": 0.06,
+    "name": "physics_c0.060_z2",
+    "type": "physics_belief",
+    "uncertainty_multiplier": 2.0
+  },
+  "selection_rule": "Among buffered-safe candidates, maximize mean reward over target OOD conditions; if none are buffered-safe, minimize maximum trip rate then maximize target-OOD reward."
+}

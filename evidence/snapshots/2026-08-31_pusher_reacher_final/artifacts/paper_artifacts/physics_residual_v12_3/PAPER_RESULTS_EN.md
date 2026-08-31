@@ -1,0 +1,7 @@
+# v12.3 factorial and reward sensitivity — manuscript-ready summary
+
+In a 2 x 2 analysis using 100 independent fresh lifetime seeds, the residual effect at the matched uncertainty margin z=1.5 was **+0.103 reward/task** (95% bootstrap CI [-0.004, 0.215]; paired sign-flip p=0.0681). The uncertainty-margin effect was **+0.965** without the residual (95% CI [0.733, 1.196]) and **+0.736** with it (95% CI [0.524, 0.950]). The interaction was negative (-0.229; 95% CI [-0.407, -0.051]). We therefore do not attribute the full benefit to an independent residual effect; the confirmatory conclusion concerns belief supervision with an uncertainty margin.
+
+The original hybrid-z=1.5 versus physics-z=0 difference of +1.068 decomposed into -1.191 base-task return, -0.029 throughput bonus, and +2.288 avoided-trip contribution. The mean utility improvement was therefore driven primarily by fewer thermal trips and included a sacrifice in immediate task performance.
+
+In a post-hoc reweighting of the same trajectories, the mean break-even trip penalty was approximately **40.0** when the original throughput bonus of 2 was retained. The total effect was -0.457, +0.306, +1.068, and +1.831 at trip penalties 25, 50, 75, and 100, respectively. The utility claim thus applies when thermal trips carry moderate or high cost, not when the objective nearly ignores them. This is an accounting sensitivity analysis on fixed evaluation trajectories, not retraining under alternative rewards.

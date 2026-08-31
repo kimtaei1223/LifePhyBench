@@ -1,0 +1,22 @@
+protocol_version: 1
+purpose: persistent_joint_aging_semantic_pilot_not_final_comparison
+
+environment:
+  id: Pusher-v5
+  simulator: mujoco
+  episode_steps: 100
+  episodes_per_lifetime: 10
+
+joint_aging:
+  enabled: true
+  rate: 0.002
+  exponent: 2.0
+  damping_multiplier_at_max_aging: 5.0
+  degradation_mode: endogenous_action
+  exogenous_dose_per_step: 0.25
+
+go_no_go:
+  require_episode_reset_preserves_joint_aging: true
+  require_lifetime_reset_restores_base_damping: true
+  require_aging_damping_changes_runtime_dynamics: true
+  require_action_dependent_aging_differs_from_exogenous_clock_control: true

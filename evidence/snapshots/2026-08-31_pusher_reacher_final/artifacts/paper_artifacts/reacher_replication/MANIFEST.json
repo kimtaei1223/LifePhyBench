@@ -1,0 +1,24 @@
+{
+  "artifacts": {
+    "PAPER_RESULTS_EN.md": "6c717b7a8be7a6462c50dfee0096e0914750ad39f3f74ca54d1dea6328ea8cac",
+    "PAPER_RESULTS_KO.md": "a990b7a14b7642e876ae777666cf28d691420514881cbceae1ee66fee3710ef5",
+    "figure_reacher_replication_summary.png": "2d1ec005f11aa4a14f13ab20bffba6d74ca6a80e19bd7b7bd23138f224ba4195",
+    "figure_reacher_replication_summary.svg": "d2c9d0b2a2e7b4ac71c04a492f832557c065e01e851ca25671040d48bafe28c9",
+    "table_reacher_calibration_frontier.csv": "f8f045c420ab6407ebbfb1a71f39baf862ec95891c728109e510ff31a08c99d9",
+    "table_reacher_condition_results.csv": "80bceda8620ce253d4b62f8cf5eaab655f8bb08cbd88f1d9a13eeda799834aeb",
+    "table_reacher_contrasts.csv": "39c61337174d67540a93897d28988fed7e5ebfe6f66ac8e6978ce229ee9c2b76"
+  },
+  "confirmatory_protocol_sha256": "eeea9e261d36b198897346ac5b9b3d3eda90b71936b2e9ba11ea12795f9ae925",
+  "extension_protocol_sha256": "bed29c0121ddf4b632173a360cd842faefde3e6ce1ac4a345bfb8af273aa049c",
+  "inputs": {
+    "outputs/reacher_replication/confirmatory/CONFIRMATORY_CELLS.json": "48c18853aea006403e1baa6904e8b772b5064c26b9de38ff2a707c62f325e3e6",
+    "outputs/reacher_replication/confirmatory/CONFIRMATORY_RESULTS.json": "b77e8de697530063bba340d6d21caeaba00432b2aee12ae250023cb36f866a6b",
+    "outputs/reacher_replication/confirmatory/FROZEN_PROTOCOL.json": "eeea9e261d36b198897346ac5b9b3d3eda90b71936b2e9ba11ea12795f9ae925",
+    "outputs/reacher_replication/margin_extension/CALIBRATED_MARGIN_SELECTION.json": "b80aa6b04b84c7828e2e978269dd6e91aadb7cb2e4a2734a5e861d7bd2fa0f7b",
+    "outputs/reacher_replication/margin_extension/FRESH_CELLS.json": "7fa17161e234a5bf2a48bb8bb9dfee29dd6b3f1feda69044721b454cd84630aa",
+    "outputs/reacher_replication/margin_extension/FRESH_RESULTS.json": "13ee79b0532556eef082e0ca2ed85ee92555e3a1aaaabc6199ac599d9ccac5da",
+    "outputs/reacher_replication/margin_extension/FROZEN_FRESH_PROTOCOL.json": "bed29c0121ddf4b632173a360cd842faefde3e6ce1ac4a345bfb8af273aa049c"
+  },
+  "phase": "reacher_replication_final_publication_artifacts",
+  "status": "validated"
+}

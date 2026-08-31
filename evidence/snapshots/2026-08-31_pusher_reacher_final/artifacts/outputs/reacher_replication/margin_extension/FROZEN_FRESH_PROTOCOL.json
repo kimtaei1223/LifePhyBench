@@ -1,0 +1,217 @@
+{
+  "calibration_cells_sha256": "bf97b691b7c35106868bbe2545603baf71acc4cb07002b89904588a3c57d3895",
+  "checkpoints": {
+    "low_level": {
+      "path": "${PROJECT_ROOT}/outputs/reacher_replication/low_level/reacher-static-task-seed5100-steps2000k/model.zip",
+      "sha256": "2439af85dd37d4774d77c2edd471acd5a3a675d8a8fcd8002ce3a90f61dcc13d"
+    },
+    "residual": {
+      "path": "${PROJECT_ROOT}/outputs/reacher_replication/belief_development/residual_model.pt",
+      "sha256": "9703fa48331fecb15edee806ffe1f2da2cc8496f260551b45869ad821d1113c5"
+    }
+  },
+  "conditions": {
+    "in_domain": {
+      "sensor_noise_sd": 0.01,
+      "shock_probability": 0.0005,
+      "shock_size": 0.01,
+      "thermal_episode_cooling": 0.15
+    },
+    "ood_combined": {
+      "sensor_noise_sd": 0.03,
+      "shock_probability": 0.001,
+      "shock_size": 0.02,
+      "thermal_episode_cooling": 0.1
+    },
+    "ood_cooling": {
+      "sensor_noise_sd": 0.01,
+      "shock_probability": 0.0005,
+      "shock_size": 0.01,
+      "thermal_episode_cooling": 0.1
+    },
+    "ood_sensor_noise": {
+      "sensor_noise_sd": 0.03,
+      "shock_probability": 0.0005,
+      "shock_size": 0.01,
+      "thermal_episode_cooling": 0.15
+    },
+    "ood_shocks": {
+      "sensor_noise_sd": 0.01,
+      "shock_probability": 0.001,
+      "shock_size": 0.02,
+      "thermal_episode_cooling": 0.15
+    }
+  },
+  "config_sha256": "19d8d4248d3ee3622390bddd43124d0bc638834bad1ab38328c703cc5d269b1b",
+  "created_utc": "2026-08-31T06:56:49.146338+00:00",
+  "fresh_policy_specs": [
+    {
+      "cutoff": 0.06,
+      "name": "selected_calibrated_margin",
+      "type": "physics_belief",
+      "uncertainty_multiplier": 2.0
+    },
+    {
+      "cutoff": 0.06,
+      "name": "physics_z0",
+      "type": "physics_belief",
+      "uncertainty_multiplier": 0.0
+    },
+    {
+      "cutoff": 0.06,
+      "name": "inherited_physics_z1_5",
+      "type": "physics_belief",
+      "uncertainty_multiplier": 1.5
+    },
+    {
+      "cutoff": 0.06,
+      "name": "hybrid_z1_5",
+      "residual_scale": 1.0,
+      "type": "hybrid_belief",
+      "uncertainty_multiplier": 1.5
+    },
+    {
+      "cutoff": 0.06,
+      "name": "current_sensor",
+      "type": "current_sensor"
+    },
+    {
+      "cutoff": 0.06,
+      "name": "privileged_state_threshold",
+      "type": "privileged_oracle"
+    }
+  ],
+  "fresh_seeds": [
+    25300,
+    25301,
+    25302,
+    25303,
+    25304,
+    25305,
+    25306,
+    25307,
+    25308,
+    25309,
+    25310,
+    25311,
+    25312,
+    25313,
+    25314,
+    25315,
+    25316,
+    25317,
+    25318,
+    25319,
+    25320,
+    25321,
+    25322,
+    25323,
+    25324,
+    25325,
+    25326,
+    25327,
+    25328,
+    25329,
+    25330,
+    25331,
+    25332,
+    25333,
+    25334,
+    25335,
+    25336,
+    25337,
+    25338,
+    25339,
+    25340,
+    25341,
+    25342,
+    25343,
+    25344,
+    25345,
+    25346,
+    25347,
+    25348,
+    25349,
+    25350,
+    25351,
+    25352,
+    25353,
+    25354,
+    25355,
+    25356,
+    25357,
+    25358,
+    25359,
+    25360,
+    25361,
+    25362,
+    25363,
+    25364,
+    25365,
+    25366,
+    25367,
+    25368,
+    25369,
+    25370,
+    25371,
+    25372,
+    25373,
+    25374,
+    25375,
+    25376,
+    25377,
+    25378,
+    25379,
+    25380,
+    25381,
+    25382,
+    25383,
+    25384,
+    25385,
+    25386,
+    25387,
+    25388,
+    25389,
+    25390,
+    25391,
+    25392,
+    25393,
+    25394,
+    25395,
+    25396,
+    25397,
+    25398,
+    25399
+  ],
+  "fresh_seeds_untouched_before_freeze": true,
+  "git_commit": "bd2d105b6b4b05ea484948c83feb7835f9ee8cd0",
+  "interpretation": "Morphology-specific calibration extension; does not replace the inherited-margin confirmatory result.",
+  "phase": "reacher_margin_extension_frozen_fresh_protocol",
+  "selected_spec": {
+    "cutoff": 0.06,
+    "name": "physics_c0.060_z2",
+    "type": "physics_belief",
+    "uncertainty_multiplier": 2.0
+  },
+  "selection_sha256": "b80aa6b04b84c7828e2e978269dd6e91aadb7cb2e4a2734a5e861d7bd2fa0f7b",
+  "source_hashes": {
+    "scripts/qualify_hierarchical_v11.py": "d38dff1b90c98d84ef32a79274f135c317dfcf50f0103542714638c91165c7be",
+    "scripts/qualify_physics_belief_v12.py": "d74f0d053d811ac3635c24720311740e6a20eadcf4daa6085d483cd824e57b3c",
+    "scripts/run_reacher_belief_development.py": "a6e6e2591c35085b02b12c5ac41d10a7cda55d8dad8632d59e5d898f5253cb00",
+    "scripts/run_reacher_confirmatory.py": "3a5108ec3736c8f0b85ee1d68820e4b0b1bd02dce954d48c918f2f0328c8111b",
+    "scripts/run_reacher_margin_extension.py": "3fa6117b3759d64c24e3260dd85c2532c9795ba0051fa272faeded9e4a4cb117",
+    "src/lifephybench/envs/hierarchical_thermal_v11.py": "f5f4df4653b87385e7798299280d2953da2e8bc066406502f9b215b05d51c640"
+  },
+  "status": "frozen_after_calibration_before_any_25300_25399_evaluation",
+  "success_criteria": {
+    "maximum_selected_trip_rate_each_condition": 0.02,
+    "paired_bootstrap_95_ci_lower_above": 0.0,
+    "paired_sign_flip_two_sided_p_below": 0.05,
+    "selected_minus_physics_z0_mean_above": 0.0
+  },
+  "target_ood": [
+    "ood_sensor_noise",
+    "ood_cooling",
+    "ood_combined"
+  ]
+}

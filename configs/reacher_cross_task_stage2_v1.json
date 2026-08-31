@@ -1,0 +1,40 @@
+{
+  "protocol": "reacher_cross_task_stage2_v1",
+  "status": "frozen_before_stage2_data_generation_or_training",
+  "parent_protocol_sha256": "4c1bbbeae5b5a28a0691e6b3f12c4d20a0443ef6a3b14c0e934fa90a1e7f509d",
+  "selected_low_level_seed": 5100,
+  "development_data": {
+    "seeds": [25000, 25029],
+    "lifetimes_per_seed": 100,
+    "tasks_per_lifetime": 20,
+    "behavior_policy": "indexed mixture of safe oracle threshold, prefix, alternating, and Markov schedules"
+  },
+  "residual_model": {
+    "transition_fit_seeds": [25000, 25014],
+    "residual_train_seeds": [25000, 25014],
+    "residual_validation_seeds": [25015, 25021],
+    "residual_test_seeds": [25022, 25029],
+    "hidden_dim": 64,
+    "epochs": 100,
+    "learning_rate": 0.0003,
+    "mean_loss_weight": 0.05,
+    "nll_loss_weight": 1.0,
+    "rng_seed": 12512
+  },
+  "controller_calibration": {
+    "seeds": [25100, 25119],
+    "conditions": ["in_domain", "ood_sensor_noise", "ood_cooling", "ood_shocks", "ood_combined"],
+    "inherited_cutoff": 0.06,
+    "inherited_uncertainty_multiplier": 1.5,
+    "ema_alpha": 0.6
+  },
+  "monolithic_baseline": {
+    "policy": "RecurrentPPO MlpLstmPolicy",
+    "training_seeds": [25100, 25101, 25102, 25103, 25104],
+    "evaluation_seeds": [25110, 25111, 25112, 25113, 25114],
+    "total_task_decisions_per_seed": 100000,
+    "evaluation_tasks_per_seed": 2000,
+    "selection_rule": "highest calibration mean reward among models with trip rate at most 0.02; if none are safe, lowest trip rate then highest reward"
+  },
+  "confirmatory_seed_access": "forbidden; 25200-25299 remain untouched"
+}
