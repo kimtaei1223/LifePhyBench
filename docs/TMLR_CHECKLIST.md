@@ -104,6 +104,9 @@ This is the authoritative checkpoint for the current scoped paper claim.
       architecture, training budget, and model-selection procedure.
 - [x] The final anonymous artifact is reproduced from a clean checkout; the
       tracked-tree archive is 19,092,310 bytes.
+- [x] The exact CPU-only dependency lock installs in a new Python 3.11 venv;
+      `pip check`, both model loads, artifact regeneration, and all 154 tests
+      pass without inheriting the development `PYTHONPATH`.
 - [ ] Reconfirm the review-system upload limit immediately before submission.
 
 Current result and claim boundary:
