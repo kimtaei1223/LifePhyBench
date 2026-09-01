@@ -1,0 +1,5 @@
+# Preserve the official vendored style byte-for-byte, including upstream
+# whitespace, while keeping repository whitespace checks strict elsewhere.
+tmlr.sty whitespace=-trailing-space
+tmlr.bst whitespace=-trailing-space
+fancyhdr.sty whitespace=-trailing-space

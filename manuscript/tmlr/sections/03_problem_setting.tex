@@ -1,0 +1,20 @@
+\section{Selective-reset problem setting}
+\label{sec:problem}
+
+An evaluation lifetime contains 20 manipulation tasks. At each task boundary,
+the task configuration is reset while the latent thermal state is retained.
+The thermal state changes as a function of selected actions, influences later
+actuator efficiency, and is observed by the deployed supervisor only through a
+noisy sensor. This produces a partially observed control problem in which a
+conventional task reset does not restore the complete physical state.
+
+The reported objective is risk-sensitive lifetime utility: task return and a
+small high-power throughput term are balanced against a thermal-trip penalty.
+The independent statistical unit is the complete lifetime, never an individual
+task. The same phenomenological thermal law is used in both MuJoCo tasks. It is
+a controlled experimental mechanism rather than a motor model in physical
+units.
+
+% TODO: migrate the exact transition, observation, actuator-efficiency, trip,
+% and utility equations from the frozen protocols, preserving notation and
+% parameter values verbatim.

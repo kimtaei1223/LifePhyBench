@@ -1,0 +1,6 @@
+# Official source: https://github.com/JmlrOrg/tmlr-style-file
+# Source commit: 7bf90efe3a0debbba703c05c43f3ff7e4d4a2992
+
+816214ff5919aa457b6b443bee52b15d9561421417b7f8a50cc84651519f0002  tmlr.sty
+79b6c2b8700cdebb0f824e4916dcf0bb3493f906bf12a62315be7298bff5837c  tmlr.bst
+d69cf4648315c6795232753b676a13beb5285f41e7f8132fde50ca080a95f4c1  fancyhdr.sty

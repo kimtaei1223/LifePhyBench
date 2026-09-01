@@ -1,0 +1,18 @@
+\section{Belief supervisor and comparators}
+\label{sec:method}
+
+A fixed low-level controller supplies task actions. Above it, a supervisor
+selects a high- or low-power mode from an explicit physics belief about the
+hidden thermal state. The uncertainty-aware variant adds a multiple $z$ of its
+estimated uncertainty before applying a threshold. The Pusher transfer setting
+uses $z=1.5$; the separately calibrated Reacher setting uses cutoff 0.06 and
+$z=2.0$.
+
+The experiments also include an optional learned residual on the physics
+belief, a privileged current-state threshold comparator, and a monolithic
+RecurrentPPO baseline. The privileged comparator is diagnostic and is not a
+planning oracle. The recurrent result is evidence only about the tested
+architecture, development seeds, training budget, and selection procedure.
+
+% TODO: add pseudocode and the exact observation sets available to each policy.
+% Keep analysis-only health variables separate from deployment observations.

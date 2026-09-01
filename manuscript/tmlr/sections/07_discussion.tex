@@ -1,0 +1,34 @@
+\section{Discussion and limitations}
+\label{sec:discussion}
+
+The combined evidence supports a deployment workflow within this benchmark:
+retain an explicit belief over persistent physical state, select the
+conservatism margin on target-task development lifetimes using a buffered
+tolerance, freeze the choice, and evaluate it once on fresh lifetimes. A margin
+can improve average utility on a new task yet still miss a prespecified
+trip-rate tolerance, so positive transfer of reward is not sufficient evidence
+for transferring a numerical operating threshold.
+
+The utility improvement is not free. In Pusher, avoided trip cost outweighs a
+decrease in immediate base-task return, and fixed-trajectory reweighting places
+the mean break-even trip penalty near 40 under the original throughput bonus.
+This accounting sensitivity is not policy retraining and does not establish a
+benefit when trips carry little cost.
+
+Both tasks use MuJoCo and share one phenomenological thermal law. The study has
+no physical-unit calibration, hardware telemetry, formal safety proof, or
+probability-calibrated OOD guarantee. It tests one selected recurrent baseline
+rather than exhausting recurrent, meta-RL, system-identification, or online
+adaptation methods. These boundaries prevent the result from supporting a
+general thermal-management or universal algorithm-ranking claim.
+
+\section{Broader impact}
+
+Persistent-health benchmarks may help reveal controllers that trade short-term
+performance for lower accumulated risk. The same abstractions could also be
+misused to overstate safety when simulated health signals are poorly calibrated
+or when an aggregate trip tolerance hides rare severe outcomes. We mitigate
+this risk by preserving failed gates, reporting distributional cautions,
+avoiding physical-validity claims, and releasing the exact simulated protocol
+needed to inspect the result. The computational cost and environmental impact
+of training and evaluation will be reported in the final manuscript.

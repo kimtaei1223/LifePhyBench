@@ -1,0 +1,69 @@
+\documentclass[10pt]{article}
+
+% Official TMLR review style from the JMLR organization. Only two non-executable
+% contact comments were removed; do not change formatting statements or enable
+% the accepted/preprint option during review.
+\usepackage{tmlr}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{url}
+
+\graphicspath{{figures/}}
+
+\title{When Uncertainty Margins Do Not Transfer: Persistent Hidden Thermal
+Dynamics Across Two Robot-Control Tasks}
+
+% The review style suppresses this field, but the source is also kept anonymous
+% so that accidental style changes cannot reveal author information.
+\author{Anonymous Authors}
+
+% Camera-ready placeholders required by the official style.
+\def\month{MM}
+\def\year{YYYY}
+\def\openreview{\url{https://openreview.net/forum?id=XXXX}}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Robot-control benchmarks commonly reset the environment between tasks, hiding
+failure modes caused by physical state that accumulates across those resets.
+We study fixed low-level controllers in two MuJoCo manipulation tasks where
+task state resets but an unobserved, action-driven thermal state persists and
+changes later actuator dynamics. An explicit belief supervisor uses a noisy
+temperature signal and an uncertainty margin to choose between high- and
+low-power control. Under prespecified sensor and cooling shifts, the margin
+improved mean risk-sensitive lifetime utility on Pusher by $+0.965$ reward per
+task (95\% bootstrap CI $[0.733, 1.196]$) while remaining below a 2\%
+thermal-trip tolerance. Transferring the same margin to Reacher preserved a
+positive mean effect ($+0.721$, $[0.474, 0.978]$) but missed the frozen
+tolerance with a 2.3\% maximum trip rate. A separately frozen,
+development-only calibration selected a more conservative margin; on 100 fresh
+Reacher lifetimes it restored the tolerance (1.6\%) and retained a positive
+mean effect ($+0.692$, $[0.434, 0.962]$) without a detectable loss relative to
+the inherited setting. Fresh factorial evidence does not establish the learned
+residual as an independent source of improvement, and only 52 of 100 calibrated
+Reacher lifetime effects were positive. These results support task-specific
+calibration of uncertainty margins for persistent-state supervisors, not a
+transferable safety guarantee. The study is limited to a shared
+phenomenological thermal model in simulation.
+\end{abstract}
+
+\input{sections/01_introduction}
+\input{sections/02_related_work}
+\input{sections/03_problem_setting}
+\input{sections/04_supervisor}
+\input{sections/05_evaluation}
+\input{sections/06_results}
+\input{sections/07_discussion}
+\input{sections/08_conclusion}
+
+\bibliography{references}
+\bibliographystyle{tmlr}
+
+\appendix
+\input{sections/appendix}
+
+\end{document}

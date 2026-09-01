@@ -1,0 +1,52 @@
+\section{Results}
+\label{sec:results}
+
+\subsection{Pusher: uncertainty, not the residual, is the robust component}
+
+The fresh $2\times2$ factorial uses 100 independent lifetimes. At matched
+$z=1.5$, the residual effect is $+0.103$ reward per task with a 95\% bootstrap
+CI of $[-0.004,0.215]$. By contrast, the uncertainty-margin effect is $+0.965$
+without the residual ($[0.733,1.196]$) and $+0.736$ with it
+($[0.524,0.950]$). The residual-attribution gate does not pass; the main
+mechanistic conclusion concerns uncertainty-aware trip avoidance.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\linewidth]{figure_pusher_factorial.png}
+  \caption{Fresh-lifetime Pusher factorial contrasts. The uncertainty margin
+  has the larger and more stable effect; the residual contribution at the
+  deployed margin is not independently established.}
+  \label{fig:pusher-factorial}
+\end{figure}
+
+\subsection{Reacher: positive transfer with a failed tolerance gate}
+
+The inherited $z=1.5$ margin improves mean target-shift utility over $z=0$ by
+$+0.721$ reward per task ($[0.474,0.978]$). Its maximum trip rate is 2.3\%,
+however, so the frozen 2.0\% gate fails. The magnitude-sensitive mean result and
+the failed empirical tolerance are both retained.
+
+\subsection{Development-only calibration recovers the tolerance}
+
+A prespecified grid evaluated only on Reacher development lifetimes selects
+cutoff 0.06 and $z=2.0$ using a buffered 1.5\% rule. On 100 new lifetimes, the
+selected policy improves mean utility over $z=0$ by $+0.692$
+($[0.434,0.962]$) and reaches a 1.6\% maximum trip rate. Its mean effect relative
+to inherited $z=1.5$ is $-0.008$ ($[-0.121,0.108]$), so calibration restores
+the tolerance without a detectable expected-utility loss rather than improving
+mean reward.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\linewidth]{figure_reacher_replication_summary.png}
+  \caption{Reacher inherited-margin confirmation and separately frozen
+  calibrated-margin extension. The inherited failure remains the authoritative
+  zero-shot transfer outcome.}
+  \label{fig:reacher-summary}
+\end{figure}
+
+Only 52 of 100 calibrated lifetime effects are positive, and the exact sign
+test is not significant ($p=0.764$). The result supports a paired mean
+expected-utility claim, not improvement in a majority of lifetimes.
+
+% TODO: add the compact protocol/result tables and condition-level results.

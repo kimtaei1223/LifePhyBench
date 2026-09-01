@@ -1,0 +1,29 @@
+\section{Related work}
+\label{sec:related}
+
+\paragraph{Persistent state and reset semantics.}
+Continuing reinforcement learning studies interaction without ordinary episode
+or embodiment resets \citep{farrahi2025continuing}. Damage-aware manipulation
+benchmarks accumulate health from several physical channels
+\citep{balaji2026oopsieverse}. Our selective-reset diagnostic instead restores
+the task configuration while retaining only a hidden health state that feeds
+back into subsequent dynamics.
+
+\paragraph{Thermal-aware robot control.}
+Thermal models, temperature-conditioned policies, and residual thermal control
+have been demonstrated in simulation and on quadruped hardware
+\citep{qian2026thermal,wan2026residual}. Our model is less physically detailed
+and is not calibrated to hardware. It is used to study partial observability,
+cross-task transfer, and uncertainty-margin calibration under controlled
+shifts.
+
+\paragraph{Belief and uncertainty-aware supervision.}
+Prior work constructs risk-aware control directly in belief space and develops
+uncertainty-aware filters for hidden or out-of-distribution dynamics
+\citep{vahs2024risk,seo2025latent,kwon2026adaptive}. Those works establish the
+architectural and theoretical precedents. Our contribution is empirical:
+fresh-lifetime mechanism attribution and a preserved transfer failure followed
+by a separately frozen calibration test.
+
+% Before submission, expand this section from the bounded depth-two audit in
+% docs/LITERATURE_AUDIT_2026-08-31.md and refresh every closest-work comparison.
