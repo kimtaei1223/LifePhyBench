@@ -14,16 +14,17 @@ Thermal models, temperature-conditioned policies, and residual thermal control
 have been demonstrated in simulation and on quadruped hardware
 \citep{qian2026thermal,wan2026residual}. Our model is less physically detailed
 and is not calibrated to hardware. It is used to study partial observability,
-cross-task transfer, and uncertainty-margin calibration under controlled
-shifts.
+uncertainty margins, policy composition, and development-only margin selection
+under controlled shifts.
 
 \paragraph{Belief and uncertainty-aware supervision.}
 Prior work constructs risk-aware control directly in belief space and develops
 uncertainty-aware filters for hidden or out-of-distribution dynamics
 \citep{vahs2024risk,seo2025latent,kwon2026adaptive}. Those works establish the
 architectural and theoretical precedents. Our contribution is empirical:
-fresh-lifetime mechanism attribution and a preserved transfer failure followed
-by a separately frozen calibration test.
+fresh-lifetime mechanism attribution, explicit separation of physics-only and
+hybrid outcomes, and a separately frozen calibration test whose necessity and
+superiority are not assumed.
 
 % Before submission, expand this section from the bounded depth-two audit in
 % docs/LITERATURE_AUDIT_2026-08-31.md and refresh every closest-work comparison.

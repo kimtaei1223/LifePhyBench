@@ -31,11 +31,13 @@ resets, and is managed through belief uncertainty.
 
 The current contribution is best described as a controlled two-task empirical
 study of when uncertainty-aware belief supervision improves risk-sensitive
-lifetime utility under persistent hidden thermal dynamics. The zero-shot
-Pusher margin improved Reacher mean utility but missed the frozen safety gate;
-target-task development-only calibration restored the gate without detectable
-mean-utility loss. It is not a new general control algorithm, a realistic
-motor-thermal model, or a hardware-validated thermal-management method.
+lifetime utility under persistent hidden thermal dynamics. The inherited
+Pusher margin improved Reacher mean utility but missed the original frozen
+point gate; target-task development-only calibration selected a policy that
+passed a fresh gate without detectable mean-utility loss, while the inherited
+policy also passed on that same fresh sample. It is not a new general control
+algorithm, a realistic motor-thermal model, or a hardware-validated thermal-
+management method.
 
 ## Audit protocol
 
@@ -171,7 +173,7 @@ define the boundaries of claims that might otherwise appear novel.
 | First study of robot learning without ordinary resets | Prohibited | Leave No Trace, continuing SAC, and CRONOS directly study reset-free robot learning. |
 | New residual model that independently improves deployed performance | Unsupported | The fresh-seed residual effect at the deployed `z=1.5` margin had a confidence interval crossing zero. |
 | Controlled evidence about uncertainty under hidden persistent thermal state and selective resets | Defensible but narrow | The exact combination was not found; the two-task study identifies the uncertainty effect while retaining magnitude-versus-direction cautions. |
-| Zero-shot margin transfer followed by development-only morphology calibration | Defensible empirical contribution | The inherited Reacher test remained a safety-gate failure, while a separately frozen calibration restored the gate on new seeds without detectable mean-utility loss. No exact duplicate was found. |
+| Inherited-margin test followed by development-only morphology calibration | Defensible empirical contribution | The inherited Reacher test remained a point-gate failure; a separately frozen procedure selected a passing policy on new seeds without detectable mean-utility loss, but inherited also passed on those same seeds. No exact duplicate of the bounded sequence was found. |
 | General thermal-management method for robots | Unsupported | Two MuJoCo tasks share one phenomenological thermal law and provide no hardware calibration. |
 
 ## Revised defensible contribution
@@ -183,10 +185,11 @@ The paper may state:
 > thermal dynamics across task resets. Under prespecified shifts, uncertainty-
 > aware belief supervision improved mean risk-sensitive lifetime utility. A
 > margin inherited from Pusher retained a positive mean effect on Reacher but
-> missed its frozen safety tolerance; development-only Reacher calibration
-> restored that tolerance on new lifetimes without detectable mean-utility
-> loss. Fresh-lifetime ablations attribute the robust benefit primarily to the
-> uncertainty margin rather than the learned residual alone.
+> missed its original frozen point tolerance; development-only Reacher
+> calibration selected a policy that passed on new lifetimes without detectable
+> mean-utility loss, while inherited also passed on that sample. Fresh-lifetime
+> ablations attribute the robust benefit primarily to the uncertainty margin
+> rather than the learned residual alone.
 
 This wording is a contribution statement, not a priority claim. The manuscript
 should use “we did not identify” rather than “the first” whenever describing the
@@ -208,9 +211,9 @@ combination.
 - a break-even analysis for the thermal-trip penalty;
 - a second task/morphology with disjoint development, inherited-margin test,
   and post-confirmatory calibrated-margin test seeds;
-- direct evidence that a useful uncertainty margin is not automatically a
-  transferable safety setting, plus a frozen target-development calibration
-  procedure.
+- direct evidence that mean-utility gains and near-boundary point-gate outcomes
+  must be distinguished, plus a frozen target-development calibration
+  procedure whose necessity and superiority remain unproven.
 
 ### Does not add
 
@@ -237,7 +240,7 @@ not as a new safety-filter algorithm or thermal simulator.
 
 For a competitive TMLR submission, the writing must now do the following:
 
-1. lead with the two-task empirical finding and calibration-transfer failure,
+1. lead with the two-task mean-utility finding and policy-composition evidence,
    not algorithmic novelty;
 2. contrast OopsieVerse explicitly: accumulated damage signal versus hidden
    health that changes later actuator dynamics and survives selective resets;

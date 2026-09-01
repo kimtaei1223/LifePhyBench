@@ -225,13 +225,14 @@ def make_tables(data: dict[str, Any], output: Path) -> None:
 def make_figure(data: dict[str, Any], output: Path) -> None:
     confirm = data["confirm_result"]
     fresh = data["fresh_result"]
-    cells = data["fresh_cells"]
+    confirm_cells = data["confirm_cells"]
+    fresh_cells = data["fresh_cells"]
     fig, axes = plt.subplots(1, 3, figsize=(13.2, 4.2))
 
     contrasts = [
-        ("Inherited z=1.5", confirm["target_ood_aggregate_contrasts"]["primary_uncertainty"], ORANGE),
-        ("Calibrated z=2.0", fresh["target_ood_aggregate_contrasts"]["selected_vs_physics_z0"], GREEN),
-        ("Hybrid z=1.5", fresh["target_ood_aggregate_contrasts"]["hybrid_vs_physics_z0"], BLUE),
+        ("Original: inherited z=1.5", confirm["target_ood_aggregate_contrasts"]["primary_uncertainty"], ORANGE),
+        ("Original: hybrid z=1.5", confirm["target_ood_aggregate_contrasts"]["hybrid_vs_physics_z0"], BLUE),
+        ("Extension: calibrated z=2.0", fresh["target_ood_aggregate_contrasts"]["selected_vs_physics_z0"], GREEN),
     ]
     for index, (label, value, color) in enumerate(contrasts):
         lo, hi = value["bootstrap_95_ci"]
@@ -246,14 +247,25 @@ def make_figure(data: dict[str, Any], output: Path) -> None:
     axes[0].set_xlabel("Target-OOD reward difference / task")
     axes[0].set_title("A. Paired mean effects (95% CI)")
 
-    policies = ["physics_z0", "inherited_physics_z1_5", "selected_calibrated_margin", "hybrid_z1_5"]
-    max_trips = [max(cells[c][p]["summary"]["trip_rate"] for c in cells) for p in policies]
-    colors = [GRAY, ORANGE, GREEN, BLUE]
-    axes[1].bar(range(len(policies)), np.asarray(max_trips) * 100, color=colors)
+    policy_cells = [
+        (confirm_cells, "physics_z1_5"),
+        (confirm_cells, "hybrid_z1_5"),
+        (fresh_cells, "inherited_physics_z1_5"),
+        (fresh_cells, "selected_calibrated_margin"),
+    ]
+    max_trips = [
+        max(cells[c][policy]["summary"]["trip_rate"] for c in cells)
+        for cells, policy in policy_cells
+    ]
+    colors = [ORANGE, BLUE, ORANGE, GREEN]
+    axes[1].bar(range(len(policy_cells)), np.asarray(max_trips) * 100, color=colors)
     axes[1].axhline(2.0, color="black", linestyle="--", linewidth=1, label="Frozen 2% gate")
-    axes[1].set_xticks(range(len(policies)), ["z=0", "Inherited\nz=1.5", "Calibrated\nz=2.0", "Hybrid\nz=1.5"])
+    axes[1].set_xticks(
+        range(len(policy_cells)),
+        ["Original\ninherited", "Original\nhybrid", "Extension\ninherited", "Extension\ncalibrated"],
+    )
     axes[1].set_ylabel("Maximum trip rate (%)")
-    axes[1].set_title("B. Worst-condition safety")
+    axes[1].set_title("B. Point gate by test sample")
     axes[1].legend(frameon=False)
 
     frontier = data["selection"]["frontier"]
@@ -281,7 +293,7 @@ def make_figure(data: dict[str, Any], output: Path) -> None:
     axes[2].set_title("C. Development-only margin selection")
     axes[2].legend(frameon=False, fontsize=8)
 
-    fig.suptitle("Reacher replication: inherited failure retained, calibrated safety restored", fontsize=12)
+    fig.suptitle("Reacher evidence: original and extension tests remain distinct", fontsize=12)
     fig.tight_layout()
     for suffix in ("png", "svg"):
         path = output / f"figure_reacher_replication_summary.{suffix}"
@@ -308,6 +320,10 @@ def make_summaries(data: dict[str, Any], output: Path) -> None:
     selected_vs_inherited = fresh["target_ood_aggregate_contrasts"]["selected_vs_inherited"]
     hybrid = confirm["target_ood_aggregate_contrasts"]["hybrid_vs_physics_z0"]
     mono = confirm["target_ood_aggregate_contrasts"]["monolithic_vs_physics_z0"]
+    fresh_inherited_max = max(
+        policies["inherited_physics_z1_5"]["summary"]["trip_rate"]
+        for policies in data["fresh_cells"].values()
+    )
 
     en = f"""# Reacher cross-task replication and calibrated-margin extension
 
@@ -319,11 +335,12 @@ Status: final results. The extension is post-confirmatory and does not replace t
 |---|---:|---:|---|
 | Inherited physics margin `z=1.5` vs `z=0` | {fmt_ci(inherited)} | {confirm['maximum_physics_z1_5_trip_rate'] * 100:.1f}% | Original primary gate failed |
 | Reacher-calibrated margin `z=2.0` vs `z=0` | {fmt_ci(selected)} | {fresh['maximum_selected_trip_rate'] * 100:.1f}% | Post-confirmatory extension passed |
+| Inherited `z=1.5` on the same extension seeds | -- | {fresh_inherited_max * 100:.1f}% | Also passed the point gate |
 | Calibrated `z=2.0` vs inherited `z=1.5` | {fmt_ci(selected_vs_inherited)} | -- | No mean reward improvement established |
 | Hybrid `z=1.5` vs `z=0` | {fmt_ci(hybrid)} | 1.4% | Secondary result |
 | Monolithic RecurrentPPO vs `z=0` | {fmt_ci(mono)} | -- | Strong OOD failure in this tested family |
 
-The inherited margin improved expected target-OOD utility but missed its frozen safety gate (2.3% versus 2.0%). A cutoff/margin pair selected only on development seeds chose cutoff 0.06 and `z=2.0`. On 100 new lifetimes, it retained a positive mean effect and reduced the maximum trip rate to 1.6%. Its mean reward did not differ clearly from the inherited setting ({fmt_ci(selected_vs_inherited)}), so the extension supports task-specific safety calibration without detectable expected-utility loss, not a new reward gain.
+The inherited margin improved expected target-OOD utility but missed its original frozen point gate (2.3% versus 2.0%). A cutoff/margin pair selected only on development seeds chose cutoff 0.06 and `z=2.0`. On 100 new lifetimes, the selected policy retained a positive mean effect and reached a 1.6% maximum trip rate. The inherited setting also passed on those same fresh seeds at {fresh_inherited_max * 100:.1f}%, and their mean reward difference was inconclusive ({fmt_ci(selected_vs_inherited)}). The extension therefore demonstrates a feasible development-only selection procedure, not calibration necessity, superiority, or unique gate recovery.
 
 Only {selected['positive']} of {selected['n']} paired lifetime effects were positive (exact sign test p={selected['exact_sign_two_sided_p']:.3f}). The supported claim concerns mean expected utility, not majority-lifetime improvement. Both tasks remain in one simulator with the same phenomenological thermal law; no real-hardware or formal-safety claim is supported.
 
@@ -339,11 +356,12 @@ Protocol hashes: inherited `{data['confirm_hash']}`; extension `{data['fresh_has
 |---|---:|---:|---|
 | 상속된 물리 여유 `z=1.5` 대 `z=0` | {fmt_ci(inherited)} | {confirm['maximum_physics_z1_5_trip_rate'] * 100:.1f}% | 최초 주 기준 실패 |
 | Reacher 보정 여유 `z=2.0` 대 `z=0` | {fmt_ci(selected)} | {fresh['maximum_selected_trip_rate'] * 100:.1f}% | 사후 확장 성공 |
+| 동일 확장 시드의 상속 `z=1.5` | -- | {fresh_inherited_max * 100:.1f}% | point gate 역시 통과 |
 | 보정 `z=2.0` 대 상속 `z=1.5` | {fmt_ci(selected_vs_inherited)} | -- | 평균 보상 개선 불확실 |
 | Hybrid `z=1.5` 대 `z=0` | {fmt_ci(hybrid)} | 1.4% | 이차 결과 |
 | Monolithic RecurrentPPO 대 `z=0` | {fmt_ci(mono)} | -- | 시험한 계열에서 강한 OOD 실패 |
 
-상속된 여유는 target-OOD 기대 효용을 높였지만 고정된 안전 기준을 통과하지 못했다(2.3% 대 2.0%). 개발 시드만으로 cutoff 0.06과 `z=2.0`을 선택한 뒤 새로운 lifetime 100개에서 한 번 평가했다. 보정 설정은 양의 평균 효과를 유지하면서 최대 trip 비율을 1.6%로 낮췄다. 상속 설정과 보정 설정의 평균 보상 차이는 명확하지 않았으므로({fmt_ci(selected_vs_inherited)}), 이 결과는 추가 보상 향상이 아니라 검출 가능한 기대 효용 손실 없는 과제별 안전 보정을 지지한다.
+상속된 여유는 target-OOD 기대 효용을 높였지만 최초 고정 point gate를 통과하지 못했다(2.3% 대 2.0%). 개발 시드만으로 cutoff 0.06과 `z=2.0`을 선택한 뒤 새로운 lifetime 100개에서 한 번 평가했다. 선택 정책은 양의 평균 효과를 유지하면서 최대 trip 비율 1.6%를 기록했다. 동일한 새 시드에서 상속 설정도 {fresh_inherited_max * 100:.1f}%로 통과했고 두 설정의 평균 보상 차이는 명확하지 않았다({fmt_ci(selected_vs_inherited)}). 따라서 이 결과는 실행 가능한 개발 전용 선택 절차를 보여주지만, 보정의 필요성·우월성·유일한 gate 회복 원인을 입증하지 않는다.
 
 대응 lifetime 중 양의 효과는 {selected['n']}개 중 {selected['positive']}개였고 exact sign test p={selected['exact_sign_two_sided_p']:.3f}이다. 따라서 주장은 다수 lifetime의 일관된 개선이 아니라 평균 기대 효용 개선으로 제한한다. 두 과제는 같은 시뮬레이터와 현상론적 열화 법칙을 공유하므로 실제 하드웨어 일반화나 형식적 안전 보장은 주장하지 않는다.
 

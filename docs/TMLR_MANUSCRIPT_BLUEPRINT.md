@@ -1,6 +1,6 @@
 # TMLR manuscript blueprint
 
-Status: evidence-grounded writing plan, 2026-08-31.
+Status: evidence-grounded writing plan, corrected 2026-09-01.
 
 This document fixes the communication structure of the paper. It does not
 change any experimental endpoint or promote post-confirmatory evidence into a
@@ -8,8 +8,8 @@ primary result.
 
 ## Recommended title
 
-**When Uncertainty Margins Do Not Transfer: Persistent Hidden Thermal Dynamics
-Across Two Robot-Control Tasks**
+**Uncertainty-Aware Belief Supervision under Persistent Hidden Thermal
+Dynamics: Evidence from Two Robot-Control Tasks**
 
 The title leads with the actionable finding rather than an unsupported claim of
 algorithmic novelty or physical realism.
@@ -23,11 +23,10 @@ Alternatives:
 
 ## One-sentence contribution
 
-In two controlled MuJoCo tasks, we show that an uncertainty margin around an
-explicit persistent-state belief can improve mean risk-sensitive lifetime
-utility under deployment shifts, while also showing that the margin itself
-must be calibrated for a new task to meet a fixed empirical trip-rate
-tolerance.
+In two controlled MuJoCo tasks, an uncertainty margin around an explicit
+persistent-state belief improves mean risk-sensitive lifetime utility under
+deployment shifts, while empirical trip-rate gates near 2% vary with policy
+composition and finite evaluation sample.
 
 ## Abstract draft
 
@@ -37,36 +36,37 @@ We study fixed low-level controllers in two MuJoCo manipulation tasks where
 task state resets but an unobserved, action-driven thermal state persists and
 changes later actuator dynamics. An explicit belief supervisor uses a noisy
 temperature signal and an uncertainty margin to choose between high- and
-low-power control. Under prespecified sensor and cooling shifts, the margin
-improved mean risk-sensitive lifetime utility on Pusher by `+0.965` reward per
-task (95% bootstrap CI `[0.733, 1.196]`) while remaining below a 2% thermal-trip
-tolerance. Transferring the same margin to Reacher preserved a positive mean
-effect (`+0.721`, `[0.474, 0.978]`) but missed the frozen tolerance with a 2.3%
-maximum trip rate. A separately frozen, development-only calibration selected
-a more conservative margin; on 100 fresh Reacher lifetimes it restored the
-tolerance (1.6%) and retained a positive mean effect (`+0.692`, `[0.434,
-0.962]`) without a detectable loss relative to the inherited setting. Fresh
-factorial evidence does not establish the learned residual as an independent
+low-power control. Under prespecified sensor and cooling shifts, a Pusher
+physics-only margin improved mean utility by `+0.965` reward per task (95%
+bootstrap CI `[0.733, 1.196]`) but reached a 2.15% maximum trip rate; the
+corresponding hybrid policy's margin effect was `+0.736` (`[0.524, 0.950]`) and
+its maximum was 1.3%. On Reacher, the inherited physics-only margin retained a
+positive mean effect (`+0.721`, `[0.474, 0.978]`) but reached 2.3%, while the
+secondary hybrid policy reached 1.4%. A separately frozen development
+procedure selected a more conservative physics-only margin; on 100 new
+lifetimes it reached 1.6% and retained a positive mean effect (`+0.692`,
+`[0.434, 0.962]`). The inherited margin also passed on that second sample at
+1.9%, and the calibrated setting had no detectable mean-utility advantage.
+Fresh factorial evidence does not establish the residual as an independent
 source of improvement, and only 52 of 100 calibrated Reacher lifetime effects
-were positive. These results support task-specific calibration of uncertainty
-margins for persistent-state supervisors, not a transferable safety guarantee.
-The study is limited to a shared phenomenological thermal model in simulation.
+were positive. These results support uncertainty-aware expected-utility
+claims, not calibration superiority or a transferable safety guarantee.
 
 ## Reader takeaway in plain language
 
-The controller remembers a hidden physical condition that survives ordinary
-task resets. Adding a conservative uncertainty buffer helps on average, but a
-buffer tuned on one robot task can still violate a numerical tolerance on
-another. A small target-task calibration stage can recover that tolerance; the
-original transfer failure must remain visible.
+The controller tracks a hidden physical condition that survives ordinary task
+resets. A conservative uncertainty buffer helps on average, but whether a
+near-boundary point tolerance passes depends on the complete policy and fresh
+sample. Target-task calibration can select a passing policy, but these data do
+not show that calibration is uniquely responsible for passing.
 
 ## Claim hierarchy
 
 | Level | Claim | Evidence | Boundary |
 |---|---|---|---|
 | Primary | Uncertainty margins improve mean risk-sensitive lifetime utility under the tested persistent hidden dynamics and shifts. | Pusher fresh factorial and inherited Reacher confirmation. | Expected mean, not most lifetimes; utility depends on trip cost. |
-| Deployment | A margin transferred across tasks may fail a frozen empirical trip-rate tolerance. | Reacher inherited `z=1.5`: positive mean effect, 2.3% maximum trip rate versus 2.0% gate. | One simulator, two tasks, one shared thermal law. |
-| Remediation | Target-task development-only calibration can recover that tolerance on fresh lifetimes without detectable mean-utility loss. | Reacher cutoff `0.06`, `z=2.0`: 1.6% maximum trip rate; selected versus inherited CI crosses zero. | Post-confirmatory and separately frozen; not zero-shot transfer. |
+| Deployment | Mean-utility improvement does not imply that a complete policy passes a near-boundary empirical trip-rate tolerance. | Physics-only `z=1.5` reaches 2.15% on Pusher and 2.3% on original Reacher; hybrid policies reach 1.3% and 1.4%. | A point rule on finite samples, not a safety probability bound. |
+| Calibration | Target-task development-only calibration can select a policy that passes a fresh tolerance gate. | Reacher cutoff `0.06`, `z=2.0`: 1.6% maximum; inherited `z=1.5` is 1.9% on the same fresh seeds and their mean-difference CI crosses zero. | Feasibility only; no calibration necessity, superiority, or unique causal recovery. |
 | Mechanism | Selective conservatism and avoided trip cost, rather than an independently verified residual gain, explain the robust benefit. | Pusher 2 x 2 factorial and reward decomposition; Reacher residual contrast. | Not a formal causal model of hardware failures. |
 | Baseline | Explicit structure outperformed the tested recurrent baseline under target OOD. | Selected RecurrentPPO result on Reacher. | One architecture, training budget, and selection procedure only. |
 
@@ -77,6 +77,8 @@ original transfer failure must remain visible.
 - No universal superiority over recurrent, adaptive, or model-free methods.
 - No majority-lifetime benefit on calibrated Reacher.
 - No independent residual advantage at the deployed uncertainty margin.
+- No claim that calibration is necessary, superior, or uniquely causes a fresh
+  tolerance pass.
 - No claim that the privileged threshold comparator is an optimal oracle.
 - No claim that the inherited Reacher confirmation passed its complete frozen
   gate.
@@ -91,10 +93,11 @@ Use four short moves:
    benchmark while the controller still experiences its future consequences.
 2. Explicit beliefs offer a transparent response, but their uncertainty margin
    becomes a deployment parameter.
-3. Ask two questions: does the margin help across tasks, and does its numerical
-   setting transfer while respecting a fixed tolerance?
-4. State the three findings: positive mean effects on two tasks, failed
-   zero-shot tolerance transfer, and successful fresh-test target calibration.
+3. Ask two questions: does the margin help across tasks, and how do policy
+   composition and development-only margin selection affect a point tolerance?
+4. State the three findings: positive mean effects on two tasks, physics-only
+   versus hybrid gate differences, and a feasible but non-superior calibrated
+   Reacher policy.
 
 Do not lead with the learned residual. It was part of the experimental path but
 is not the established cause of the final result.
@@ -153,10 +156,11 @@ Recommended order:
 
 1. **Pusher mechanism:** show the 2 x 2 factorial and establish that uncertainty
    is the robust component.
-2. **Cross-task transfer:** show positive mean Reacher utility together with the
-   failed 2.3% trip-rate gate.
+2. **Policy composition across tasks:** show positive mean effects together
+   with physics-only failures and hybrid passes in the designated tests.
 3. **Target calibration:** show the development frontier and fresh 1.6% result,
-   including calibrated-versus-inherited equivalence uncertainty.
+   while also reporting inherited 1.9% on the same seeds and the inconclusive
+   calibrated-versus-inherited mean contrast.
 4. **Cautions:** report positive-lifetime counts, recurrent comparison,
    condition-level heterogeneity, and reward sensitivity.
 
@@ -167,17 +171,18 @@ their direction.
 
 The practical workflow is: model the persistent state explicitly, select a
 conservatism margin using target development lifetimes and a buffered
-tolerance, freeze it, then test once. Discuss why positive expected utility can
-coexist with only 52/100 positive lifetime effects and why an empirical trip
-rate is not a safety proof. End with the simulator, shared-law, hardware,
-reward-preference, and baseline limitations.
+tolerance, freeze it, then test once. Present this as a feasible procedure, not
+a demonstrated necessity. Discuss sample sensitivity, why positive expected
+utility can coexist with only 52/100 positive lifetime effects, and why an
+empirical trip rate is not a safety proof. End with the simulator, shared-law,
+hardware, reward-preference, and baseline limitations.
 
 ### 8. Conclusion
 
 Use one restrained paragraph: uncertainty-aware supervision helped on average
-in both tasks; the numerical margin did not transfer cleanly; target-specific
-calibration recovered the empirical tolerance; physical and algorithmic
-generality remain open.
+in both tasks; physics-only and full-hybrid policies differed at the point
+gate; target-specific calibration selected a passing policy but did not prove
+necessity or superiority; physical and algorithmic generality remain open.
 
 ## Main-paper figure and table map
 
@@ -185,7 +190,7 @@ generality remain open.
 |---|---|---|
 | Figure 1 | New schematic derived from the environment specification | Show selective reset, persistent hidden thermal state, noisy sensing, and supervisory switch. |
 | Figure 2 | `paper_artifacts/physics_residual_v12_3/figure_v12_3_factorial.svg` | Attribute the Pusher effect to uncertainty versus residual. |
-| Figure 3 | `paper_artifacts/reacher_replication/figure_reacher_replication_summary.svg` | Show inherited transfer failure and calibrated fresh-test recovery. |
+| Figure 3 | `paper_artifacts/reacher_replication/figure_reacher_replication_summary.svg` | Show the original inherited test and separately frozen calibrated evaluation without implying unique recovery. |
 | Table 1 | New compact protocol table | Align tasks, seed roles, OOD conditions, estimands, and gates. |
 | Table 2 | Pusher and Reacher within-task contrasts | Report means, intervals, tests, positive counts, and trip rates without pooling reward scales. |
 | Table 3 | `table_reacher_calibration_frontier.csv`, condensed | Make the development-only selection rule auditable. |
@@ -223,7 +228,6 @@ paper because appendix review is optional.
 
 ## Immediate next implementation step
 
-Instantiate the official TMLR LaTeX template, create an anonymous manuscript
-skeleton with the section structure above, and migrate only evidence-backed
-text. Before submission, refresh the literature ledger and rerun the complete
-claim-to-evidence, privacy, archive-size, and clean-reproduction audits.
+Complete and compile the anonymous TMLR manuscript, then run the full
+claim-to-evidence, privacy, archive-size, and clean-reproduction audits. Refresh
+the literature ledger immediately before submission.

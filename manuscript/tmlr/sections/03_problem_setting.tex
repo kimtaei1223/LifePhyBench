@@ -1,20 +1,99 @@
 \section{Selective-reset problem setting}
 \label{sec:problem}
 
-An evaluation lifetime contains 20 manipulation tasks. At each task boundary,
-the task configuration is reset while the latent thermal state is retained.
-The thermal state changes as a function of selected actions, influences later
-actuator efficiency, and is observed by the deployed supervisor only through a
-noisy sensor. This produces a partially observed control problem in which a
-conventional task reset does not restore the complete physical state.
+An evaluation lifetime $\ell$ contains $K=20$ manipulation tasks, each with at
+most $H=100$ physical transitions. At each task boundary, the MuJoCo arm,
+object, and goal are restored using canonical task seed 811, while scalar
+thermal load $h\in[0,1]$ is retained. Only a lifetime reset restores physical
+health. At the start of a lifetime, $h_0\sim\mathcal{U}(0,0.08)$.
 
-The reported objective is risk-sensitive lifetime utility: task return and a
-small high-power throughput term are balanced against a thermal-trip penalty.
-The independent statistical unit is the complete lifetime, never an individual
-task. The same phenomenological thermal law is used in both MuJoCo tasks. It is
-a controlled experimental mechanism rather than a motor model in physical
+For an $m$-dimensional requested action $a_t$, let $s_j$ be the largest absolute
+bound of actuator coordinate $j$. The endogenous thermal dose is
+\begin{equation}
+ d_t=\frac{1}{m}\sum_{j=1}^{m}
+ \left|\frac{\operatorname{clip}(a_{t,j})}{s_j}\right|^2.
+ \label{eq:dose}
+\end{equation}
+With heat rate $\alpha=0.05$ and within-task cooling $c=0$ in all reported
+experiments, the physical-step update is
+\begin{align}
+ \widetilde h_{t+1} &= \operatorname{clip}_{[0,1]}
+   \left((h_t+\alpha d_t)(1-c)\right), \\
+ h_{t+1} &= \operatorname{clip}_{[0,1]}
+   \left(\widetilde h_{t+1}+b_t\Delta\right),
+ \label{eq:thermal-step}
+\end{align}
+where $b_t\sim\operatorname{Bernoulli}(p)$ is an indexed shock draw. At an
+ordinary task reset, $h\leftarrow(1-\rho)h$, where $\rho$ is the
+condition-specific cooling fraction. Shock and sensor draws are indexed by
+lifetime, task, and step so that an early trip cannot shift later randomness.
+
+The deployed supervisor receives one sensor value per task,
+\begin{equation}
+ y_k=\operatorname{clip}_{[0,1]}(h_{k,0}+\epsilon_k),\qquad
+ \epsilon_k\sim\mathcal{N}(0,\sigma^2),
+ \label{eq:sensor}
+\end{equation}
+not the exact $h_{k,0}$. Thermal load changes the MuJoCo actuator gains through
+\begin{equation}
+ \eta(h)=1-(1-0.60)h=1-0.40h,
+ \label{eq:efficiency}
+\end{equation}
+so the gain used for the next physical transition is the nominal gain times
+$\eta(h)$.
+
+At each task boundary the supervisor commits to high power ($q=1$) or low
+power ($q=0.4$). Low power scales every low-level action by 0.4. Selecting high
+power when $h_{k,0}\geq0.10$ triggers protection, ends the task, and returns
+$-75$. Otherwise task utility is the sum of the MuJoCo rewards after correcting
+the control-cost term to the requested-action basis, plus a one-time high-power
+bonus of 2. This correction prevents low power from receiving an artificial
+control-cost advantage merely because its applied action is smaller.
+
+The reported objective is mean risk-sensitive utility per task within a
+lifetime. The independent statistical unit is the complete lifetime, never an
+individual task. The same phenomenological law is used in both MuJoCo tasks; it
+is a controlled experimental mechanism rather than a motor model in physical
 units.
 
-% TODO: migrate the exact transition, observation, actuator-efficiency, trip,
-% and utility equations from the frozen protocols, preserving notation and
-% parameter values verbatim.
+\begin{table}[t]
+\caption{Shared environment and utility parameters}
+\label{tab:shared-parameters}
+\centering
+\begin{tabular}{lll}
+\toprule
+Quantity & Symbol & Value \\
+\midrule
+Tasks per lifetime & $K$ & 20 \\
+Maximum physical steps per task & $H$ & 100 \\
+Initial thermal load & $h_0$ & $\mathcal{U}(0,0.08)$ \\
+Heat rate / exponent & $\alpha$ / exponent & 0.05 / 2 \\
+Minimum thermal efficiency & $\eta_{\min}$ & 0.60 \\
+High / low power scale & $q_H/q_L$ & 1.0 / 0.4 \\
+Trip threshold / penalty & $\tau/P$ & 0.10 / 75 \\
+Successful high-power bonus & $B$ & 2 \\
+Within-task cooling & $c$ & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\caption{Deployment conditions shared by Pusher and Reacher}
+\label{tab:conditions}
+\centering
+\begin{tabular}{lrrrr}
+\toprule
+Condition & $\sigma$ & $\rho$ & $p$ & $\Delta$ \\
+\midrule
+In-domain & 0.01 & 0.15 & 0.0005 & 0.01 \\
+Sensor noise & 0.03 & 0.15 & 0.0005 & 0.01 \\
+Cooling shift & 0.01 & 0.10 & 0.0005 & 0.01 \\
+Physical shocks & 0.01 & 0.15 & 0.0010 & 0.02 \\
+Combined shift & 0.03 & 0.10 & 0.0010 & 0.02 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The target-OOD aggregate averages sensor noise, cooling shift, and combined
+shift within each lifetime. Physical shocks are retained as a secondary
+boundary condition, not silently added to the primary aggregate.

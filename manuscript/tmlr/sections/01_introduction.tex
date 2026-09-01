@@ -29,9 +29,9 @@ uncertainty-aware filtering has strong precedent, including belief-space and
 latent safety filters with substantially stronger guarantees than those studied
 here \citep{vahs2024risk,seo2025latent,kwon2026adaptive}. We therefore do not
 claim a new safety-filter architecture. Instead, we ask whether a fixed margin
-improves lifetime utility under deployment shifts, whether that numerical
-margin transfers between robot-control tasks, and what a target-specific
-calibration stage actually recovers.
+improves lifetime utility under deployment shifts, how a point trip-rate
+tolerance behaves across policy compositions and fresh task samples, and what
+a target-specific calibration stage actually establishes.
 
 We answer these questions in Pusher and Reacher under matched selective-reset
 semantics and a shared thermal law. Each independent evaluation unit is a
@@ -41,24 +41,26 @@ the inherited cross-task test separate from a later, development-only
 calibration and its disjoint fresh test set.
 
 The results provide three main findings. First, a fresh Pusher factorial
-experiment attributes the robust benefit primarily to the uncertainty margin:
-without the learned residual, the margin improves target-shift mean utility by
-$+0.965$ reward per task (95\% bootstrap CI $[0.733,1.196]$). Second, the same
-margin retains a positive mean effect on Reacher ($+0.721$,
-$[0.474,0.978]$) but reaches a 2.3\% maximum trip rate and therefore fails the
-prespecified 2.0\% tolerance. Third, a separately frozen calibration using only
-Reacher development lifetimes selects a more conservative margin; on 100 new
-lifetimes it reaches 1.6\% while preserving a positive mean effect ($+0.692$,
-$[0.434,0.962]$). Its mean utility is not detectably different from the
-inherited setting. Calibration is therefore credited with tolerance recovery,
-not reward superiority.
+attributes the robust utility benefit primarily to uncertainty. The
+physics-only margin improves target-shift mean utility by $+0.965$ reward per
+task (95\% bootstrap CI $[0.733,1.196]$), although its maximum trip rate is
+2.15\%. The hybrid margin effect is $+0.736$ ($[0.524,0.950]$), with a 1.3\%
+maximum trip rate. Second, the inherited physics-only margin retains a positive
+mean effect on Reacher ($+0.721$, $[0.474,0.978]$) but reaches 2.3\% and fails
+the prespecified 2.0\% tolerance; the secondary full hybrid reaches 1.4\%.
+Third, a separately frozen calibration selects a more conservative
+physics-only margin. It reaches 1.6\% with a positive fresh-sample mean effect
+($+0.692$, $[0.434,0.962]$), but the inherited setting also reaches 1.9\% on
+that same second sample and has no detectably different mean utility.
 
 These are mean risk-sensitive utility results, not universal dominance. Only
 52 of 100 calibrated Reacher lifetime effects are positive, and the exact sign
 test is not significant. Pusher reward decomposition further shows that fewer
 thermal trips compensate for lower immediate task return, so the conclusion
-depends on trips carrying moderate or high cost. Together, the evidence
-supports a practical and testable workflow---calibrate the uncertainty margin
-on target-task development lifetimes, freeze it, and evaluate it once---while
-leaving hardware validity, formal safety, and general algorithmic superiority
-open.
+depends on trips carrying moderate or high cost. Together, the evidence shows
+that uncertainty can improve expected utility while a hard empirical trip-rate
+gate close to 2\% is sensitive to policy composition and the fresh sample. A
+buffered target-development procedure can produce a conservative physics-only
+setting that passes a new test, but these data do not establish that calibration
+is superior or necessary. Hardware validity, formal safety, and general
+algorithmic superiority remain open.

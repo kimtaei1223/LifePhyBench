@@ -3,16 +3,55 @@
 
 A fixed low-level controller supplies task actions. Above it, a supervisor
 selects a high- or low-power mode from an explicit physics belief about the
-hidden thermal state. The uncertainty-aware variant adds a multiple $z$ of its
-estimated uncertainty before applying a threshold. The Pusher transfer setting
-uses $z=1.5$; the separately calibrated Reacher setting uses cutoff 0.06 and
-$z=2.0$.
+hidden thermal state. A linear task-boundary transition is fitted only on
+development rows,
+\begin{equation}
+ h_{k+1}=\beta_0+\beta_h h_k+\beta_a u_k+\xi_k,
+ \qquad \xi_k\sim\mathcal{N}(0,Q),
+ \label{eq:task-transition}
+\end{equation}
+where $u_k\in\{0,1\}$ is the previous mode. Given posterior
+$(\mu_{k-1},V_{k-1})$, the filter computes
+\begin{align}
+ \mu_k^- &= \beta_0+\beta_h\mu_{k-1}+\beta_a u_{k-1}, \\
+ V_k^- &= \beta_h^2V_{k-1}+Q, \\
+ G_k &= \frac{V_k^-}{V_k^-+R}, \\
+ \mu_k &= \mu_k^-+G_k(y_k-\mu_k^-),\qquad
+ V_k=(1-G_k)V_k^- .
+ \label{eq:belief-update}
+\end{align}
+At the first task, $(\mu_0,V_0)=(y_0,R)$. The supervisor selects high power iff
+\begin{equation}
+ \mu_k+z\sqrt{V_k}<\gamma,
+ \label{eq:margin-decision}
+\end{equation}
+where $\gamma$ is the cutoff and $z$ is the uncertainty multiplier. The
+inherited component-level setting uses $\gamma=0.06,z=1.5$; the separately
+calibrated Reacher setting uses $\gamma=0.06,z=2.0$.
 
-The experiments also include an optional learned residual on the physics
-belief, a privileged current-state threshold comparator, and a monolithic
-RecurrentPPO baseline. The privileged comparator is diagnostic and is not a
-planning oracle. The recurrent result is evidence only about the tested
-architecture, development seeds, training budget, and selection procedure.
+\begin{table}[t]
+\caption{Development-only task-boundary transition fits}
+\label{tab:transition-fits}
+\centering
+\begin{tabular}{lrrrrrr}
+\toprule
+Task & $\beta_0$ & $\beta_h$ & $\beta_a$ & $Q$ & $R$ & $R^2$ \\
+\midrule
+Pusher & .007601 & .849727 & .023402 & $3.47\!\times\!10^{-6}$ & $9.98\!\times\!10^{-5}$ & .9738 \\
+Reacher & .006310 & .841105 & .010367 & $3.82\!\times\!10^{-6}$ & $1.01\!\times\!10^{-4}$ & .9840 \\
+\bottomrule
+\end{tabular}
+\end{table}
 
-% TODO: add pseudocode and the exact observation sets available to each policy.
-% Keep analysis-only health variables separate from deployment observations.
+The experiments also include an optional GRU residual on the physics belief, a
+privileged current-state threshold comparator, and a monolithic RecurrentPPO
+baseline. The residual receives the sensor, previous mode and its presence
+flag, normalized task index, physics mean, and physics standard deviation. Its
+mean correction and predicted variance augment the physics belief. The
+privileged comparator is diagnostic and is not a planning oracle. The recurrent
+result is evidence only about the tested architecture, development seeds,
+training budget, and selection procedure.
+
+Exact health is used only to fit and audit development models and by the
+explicitly privileged comparator; it is not a deployment input to the physics
+or hybrid supervisor.

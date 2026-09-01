@@ -29,10 +29,10 @@ Status labels:
 
 > Under hidden action-driven thermal dynamics that persist across task resets,
 > an uncertainty margin around an explicit belief supervisor can improve mean
-> risk-sensitive lifetime utility on two MuJoCo manipulation tasks. A margin
-> transferred between tasks can miss a fixed trip-rate tolerance; target-task
-> development-only calibration can recover that tolerance on a fresh test set
-> without a detectable loss in mean utility.
+> risk-sensitive lifetime utility on two MuJoCo manipulation tasks. Whether a
+> near-boundary empirical trip-rate rule passes depends on the complete policy
+> and finite test sample. Development-only calibration can select a passing
+> policy, but the current data do not establish its necessity or superiority.
 
 This is a claim about expected risk-sensitive utility in a controlled,
 phenomenological two-task simulation. It is not a hardware-valid thermal model,
@@ -78,9 +78,10 @@ submission failure because the paper does not make the corresponding claims.
       criteria were frozen before v12.2 evaluation.
 - [x] A fresh 2 x 2 residual-by-uncertainty factorial used 100 disjoint seeds
       and retained every lifetime.
-- [x] The uncertainty effect without residual was `+0.965` reward/task with
-      bootstrap 95% CI `[0.733, 1.196]`; maximum treatment trip rate was below
-      the 2% gate.
+- [x] The physics-only uncertainty effect was `+0.965` reward/task with
+      bootstrap 95% CI `[0.733, 1.196]`; that treatment's maximum trip rate was
+      2.15% and failed the 2% point gate. The full hybrid treatment's margin
+      effect was `+0.736`, with a 1.3% maximum trip rate.
 - [x] Reward decomposition and fixed-trajectory sensitivity distinguish lower
       immediate task return from avoided thermal-trip cost.
 - [x] The residual gain at matched `z=1.5` was not independently established
@@ -100,8 +101,10 @@ submission failure because the paper does not make the corresponding claims.
       test was non-significant. The claim is about the paired mean, not a
       majority of lifetimes.
 - [x] The calibrated and inherited policies had no detectable mean-utility
-      difference. Calibration is credited with tolerance recovery, not reward
-      superiority.
+      difference. The inherited policy also reached 1.9% on the same fresh
+      extension seeds, so calibration is presented as a feasible selection
+      procedure, not as necessary, superior, or uniquely responsible for the
+      passing gate.
 
 ### Artifact and clean-environment reproduction
 

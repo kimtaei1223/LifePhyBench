@@ -27,8 +27,9 @@ persists across task resets; a frozen uncertainty-aware supervisor is tested
 under prespecified shifts; and fresh-lifetime ablations isolate the robust
 uncertainty effect from the unsupported residual mechanism claim. A margin
 inherited from Pusher preserved positive mean Reacher utility but missed the
-frozen safety gate; development-only Reacher calibration restored the gate on
-new lifetimes without a detectable mean-utility loss.
+original frozen point gate; development-only Reacher calibration selected a
+policy that passed on new lifetimes without a detectable mean-utility loss,
+while the inherited policy also passed on that same new sample.
 
 ## Claim decision matrix after Reacher
 
@@ -39,8 +40,8 @@ new lifetimes without a detectable mean-utility loss.
 | Uncertainty-aware safety supervision is new | Reject | Cite belief CBF, adaptive shielding, UNISafe, and Gameplay Filters. |
 | Selective task reset with persistent hidden health is a novel individual concept | Avoid priority claim | Say that no exact experimental combination was identified. |
 | Health changes future dynamics, unlike damage-only accounting | Use as a distinction, not a first claim | OopsieVerse explicitly keeps original task dynamics intact; maintenance and hidden-dynamics work cover adjacent ideas. |
-| Inherited uncertainty margin transfers safely across morphologies | Reject | The inherited Reacher margin failed the frozen 2% gate at 2.3%. |
-| Target-development calibration can recover the frozen trade-off | Support narrowly | Report it as a post-confirmatory Reacher extension: 1.6% maximum trip rate and `+0.692` mean OOD effect. |
+| Inherited uncertainty margin transfers safely across morphologies | Reject | The inherited Reacher margin failed the original frozen 2% gate at 2.3%; a later 1.9% on different seeds does not erase that failure. |
+| Target-development calibration can select a passing policy | Support narrowly | Report the post-confirmatory Reacher extension: 1.6% and `+0.692`; disclose inherited 1.9% on the same fresh seeds and claim neither calibration necessity nor superiority. |
 | Most lifetimes improve | Reject | Only 52/100 calibrated Reacher effects were positive; exact sign `p=0.764`. |
 | Mean risk-sensitive lifetime utility improves | Support | Use paired lifetime bootstrap and sign-flip evidence, with reward-preference limitations. |
 
@@ -52,7 +53,7 @@ new lifetimes without a detectable mean-utility loss.
 | Qian et al. (2026) | Motor thermal dynamics, RL, long-duration utility | Direct motor-temperature input, calibrated whole-body model, and hardware; ours studies hidden-state inference, uncertainty, and OOD mechanism attribution. |
 | Wan et al. (2026) | Frozen nominal policy plus thermal residual and safety/performance trade-off | Their residual changes motor commands; ours corrects a thermal belief model, and its matched-margin residual benefit was not established. |
 | Farrahi and Mahmood (CoLLAs 2025) / CRONOS (2026) | Continuing or reset-free robot interaction | They remove/minimize embodiment or scene resets; ours resets task state while retaining only the internal health state. |
-| Adaptive Shielding / UNISafe / belief CBF work | Online uncertainty-aware intervention under hidden/OOD dynamics | They offer general filters and stronger certificates; ours provides controlled persistent-health and calibration-transfer evidence without formal safety guarantees. |
+| Adaptive Shielding / UNISafe / belief CBF work | Online uncertainty-aware intervention under hidden/OOD dynamics | They offer general filters and stronger certificates; ours provides controlled persistent-health and policy-composition evidence without formal safety guarantees. |
 
 The full bounded depth-two search tree, retained-paper matrix, source links,
 claim decisions, and final writing constraints are recorded in

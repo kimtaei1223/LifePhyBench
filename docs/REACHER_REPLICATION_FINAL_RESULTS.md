@@ -63,21 +63,25 @@ On the new extension seed set, calibrated `z=2.0` minus physics `z=0` yielded:
 - exact sign-test `p = 0.764`;
 - maximum selected-policy trip rate: `1.6%`.
 
-All frozen extension criteria passed. The calibrated policy's mean reward was
-not distinguishable from the inherited policy: `-0.0081`, 95% CI
-`[-0.1210, +0.1078]`. The supported extension claim is therefore that
-morphology-specific development-only calibration restored the specified
-safety margin without a detectable expected-utility loss. It is not evidence
-that `z=2.0` is universally optimal or improves reward over `z=1.5`.
+All frozen extension criteria for the selected policy passed. The inherited
+`z=1.5` policy also reached a 1.9% maximum trip rate on the same fresh extension
+seeds. The calibrated policy's mean reward was not distinguishable from the
+inherited policy: `-0.0081`, 95% CI `[-0.1210, +0.1078]`. The supported
+extension claim is therefore that the development-only procedure selected a
+policy that passed a fresh point gate without detectable expected-utility loss.
+It is not evidence that calibration was necessary, that `z=2.0` is universally
+optimal, or that it improves reward over `z=1.5`.
 
 ## Integrated claim
 
 Pusher and Reacher agree that an uncertainty margin around an explicit belief
 supervisor can improve mean risk-sensitive lifetime utility under hidden,
 persistent thermal dynamics and prespecified shifts. The Reacher sequence adds
-an important deployment result: a margin transferred across tasks need not
-satisfy a fixed safety tolerance, while a margin calibrated solely on target-
-task development lifetimes can recover that tolerance on a new test set.
+an important deployment caution: a margin with a positive mean effect may miss
+a fixed point tolerance in a designated test, while a development-only
+procedure can select a policy that passes on a new test set. Because the
+inherited policy also passes on that second set, the data do not isolate
+calibration as the cause of passing.
 
 This supports a practical workflow--retain explicit persistent-state belief,
 calibrate the conservatism margin for the deployment morphology, then freeze

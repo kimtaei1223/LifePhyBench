@@ -13,8 +13,39 @@ within lifetime over the prespecified target deployment shifts. We report mean
 paired effects, seed-bootstrap 95\% confidence intervals, paired sign-flip
 tests, positive-lifetime counts, exact sign tests, and the maximum
 condition-level trip rate. A frozen 2.0\% trip-rate tolerance evaluates the
-deployed treatment. Raw reward levels are not pooled across Pusher and Reacher
-because the task scales differ.
+deployed treatment. This point tolerance is an empirical decision rule, not a
+confidence bound or formal safety certificate. Raw reward levels are not
+pooled across Pusher and Reacher because the task scales differ.
 
-% TODO: add the complete condition table, seed-role table, hashes, test tails,
-% resampling counts, and multiplicity handling from the frozen protocols.
+For mean effects, confidence intervals use 100,000 paired-lifetime bootstrap
+resamples. Two-sided paired sign-flip tests use 1,000,000 Monte Carlo draws and
+the plus-one correction; the distribution-free directional diagnostic is a
+two-sided exact binomial sign test after excluding zero differences. These
+tests answer different questions: the sign-flip test is sensitive to effect
+magnitude, whereas the exact sign test asks whether positive effects occur in
+more than half of lifetimes.
+
+\begin{table}[t]
+  \centering
+  \small
+  \caption{Disjoint seed roles in the confirmatory sequence. Development and
+  calibration seeds are never included in the corresponding fresh test.}
+  \label{tab:seed-roles}
+  \begin{tabular}{lll}
+    \toprule
+    Task and stage & Lifetime seeds & Role \\
+    \midrule
+    Pusher v12.2 & 22000--22099 & confirmation \\
+    Pusher v12.3 & 23000--23099 & fresh factorial \\
+    Reacher low-level & 5100--5104 & development/selection \\
+    Reacher belief & 25000--25029 & model development \\
+    Reacher calibration & 25100--25119 & margin selection \\
+    Reacher inherited & 25200--25299 & original fresh test \\
+    Reacher extension & 25300--25399 & calibrated fresh test \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+The confirmatory claims are tied to their frozen protocols and designated
+contrasts. Secondary contrasts and condition-level diagnostics are labeled as
+such; we do not reinterpret a failed point gate using a later seed set.

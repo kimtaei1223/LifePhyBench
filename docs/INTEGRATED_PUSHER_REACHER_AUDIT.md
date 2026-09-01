@@ -1,6 +1,6 @@
 # Integrated Pusher–Reacher evidence and error audit
 
-Status: post-confirmatory audit, 2026-08-31.
+Status: post-confirmatory audit, corrected 2026-09-01.
 
 ## Audit verdict
 
@@ -30,7 +30,7 @@ The within-task effects agree in direction:
 
 | Task | Uncertainty contrast | Mean reward/task | 95% bootstrap CI | Maximum treatment trip rate |
 |---|---|---:|---:|---:|
-| Pusher | physics `z=1.5` minus physics `z=0` | +0.965 | [0.733, 1.196] | below the frozen 2% gate |
+| Pusher | physics `z=1.5` minus physics `z=0` | +0.965 | [0.733, 1.196] | 2.15% (fails point gate) |
 | Reacher | physics `z=1.5` minus physics `z=0` | +0.721 | [0.474, 0.978] | 2.3% |
 
 Raw rewards must not be pooled across tasks because their reward scales differ.
@@ -103,9 +103,9 @@ not establish:
 
 ## Recommended final extension
 
-The inherited Pusher margin narrowly missed the Reacher safety gate. A useful
-and scientifically distinct follow-up is to ask whether a margin selected only
-on Reacher development seeds restores the safety–utility trade-off.
+The inherited Pusher margin narrowly missed the original Reacher point gate. A
+useful and scientifically distinct follow-up is to test whether a margin can be
+selected only on Reacher development seeds and then pass a fresh gate.
 
 The extension must:
 
@@ -125,14 +125,17 @@ set of 100 fresh lifetime seeds (25300--25399). Development-only selection chose
 cutoff `0.06` and uncertainty multiplier `z=2.0`. Relative to physics `z=0`,
 the selected policy improved target-OOD reward by `+0.692`, bootstrap 95% CI
 `[+0.434, +0.962]`, while its maximum condition-level trip rate was 1.6%.
-All frozen extension criteria passed.
+All frozen extension criteria for the selected policy passed.
 
 The selected margin did not improve mean reward over the inherited `z=1.5`
-setting: `-0.008`, 95% CI `[-0.121, +0.108]`. Its contribution is safety-margin
-recovery without a detectable expected-utility loss. The original inherited-
-margin failure (2.3% versus the 2.0% gate) remains the authoritative zero-shot
-replication result.
+setting: `-0.008`, 95% CI `[-0.121, +0.108]`. Moreover, the inherited setting
+also had a 1.9% maximum trip rate on the same extension seeds. The extension
+therefore establishes that the frozen development-only procedure selected a
+policy that passed its fresh gate; it does not establish calibration necessity,
+superiority, or unique tolerance recovery. The original inherited-margin
+failure (2.3% versus the 2.0% gate) remains the authoritative original test.
 
 Only 52 of 100 selected-versus-`z=0` lifetime effects were positive (exact sign
-test `p = 0.764`). The extension strengthens the mean expected-utility and
-safety-calibration claim, not a majority-lifetime improvement claim.
+test `p = 0.764`). The extension strengthens the mean expected-utility result
+and demonstrates selection feasibility, not a majority-lifetime improvement or
+calibration-superiority claim.

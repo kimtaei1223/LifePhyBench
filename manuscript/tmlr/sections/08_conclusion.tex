@@ -2,9 +2,12 @@
 \label{sec:conclusion}
 
 Uncertainty-aware belief supervision improved mean risk-sensitive lifetime
-utility in two controlled manipulation tasks, but its numerical margin did not
-transfer cleanly: the inherited Reacher setting missed a frozen trip-rate
-tolerance. Target-task development-only calibration recovered that tolerance
-on fresh lifetimes without a detectable loss in mean utility. The result is a
-two-task simulation study about transfer and calibration under persistent
-hidden dynamics, not a hardware or formal safety guarantee.
+utility in two controlled manipulation tasks. Physics-only $z=1.5$ policies
+missed the 2\% point trip-rate rule in the designated Pusher and Reacher tests,
+whereas the corresponding complete hybrid policies passed; the residual's own
+incremental contribution was not established. A target-development procedure
+selected a more conservative Reacher physics-only policy that passed on a new
+sample, but the inherited policy also passed there and neither calibration
+superiority nor necessity was demonstrated. The result is a two-task
+simulation study about uncertainty-aware control under persistent hidden
+dynamics, not a hardware, transferable-threshold, or formal safety guarantee.

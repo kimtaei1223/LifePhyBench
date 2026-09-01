@@ -1,13 +1,23 @@
 \section{Discussion and limitations}
 \label{sec:discussion}
 
-The combined evidence supports a deployment workflow within this benchmark:
-retain an explicit belief over persistent physical state, select the
-conservatism margin on target-task development lifetimes using a buffered
-tolerance, freeze the choice, and evaluate it once on fresh lifetimes. A margin
-can improve average utility on a new task yet still miss a prespecified
-trip-rate tolerance, so positive transfer of reward is not sufficient evidence
-for transferring a numerical operating threshold.
+The combined evidence supports uncertainty-aware belief supervision within
+this benchmark. Margins improve average risk-sensitive utility on both tasks,
+but passing a point trip-rate rule near 2\% depends on policy composition and
+the finite evaluation sample. In both original tests the physics-only
+$z=1.5$ policy misses the rule while the complete hybrid policy passes. This
+does not establish that the learned residual itself is responsible: its fresh
+Pusher attribution contrast is inconclusive.
+
+A reasonable deployment workflow is to retain an explicit belief over
+persistent physical state, choose a conservatism margin on target-task
+development lifetimes using a buffered tolerance, freeze the choice, and
+evaluate it once on fresh lifetimes. The Reacher extension shows that this
+workflow can select a physics-only policy that passes a fresh point gate. It
+does not show that calibration is necessary or superior, because the inherited
+policy also passes on the same fresh sample and the selected-versus-inherited
+mean contrast is inconclusive. Repeated use of fresh data would invalidate the
+single-test interpretation.
 
 The utility improvement is not free. In Pusher, avoided trip cost outweighs a
 decrease in immediate base-task return, and fixed-trajectory reweighting places
@@ -20,7 +30,8 @@ no physical-unit calibration, hardware telemetry, formal safety proof, or
 probability-calibrated OOD guarantee. It tests one selected recurrent baseline
 rather than exhausting recurrent, meta-RL, system-identification, or online
 adaptation methods. These boundaries prevent the result from supporting a
-general thermal-management or universal algorithm-ranking claim.
+general thermal-management, transferable numerical threshold, calibration-
+superiority, or universal algorithm-ranking claim.
 
 \section{Broader impact}
 

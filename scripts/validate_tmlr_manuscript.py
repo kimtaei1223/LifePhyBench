@@ -99,6 +99,31 @@ def main() -> None:
     if missing_sections:
         fail(f"missing required sections: {missing_sections}")
 
+    # Guard the corrected policy-to-result mapping. Earlier prose accidentally
+    # combined the physics-only Pusher mean effect with the hybrid trip rate and
+    # overstated the role of Reacher calibration. These source-level sentinels
+    # make that evidence conflation fail loudly if it is reintroduced.
+    required_evidence = {
+        "Pusher physics-only trip rate": "2.15\\%",
+        "Pusher hybrid trip rate": "1.3\\%",
+        "Reacher original physics trip rate": "2.3\\%",
+        "Reacher original hybrid trip rate": "1.4\\%",
+        "Reacher calibrated fresh trip rate": "1.6\\%",
+        "Reacher inherited same-fresh trip rate": "1.9\\%",
+        "calibration necessity boundary": "not that calibration was necessary",
+    }
+    for label, fragment in required_evidence.items():
+        if fragment not in source:
+            fail(f"missing corrected evidence boundary: {label}")
+
+    forbidden_claims = {
+        "calibration recovered the tolerance": r"calibration recover(?:ed|s) the tolerance",
+        "calibration restored the tolerance": r"calibration restore(?:d|s) the tolerance",
+    }
+    for label, pattern in forbidden_claims.items():
+        if re.search(pattern, source, flags=re.IGNORECASE):
+            fail(f"unsupported claim reintroduced: {label}")
+
     print(
         "TMLR manuscript source validation passed: "
         f"{len(tex_files)} TeX files, {len(cited_keys)} citation keys, "

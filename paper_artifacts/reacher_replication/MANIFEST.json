@@ -1,9 +1,9 @@
 {
   "artifacts": {
-    "PAPER_RESULTS_EN.md": "6c717b7a8be7a6462c50dfee0096e0914750ad39f3f74ca54d1dea6328ea8cac",
-    "PAPER_RESULTS_KO.md": "a990b7a14b7642e876ae777666cf28d691420514881cbceae1ee66fee3710ef5",
-    "figure_reacher_replication_summary.png": "2d1ec005f11aa4a14f13ab20bffba6d74ca6a80e19bd7b7bd23138f224ba4195",
-    "figure_reacher_replication_summary.svg": "d2c9d0b2a2e7b4ac71c04a492f832557c065e01e851ca25671040d48bafe28c9",
+    "PAPER_RESULTS_EN.md": "99a6386837af7d2aaae72d98687138352a2c93e6e4f48bc1179cb7f149c0d509",
+    "PAPER_RESULTS_KO.md": "5ddcfdf17c96da799c0c79af66b32c7ec61d44076ea1e615fbaa74bdf013e84e",
+    "figure_reacher_replication_summary.png": "f322dca0dc8b6f818a0fc640e3465245e63ce8585843018d0352716c5f010bf2",
+    "figure_reacher_replication_summary.svg": "cebfec01c4fe6d161b32c9cc2b43de4be2b9b5275bd51300e0ce13b525b20e89",
     "table_reacher_calibration_frontier.csv": "f8f045c420ab6407ebbfb1a71f39baf862ec95891c728109e510ff31a08c99d9",
     "table_reacher_condition_results.csv": "80bceda8620ce253d4b62f8cf5eaab655f8bb08cbd88f1d9a13eeda799834aeb",
     "table_reacher_contrasts.csv": "39c61337174d67540a93897d28988fed7e5ebfe6f66ac8e6978ce229ee9c2b76"
