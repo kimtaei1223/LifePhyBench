@@ -1,11 +1,12 @@
 # Novelty Ledger
 
-Current search checkpoint: 2026-08-31. This is a living risk register, not proof
+Current search checkpoint: 2026-09-01. This is a living risk register, not proof
 that no related work exists. Every paper draft must update it.
 
-## 2026-08-31 completed-study verdict
+## 2026-09-01 completed-study verdict
 
-The current novelty risk is **medium--high**. Reacher replication and its
+The current novelty risk is **high but manageable under narrow empirical
+framing**. Reacher replication and its
 separately frozen margin-calibration extension strengthen the original
 single-task evidence, but they do not create a new general control algorithm.
 Two direct 2026 papers already establish thermal-aware reinforcement learning
@@ -13,13 +14,16 @@ and residual thermal control on Unitree A1 hardware. OopsieVerse (RSS 2026)
 already establishes accumulated mechanical/thermal/fluid health for simulated
 manipulation, including RL and MuJoCo. Prior work also establishes hidden motor-
 temperature estimation, reset-free robot learning, belief-space safety,
-uncertainty-aware shielding, and physics-plus-residual dynamics learning.
+uncertainty-aware shielding, runtime calibration of filter conservatism, and
+physics-plus-residual dynamics learning. In particular, AnySafe and UPSi
+preclude novelty claims about calibrated intervention margins or
+uncertainty-aware predictive filtering.
 
 The paper must not claim first thermal-aware robot learning, first damage-aware
 manipulation benchmark, first thermal supervisor, first hidden-temperature
 estimator, first uncertainty-aware safety filter, first residual controller,
-first reset-free/continuing robot learning, or first action-dependent
-degradation.
+first reset-free/continuing robot learning, first action-dependent degradation,
+or first calibration of an uncertainty-dependent intervention margin.
 
 The defensible contribution is a narrow controlled empirical result across two
 MuJoCo tasks: hidden, action-driven thermal state changes later dynamics and
@@ -38,6 +42,7 @@ while the inherited policy also passed on that same new sample.
 | Damage-aware or health-aware robot learning is new | Reject | Cite OopsieVerse and maintenance/degradation POMDPs. |
 | Thermal-aware robot control or residual thermal policy is new | Reject | Cite Qian 2026, Wan 2026, Kawaharazuka 2020, and Sabelhaus 2024. |
 | Uncertainty-aware safety supervision is new | Reject | Cite belief CBF, adaptive shielding, UNISafe, and Gameplay Filters. |
+| Calibration of uncertainty-dependent intervention strength is new | Reject | AnySafe explicitly calibrates runtime conservatism, while adaptive shielding and predictive safety filters provide stronger precedents. |
 | Selective task reset with persistent hidden health is a novel individual concept | Avoid priority claim | Say that no exact experimental combination was identified. |
 | Health changes future dynamics, unlike damage-only accounting | Use as a distinction, not a first claim | OopsieVerse explicitly keeps original task dynamics intact; maintenance and hidden-dynamics work cover adjacent ideas. |
 | Inherited uncertainty margin transfers safely across morphologies | Reject | The inherited Reacher margin failed the original frozen 2% gate at 2.3%; a later 1.9% on different seeds does not erase that failure. |
@@ -54,6 +59,7 @@ while the inherited policy also passed on that same new sample.
 | Wan et al. (2026) | Frozen nominal policy plus thermal residual and safety/performance trade-off | Their residual changes motor commands; ours corrects a thermal belief model, and its matched-margin residual benefit was not established. |
 | Farrahi and Mahmood (CoLLAs 2025) / CRONOS (2026) | Continuing or reset-free robot interaction | They remove/minimize embodiment or scene resets; ours resets task state while retaining only the internal health state. |
 | Adaptive Shielding / UNISafe / belief CBF work | Online uncertainty-aware intervention under hidden/OOD dynamics | They offer general filters and stronger certificates; ours provides controlled persistent-health and policy-composition evidence without formal safety guarantees. |
+| AnySafe / UPSi | Runtime constraint parameterization, calibrated conservatism, and uncertainty-aware predictive filtering | Ours contributes no new calibration theory; it tests a point-rule selection protocol on disjoint persistent-health lifetimes. |
 
 The full bounded depth-two search tree, retained-paper matrix, source links,
 claim decisions, and final writing constraints are recorded in

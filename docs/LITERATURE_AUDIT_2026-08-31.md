@@ -1,7 +1,7 @@
-# Literature and novelty audit — 2026-08-31
+# Literature and novelty audit — refreshed 2026-09-01
 
-Status: final pre-writing checkpoint for the completed Pusher--Reacher study,
-not a claim of bibliometric exhaustiveness or priority.
+Status: final targeted pre-writing checkpoint for the completed
+Pusher--Reacher study, not a claim of bibliometric exhaustiveness or priority.
 
 ## Bottom line
 
@@ -43,7 +43,7 @@ management method.
 
 ### Search date and scope
 
-- checkpoint date: 2026-08-31;
+- checkpoint date: 2026-09-01;
 - target fields: robot learning, safe RL, belief-space control, thermal-aware
   robot control, actuator degradation, hidden-parameter adaptation, residual
   dynamics, and persistent non-stationarity;
@@ -79,7 +79,7 @@ specific novelty boundary.
 6. action-dependent non-stationarity and actuator degradation;
 7. long-horizon health-aware decision making and maintenance.
 
-The retained set contains 28 Level-1 papers and 19 Level-2 conceptual nodes.
+The retained set contains 32 Level-1 papers and 20 Level-2 conceptual nodes.
 Many additional discovery hits were screened out as generic safe RL, unrelated
 thermal control, or applications without robot dynamics. The counts describe
 this bounded audit, not bibliometric completeness.
@@ -91,10 +91,15 @@ citation checks from the closest thermal, damage-benchmark, reset-free, and
 uncertainty-filter papers. Newly retained direct nodes were OopsieVerse,
 Gameplay Filters, the unified safety-filter review, continuing SAC without
 embodiment resets, CRONOS, SF-RSSM, and degradation/maintenance POMDP work.
-Searches through 31 August 2026 did not return a paper combining selective
-task resets, hidden action-driven actuator health with dynamics feedback, and
+The 1 September targeted refresh additionally retained AnySafe,
+uncertainty-aware predictive safety filters (UPSi), language-conditioned latent
+safety filters, and physics-shaped tube MPC. These papers make clear that
+uncertainty-dependent intervention strength, calibration of conservatism, and
+learned-residual uncertainty tubes are established components. Searches through
+1 September 2026 did not identify a paper combining selective task resets,
+hidden action-driven actuator health with dynamics feedback, and
 fresh-lifetime evaluation of transferred versus target-calibrated uncertainty
-margins.
+margins. This is a bounded-search result, not a priority claim.
 
 ## Level-1 closest work
 
@@ -112,7 +117,10 @@ Risk labels refer to overlap with the v12 paper, not paper quality.
 | [Kawaharazuka et al., *Estimation and Control of Motor Core Temperature with Online Learning of Thermal Model Parameters* (2020)](https://doi.org/10.1109/LRA.2020.2990889) | Online estimation of hidden motor-core temperature, online thermal-parameter adaptation, anomaly detection, and thermal output limiting on a humanoid | v12 evaluates learned belief uncertainty and OOD utility, but cannot claim first hidden-temperature estimation or first thermal-model adaptation | **High** |
 | [Sabelhaus et al., *Safe Supervisory Control of Soft Robot Actuators* (2024)](https://doi.org/10.1089/soro.2022.0131) | A modular supervisor dynamically saturates arbitrary nominal-controller inputs to prevent thermal-actuator overheating, with proofs and hardware | v12 uses a simulated, partially observed, action-driven thermal state and evaluates uncertainty margins; it provides no formal safety guarantee | **High** |
 | [Kwon et al., *Adaptive Shielding for Safe Reinforcement Learning under Hidden-Parameter Dynamics Shifts* (2025/2026)](https://arxiv.org/abs/2506.11033) | Online hidden-parameter inference, uncertainty-aware action filtering, OOD dynamics shifts, conformal prediction, and probabilistic guarantees | v12 has a within-lifetime evolving thermal health state and selective resets rather than fixed hidden parameters, but its architectural claim is substantially narrower | **Critical** |
+| [Agrawal et al., *AnySafe: Adapting Latent Safety Filters at Runtime via Safety Constraint Parameterization in the Latent Space* (ICRA 2026)](https://arxiv.org/abs/2509.19555) | Runtime-parameterized latent safety filters and conformal calibration that explicitly tune conservatism, evaluated in simulation and on Franka hardware | v12 offers no new calibration principle or guarantee; its remaining distinction is the selective-reset persistent-health protocol and disjoint lifetime-level evidence | **Critical** |
+| [Frauenknecht et al., *Uncertainty-Aware Predictive Safety Filters for Probabilistic Neural Network Dynamics* (2026)](https://arxiv.org/abs/2604.26836) | Probabilistic learned dynamics, certainty constraints, and predictive reachable sets, with formal arguments and documented implementation approximations | v12 uses a heuristic belief margin and empirical utility/trip criteria rather than a predictive safety certificate | **Critical** |
 | [Liu et al., *Action-Conditioned Risk Gating for Safety-Critical Control under Partial Observability* (2026)](https://arxiv.org/abs/2605.14246) | Uses a finite-history proxy and action-conditioned risk predictor to gate optimistic versus conservative control under partial observability | v12's gate concerns a persistent thermal state and frozen low-level modes, but lightweight risk gating is not novel | **Critical** |
+| [*General Language-Conditioned Latent Safety Filters* (2026)](https://arxiv.org/abs/2608.00315) | Conditions latent failure constraints on language and evaluates transfer under partially specified safety requirements | v12 does not use language; the overlap further precludes a broad claim to adaptable latent-filter constraints | **Medium** |
 | [Seo et al., *Uncertainty-aware Latent Safety Filters for Avoiding Out-of-Distribution Failures* (CoRL 2025)](https://proceedings.mlr.press/v305/seo25a.html) | Uncertainty-aware safety filtering for high-dimensional learned latent dynamics under OOD observations | v12 is a transparent low-dimensional thermal diagnostic with paired lifetime inference and reward decomposition | **High** |
 | [Vahs, Pek, and Tumova, *Belief Control Barrier Functions for Risk-Aware Control* (2023)](https://doi.org/10.1109/LRA.2023.3330662) | Risk-aware safety control directly over probabilistic state beliefs under sensing and motion uncertainty | v12 uses a heuristic uncertainty margin and empirical trip utility, not a belief-space safety certificate | **High** |
 | [Vahs and Tumova, *Risk-aware Control for Robots with Non-Gaussian Belief Spaces* (2023)](https://arxiv.org/abs/2309.12857) | Safe-set control using particle-filter beliefs with probabilistic guarantees in simulation and hardware | v12 focuses on action-driven persistent thermal state and task boundaries, without comparable guarantees | **High** |
@@ -121,6 +129,7 @@ Risk labels refer to overlap with the v12 paper, not paper quality.
 | [Feng et al., *Adaptive Shielding via Parametric Safety Proofs* (OOPSLA 2025)](https://doi.org/10.1145/3720450) | Adaptive, increasingly permissive shields with runtime inference and end-to-end probabilistic guarantees | v12 supplies an empirical learned-belief supervisor, not proof-carrying adaptive shielding | **High** |
 | [Liu et al., *Robust Regression for Safe Exploration in Control* (L4DC 2020)](https://proceedings.mlr.press/v120/liu20a.html) | Learns residual robot dynamics with uncertainty bounds under covariate shift for safety certification | v12's physics-plus-recurrent-residual model is not novel by itself, and matched-margin residual attribution was inconclusive | **High** |
 | [Bonzanini and Mesbah, *Learning-based Stochastic MPC with State-Dependent Uncertainty* (L4DC 2020)](https://proceedings.mlr.press/v120/bonzanini20a.html) | Corrects nominal dynamics with state-dependent uncertainty and enforces chance constraints | v12 studies selective resets and lifetime utility using a much simpler binary supervisor | **Medium–high** |
+| [Li, Jia, and Zhang, *Physics-Shaped Tube MPC for Friction-Limited Ground Robots* (2026)](https://www.sciencedirect.com/science/article/pii/S0307904X2600538X) | Combines a nominal physical model, learned tire-force residual, confidence estimates, adaptive uncertainty tubes, and barrier constraints in simulation | v12's physics-plus-residual and uncertainty composition is not new; its distinction remains persistent hidden health, selective reset, and fresh lifetime attribution | **High** |
 | [Zhao et al., *Uncertainty-Aware Implicit Safe Set Algorithm* (L4DC 2023)](https://proceedings.mlr.press/v211/zhao23a.html) | Safeguards a nominal RL policy using learned dynamics, uncertainty bounds, and safe-set projection | v12 thermal trips and persistence are distinct diagnostics, but nominal-policy safeguarding is established prior art | **High** |
 | [Pfrommer et al., *Safe RL with Chance-constrained MPC* (L4DC 2022)](https://proceedings.mlr.press/v168/pfrommer22a.html) | Couples a nominal RL policy with a chance-constrained safety guide | v12 has hidden persistent degradation and empirical OOD testing, but no theoretical safety result | **Medium** |
 | [Murillo-Gonzalez and Liu, *Situationally-aware Dynamics Learning* (IJRR 2026)](https://doi.org/10.1177/02783649261431863) | Online hidden-state representation, probabilistic dynamics segmentation, and adaptation in simulation and real robots | v12 uses a known slow-state structure and controlled thermal shifts rather than general situation discovery | **High** |
@@ -139,6 +148,7 @@ define the boundaries of claims that might otherwise appear novel.
 | Conceptual node | Relevance to v12 |
 |---|---|
 | [Ames et al., *Control Barrier Functions: Theory and Applications* (2019)](https://doi.org/10.1109/ECC.2019.8796030) | Establishes the safety-filter/constraint formalism used by thermal-aware and belief-space controllers. |
+| [Wabersich and Zeilinger, *A Predictive Safety Filter for Learning-Based Control of Constrained Nonlinear Dynamical Systems* (Automatica 2021)](https://doi.org/10.1016/j.automatica.2021.109597) | Establishes predictive runtime filtering of proposed learning-control inputs under constrained nonlinear dynamics. |
 | [Johannink et al., *Residual Reinforcement Learning for Robot Control* (2018/2019)](https://arxiv.org/abs/1812.03201) | Establishes additive learned correction on top of conventional robot controllers. |
 | [Doshi-Velez and Konidaris, *Hidden Parameter MDPs* (2016)](https://pmc.ncbi.nlm.nih.gov/articles/PMC5466173/) | Establishes latent task/dynamics parameter inference across related MDPs. |
 | [Perez et al., *Generalized Hidden Parameter MDPs* (AAAI 2020)](https://doi.org/10.1609/aaai.v34i04.5989) | Extends hidden-parameter dynamics for rapid transferable model-based RL. |
@@ -167,6 +177,7 @@ define the boundaries of claims that might otherwise appear novel.
 | First thermal supervisor over a nominal controller | Prohibited | Sabelhaus 2024 and Wan 2026 already provide supervisory/residual architectures. |
 | First hidden motor-temperature inference for control | Prohibited | Kawaharazuka 2020 estimates hidden motor-core temperature and controls output limits. |
 | First uncertainty-aware belief safety filter | Prohibited | Belief CBFs, latent safety filters, and adaptive shielding precede v12. |
+| First calibration of an uncertainty-aware intervention margin | Prohibited | Adaptive shielding and AnySafe already use conformal calibration or runtime constraint parameterization to adjust conservatism. |
 | First physics-plus-residual safe controller | Prohibited | Residual-dynamics and uncertainty-aware safe-control work predates v12. |
 | First action-driven persistent degradation problem | Prohibited | Action-dependent non-stationarity and health-aware control already formalize the concept. |
 | First damage/health-augmented robot-manipulation benchmark | Prohibited | OopsieVerse already accumulates mechanical, thermal, and fluid health and uses it in robot learning. |
@@ -228,7 +239,7 @@ combination.
 
 ## TMLR novelty risk
 
-Current risk: **medium--high**.
+Current risk: **high but manageable under narrow empirical framing**.
 
 The completed second morphology and independently frozen margin extension
 materially improve the empirical package. The closest 2026 papers still have
@@ -286,7 +297,7 @@ Use four explicit subsections:
 
 ## Search maintenance rule
 
-This checkpoint is current through 2026-08-31, not through a future submission
+This checkpoint is current through 2026-09-01, not through a future submission
 date. Repeat Level-1 searches immediately before actual submission and record
 that date. Follow new references only when they change a claim boundary or
 introduce a stronger baseline. The “through submission date” checklist item

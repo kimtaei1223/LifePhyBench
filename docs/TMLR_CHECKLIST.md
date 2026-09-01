@@ -1,6 +1,6 @@
 # TMLR submission checklist
 
-Policy checkpoint: 2026-08-31.
+Policy checkpoint: 2026-09-01.
 
 Official sources:
 
@@ -52,9 +52,9 @@ control result.
 | **Complete** | Comparator claims are bounded to the actual experiment. | The privileged comparator is described as a current-state threshold baseline, not a planning oracle; the learned comparison is limited to the tested RecurrentPPO family and budget. |
 | **Complete** | Artifacts regenerate the reported results. | Protocol hashes, raw lifetime rows, models, tables, figures, manifests, and dependency lock reproduce from a clean Python 3.11 environment; 154 tests pass. |
 | **Complete** | Limitations distinguish simulated degradation from physical prediction. | The evidence audit explicitly excludes hardware validity, physical-unit calibration, formal safety, universal reward preferences, and cross-simulator generalization. |
-| **Open** | Closest-work and novelty ledger are current on the submission date. | Depth-two audit is current through 2026-08-30; run one final targeted update immediately before submission. |
-| **Open** | The manuscript states the contribution as an empirical deployment lesson rather than component novelty. | Enforce while drafting Abstract, Introduction, Related Work, and Conclusion. |
-| **Open** | All main-paper numbers and claims are traceable to immutable artifacts. | Use the manuscript blueprint and run a final claim-to-evidence audit after typesetting. |
+| **Open** | Closest-work and novelty ledger are current on the submission date. | Depth-two audit plus a targeted refresh are current through 2026-09-01; repeat only if the actual submission is later. |
+| **Complete** | The manuscript states the contribution as an empirical deployment lesson rather than component novelty. | Abstract, Introduction, Related Work, and Conclusion now exclude component-priority claims and bound calibration, residual, and safety interpretations. |
+| **Complete** | All main-paper numbers and claims are traceable to immutable artifacts. | `scripts/audit_tmlr_claims.py` verifies 35 numerical and boundary checks and regenerates `docs/TMLR_CLAIM_EVIDENCE_AUDIT_2026-09-01.md`. |
 
 ## Explicitly out of scope for this paper
 
@@ -122,6 +122,7 @@ Evidence:
 - [`REACHER_REPLICATION_FINAL_RESULTS.md`](REACHER_REPLICATION_FINAL_RESULTS.md)
 - [`INTEGRATED_PUSHER_REACHER_AUDIT.md`](INTEGRATED_PUSHER_REACHER_AUDIT.md)
 - [`CLEAN_CHECKOUT_REPRODUCTION_2026-08-31.md`](CLEAN_CHECKOUT_REPRODUCTION_2026-08-31.md)
+- [`TMLR_CLAIM_EVIDENCE_AUDIT_2026-09-01.md`](TMLR_CLAIM_EVIDENCE_AUDIT_2026-09-01.md)
 
 ## Historical v10 diagnostic study
 
