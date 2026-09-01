@@ -31,10 +31,19 @@ def parse_args() -> argparse.Namespace:
 
 
 def tracked_files() -> list[Path]:
-    result = subprocess.run(
-        ["git", "ls-files", "-z"], check=True, capture_output=True
+    result = subprocess.run(["git", "ls-files", "-z"], capture_output=True)
+    if result.returncode == 0:
+        return [Path(item) for item in result.stdout.decode().split("\0") if item]
+
+    # Anonymous supplements intentionally contain no Git metadata. In that
+    # setting, scan every supplied file rather than silently skipping privacy
+    # validation.
+    excluded = {".git", ".pytest_cache", "__pycache__"}
+    return sorted(
+        path
+        for path in Path.cwd().rglob("*")
+        if path.is_file() and not any(part in excluded for part in path.parts)
     )
-    return [Path(item) for item in result.stdout.decode().split("\0") if item]
 
 
 def scan_payload(label: str, payload: bytes) -> list[tuple[str, str]]:
@@ -79,12 +88,14 @@ def main() -> None:
     for path in tracked_files():
         findings.extend(scan_file(path))
 
-    identity = subprocess.run(
+    identity_result = subprocess.run(
         ["git", "show", "-s", "--format=%ae%n%ce", args.commit],
-        check=True,
         capture_output=True,
-    ).stdout
-    findings.extend(scan_payload(f"commit {args.commit}", identity))
+    )
+    if identity_result.returncode == 0:
+        findings.extend(
+            scan_payload(f"commit {args.commit}", identity_result.stdout)
+        )
 
     if findings:
         for label, category in sorted(set(findings)):

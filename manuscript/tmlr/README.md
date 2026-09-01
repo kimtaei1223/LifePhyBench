@@ -31,9 +31,15 @@ pdflatex main.tex
 ```
 
 The current workstation did not have `pdflatex` or `latexmk` available when
-the skeleton was created. Source-level, citation, figure, style-hash, and
-privacy checks are therefore performed by the repository validation script
-until a LaTeX runtime is installed.
+the skeleton was created. The final review draft has also been compiled with
+Tectonic. Independently of the LaTeX engine, source-level citation, figure,
+style-hash, evidence, and privacy checks can be run from the repository root:
+
+```bash
+python scripts/validate_tmlr_manuscript.py
+python scripts/audit_tmlr_claims.py
+python scripts/audit_repository_privacy.py
+```
 
 ## Review anonymity
 
@@ -53,5 +59,6 @@ The manuscript text must remain consistent with:
 - `docs/TMLR_MANUSCRIPT_BLUEPRINT.md`;
 - `docs/LITERATURE_AUDIT_2026-08-31.md`.
 
-Lines marked `TODO` identify missing exposition, tables, or equations; they do
-not authorize new empirical claims.
+The current review source contains no unresolved manuscript `TODO` markers.
+Any later edit to a principal number should be followed by both manuscript and
+claim-to-evidence validation.

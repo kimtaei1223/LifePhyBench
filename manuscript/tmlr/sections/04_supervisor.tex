@@ -1,10 +1,13 @@
 \section{Belief supervisor and comparators}
 \label{sec:method}
 
-A fixed low-level controller supplies task actions. Above it, a supervisor
-selects a high- or low-power mode from an explicit physics belief about the
-hidden thermal state. A linear task-boundary transition is fitted only on
-development rows,
+A fixed low-level controller supplies task actions. The retained Pusher and
+Reacher controllers are task-memory RecurrentPPO checkpoints trained for two
+million task transitions; Reacher selects one of five training seeds using
+1,000 development episodes. Controller parameters are frozen before all
+lifetime comparisons. Above the controller, a supervisor selects a high- or
+low-power mode from an explicit physics belief about the hidden thermal state.
+A linear task-boundary transition is fitted only on development rows,
 \begin{equation}
  h_{k+1}=\beta_0+\beta_h h_k+\beta_a u_k+\xi_k,
  \qquad \xi_k\sim\mathcal{N}(0,Q),
@@ -49,8 +52,10 @@ baseline. The residual receives the sensor, previous mode and its presence
 flag, normalized task index, physics mean, and physics standard deviation. Its
 mean correction and predicted variance augment the physics belief. The
 privileged comparator is diagnostic and is not a planning oracle. The recurrent
-result is evidence only about the tested architecture, development seeds,
-training budget, and selection procedure.
+comparator is trained for 100,000 supervisory decisions at each of five Reacher
+development seeds and selected by development reward subject to the 2\% point
+rule. Its result is evidence only about that architecture, budget, and selection
+procedure.
 
 Exact health is used only to fit and audit development models and by the
 explicitly privileged comparator; it is not a deployment input to the physics

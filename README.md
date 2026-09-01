@@ -12,20 +12,22 @@ a single robot application.
 
 ## Current status
 
-The repository now contains a completed held-out hierarchical thermal study in
-addition to the semantic diagnostics and earlier development pilots. In the
-frozen Pusher thermal-commitment protocol, lifetime-state RecurrentPPO
-outperformed a matched task-reset arm by `+1.1269` reward per task across 20
-independent held-out training seeds (seed-bootstrap 95% CI
-`[0.7950, 1.4328]`; locally pre-specified one-sided `p = 1.15e-6`). The static
-zero-dose control difference was exactly zero.
+The scoped Pusher--Reacher publication study is complete. Under prespecified
+deployment shifts, the Pusher physics-only uncertainty margin improved paired
+mean utility by `+0.965` reward per task but reached a 2.15% maximum trip rate
+and missed the frozen 2% point rule. The complete hybrid policy had a `+0.736`
+margin effect and passed at 1.3%. On Reacher, the inherited physics-only margin
+improved mean utility by `+0.721` but missed the rule at 2.3%. A separately
+frozen development procedure selected a more conservative margin that yielded
+`+0.692` and 1.6% on new lifetimes; the inherited margin also passed at 1.9% on
+that same sample, with no detectable mean-utility difference.
 
-This is a valid single-diagnostic learned-policy result, not the final TMLR
-evidence package. The task-reset policies collapsed to an Always-Low strategy,
-and a transparent task-reactive rule closes most of the learned comparison
-gap. Cross-task, cross-mechanism, and stronger-baseline evidence remains open.
-See [`docs/HIERARCHICAL_THERMAL_CONFIRMATORY_V10.md`](docs/HIERARCHICAL_THERMAL_CONFIRMATORY_V10.md)
-for the result and its claim limits.
+The supported conclusion concerns expected risk-sensitive lifetime utility and
+uncertainty-aware trip avoidance. The evidence does not establish an
+independent residual benefit, calibration necessity or superiority, a
+majority-lifetime improvement, physical motor validity, or a safety guarantee.
+The earlier v10 learned-policy study remains historical provenance rather than
+evidence for the current primary claim.
 
 ## Core semantics
 
@@ -136,8 +138,11 @@ engineering-only GPU smoke results are in
 for recurrent and finite-history baselines are in
 [`docs/RECURRENT_DEVELOPMENT_RESULTS.md`](docs/RECURRENT_DEVELOPMENT_RESULTS.md)
 and [`docs/FRAMESTACK_DEVELOPMENT_RESULTS.md`](docs/FRAMESTACK_DEVELOPMENT_RESULTS.md).
-The current held-out result is documented in
-[`docs/HIERARCHICAL_THERMAL_CONFIRMATORY_V10.md`](docs/HIERARCHICAL_THERMAL_CONFIRMATORY_V10.md).
+The publication evidence is documented in
+[`docs/PHYSICS_RESIDUAL_V12_FINAL_RESULTS.md`](docs/PHYSICS_RESIDUAL_V12_FINAL_RESULTS.md),
+[`docs/REACHER_REPLICATION_FINAL_RESULTS.md`](docs/REACHER_REPLICATION_FINAL_RESULTS.md),
+and
+[`docs/TMLR_CLAIM_EVIDENCE_AUDIT_2026-09-01.md`](docs/TMLR_CLAIM_EVIDENCE_AUDIT_2026-09-01.md).
 
 ## Reproducibility rule
 

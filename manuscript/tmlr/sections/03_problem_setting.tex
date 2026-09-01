@@ -11,7 +11,7 @@ For an $m$-dimensional requested action $a_t$, let $s_j$ be the largest absolute
 bound of actuator coordinate $j$. The endogenous thermal dose is
 \begin{equation}
  d_t=\frac{1}{m}\sum_{j=1}^{m}
- \left|\frac{\operatorname{clip}(a_{t,j})}{s_j}\right|^2.
+ \left|\frac{\operatorname{clip}(a_{t,j},-s_j,s_j)}{s_j}\right|^2.
  \label{eq:dose}
 \end{equation}
 With heat rate $\alpha=0.05$ and within-task cooling $c=0$ in all reported
@@ -51,9 +51,11 @@ bonus of 2. This correction prevents low power from receiving an artificial
 control-cost advantage merely because its applied action is smaller.
 
 The reported objective is mean risk-sensitive utility per task within a
-lifetime. The independent statistical unit is the complete lifetime, never an
-individual task. The same phenomenological law is used in both MuJoCo tasks; it
-is a controlled experimental mechanism rather than a motor model in physical
+lifetime. We use ``risk-sensitive'' descriptively because utility includes the
+fixed trip penalty; it does not denote a coherent risk measure or chance
+constraint. The independent statistical unit is the complete lifetime, never
+an individual task. The same phenomenological law is used in both MuJoCo tasks;
+it is a controlled experimental mechanism rather than a motor model in physical
 units.
 
 \begin{table}[t]

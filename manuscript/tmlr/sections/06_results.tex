@@ -32,6 +32,12 @@ the failed empirical tolerance are both retained. A secondary full-hybrid
 comparison improves utility by $+0.797$ ($[0.546,1.059]$) relative to physics
 $z=0$ and reaches a 1.4\% maximum trip rate.
 
+The selected monolithic RecurrentPPO comparator underperforms physics $z=0$ by
+$-9.068$ reward per task ($[-9.507,-8.630]$) and reaches a 23.6\% maximum trip
+rate. This negative result motivates explicit belief diagnostics but supports
+no claim about recurrent policies beyond the tested architecture, training
+budget, and development selection.
+
 \subsection{Development-only calibration yields a passing designated policy}
 
 A prespecified grid evaluated only on Reacher development lifetimes selects

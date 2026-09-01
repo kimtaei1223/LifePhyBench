@@ -13,7 +13,7 @@
 \graphicspath{{figures/}}
 
 \title{Uncertainty-Aware Belief Supervision under Persistent Hidden Thermal
-Dynamics: Evidence from Two Robot-Control Tasks}
+Dynamics}
 
 % The review style suppresses this field, but the source is also kept anonymous
 % so that accidental style changes cannot reveal author information.
@@ -29,30 +29,26 @@ Dynamics: Evidence from Two Robot-Control Tasks}
 \maketitle
 
 \begin{abstract}
-Robot-control benchmarks commonly reset the environment between tasks, hiding
-failure modes caused by physical state that accumulates across those resets.
-We study fixed low-level controllers in two MuJoCo manipulation tasks where
-task state resets but an unobserved, action-driven thermal state persists and
-changes later actuator dynamics. An explicit belief supervisor uses a noisy
-temperature signal and an uncertainty margin to choose between high- and
-low-power control. Under prespecified sensor and cooling shifts, a fresh Pusher
-factorial showed that a physics-only uncertainty margin improved mean
-risk-sensitive lifetime utility by $+0.965$ reward per task (95\% bootstrap CI
-$[0.733,1.196]$), but its maximum trip rate was 2.15\%; the corresponding full
-hybrid supervisor had a smaller margin effect ($+0.736$, $[0.524,0.950]$) and a
-1.3\% maximum trip rate. On Reacher, the inherited physics-only margin retained
-a positive mean effect ($+0.721$, $[0.474,0.978]$) but reached 2.3\%, whereas
-the secondary hybrid supervisor reached 1.4\%. A separately frozen development
-procedure selected a more conservative physics-only margin; on 100 new Reacher
-lifetimes it passed the 2\% tolerance (1.6\%) with a positive mean effect
-($+0.692$, $[0.434,0.962]$). The inherited margin also passed on that second
-sample (1.9\%), and the calibrated setting had no detectable mean-utility
-advantage over it. Only 52 of 100 calibrated lifetime effects were positive.
-Thus, uncertainty margins improve expected risk-sensitive utility in this
-benchmark, while point trip-rate gates near their boundary depend on policy
-composition and evaluation sample. The results establish neither calibration
-superiority nor a transferable safety guarantee and are limited to a shared
-phenomenological thermal model in simulation.
+Physical state such as actuator temperature can outlive a task reset, but
+ordinary episodic evaluation erases this history. We ask whether accounting for
+uncertainty in such a hidden state improves lifetime decisions. In two MuJoCo
+manipulation tasks, task state resets while an action-driven thermal state
+persists and weakens later actuation. A belief supervisor observes a noisy
+thermal signal and selects high- or low-power control from a fixed low-level
+policy. Across 100 fresh Pusher lifetimes, a physics-only uncertainty margin
+improved mean risk-sensitive utility by $+0.965$ reward per task (95\%
+bootstrap CI $[0.733,1.196]$), although its maximum trip rate was 2.15\% and
+missed a prespecified 2\% point rule. A hybrid supervisor passed at 1.3\%, with
+a smaller margin effect of $+0.736$ ($[0.524,0.950]$). On Reacher, the inherited
+physics-only margin again improved mean utility ($+0.721$,
+$[0.474,0.978]$) but missed the rule at 2.3\%. Development-only selection of a
+more conservative margin produced $+0.692$ ($[0.434,0.962]$) and 1.6\% on new
+lifetimes; however, the inherited margin also passed on that sample at 1.9\%,
+with no detectable mean-utility difference. The gain comes from avoiding costly
+thermal trips and does not imply majority-lifetime improvement, calibration
+superiority, or a safety guarantee. The practical lesson is to evaluate hidden
+persistent state over complete lifetimes and to keep expected utility distinct
+from finite-sample threshold decisions.
 \end{abstract}
 
 \input{sections/01_introduction}

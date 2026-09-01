@@ -29,8 +29,10 @@ Both tasks use MuJoCo and share one phenomenological thermal law. The study has
 no physical-unit calibration, hardware telemetry, formal safety proof, or
 probability-calibrated OOD guarantee. It tests one selected recurrent baseline
 rather than exhausting recurrent, meta-RL, system-identification, or online
-adaptation methods. These boundaries prevent the result from supporting a
-general thermal-management, transferable numerical threshold, calibration-
+adaptation methods. Each task also reuses one canonical task initialization,
+so the evidence concerns dynamics shifts across lifetimes rather than broad
+goal or object diversity. These boundaries prevent the result from supporting
+a general thermal-management, transferable numerical threshold, calibration-
 superiority, or universal algorithm-ranking claim.
 
 \section{Broader impact}
@@ -41,5 +43,8 @@ misused to overstate safety when simulated health signals are poorly calibrated
 or when an aggregate trip tolerance hides rare severe outcomes. We mitigate
 this risk by preserving failed gates, reporting distributional cautions,
 avoiding physical-validity claims, and releasing the exact simulated protocol
-needed to inspect the result. The computational cost and environmental impact
-of training and evaluation will be reported in the final manuscript.
+needed to inspect the result. The final confirmation and calibration-extension
+evaluations reuse fixed policies rather than retraining them. Because
+wall-clock energy and power telemetry were not recorded consistently throughout
+development, we report reproducible sample budgets and hardware-independent
+commands instead of reconstructing an unreliable energy estimate.

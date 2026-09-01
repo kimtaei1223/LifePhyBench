@@ -191,13 +191,17 @@ def main() -> None:
     if args.run_tests:
         run_checked([sys.executable, "-m", "pytest", "-q"])
 
-    commit = subprocess.run(
+    commit_result = subprocess.run(
         ["git", "rev-parse", "HEAD"],
         cwd=ROOT,
-        check=True,
         text=True,
         capture_output=True,
-    ).stdout.strip()
+    )
+    commit = (
+        commit_result.stdout.strip()
+        if commit_result.returncode == 0
+        else "anonymous-supplement"
+    )
     report = {
         "status": "passed",
         "commit": commit,

@@ -54,7 +54,7 @@ control result.
 | **Complete** | Limitations distinguish simulated degradation from physical prediction. | The evidence audit explicitly excludes hardware validity, physical-unit calibration, formal safety, universal reward preferences, and cross-simulator generalization. |
 | **Open** | Closest-work and novelty ledger are current on the submission date. | Depth-two audit plus a targeted refresh are current through 2026-09-01; repeat only if the actual submission is later. |
 | **Complete** | The manuscript states the contribution as an empirical deployment lesson rather than component novelty. | Abstract, Introduction, Related Work, and Conclusion now exclude component-priority claims and bound calibration, residual, and safety interpretations. |
-| **Complete** | All main-paper numbers and claims are traceable to immutable artifacts. | `scripts/audit_tmlr_claims.py` verifies 35 numerical and boundary checks and regenerates `docs/TMLR_CLAIM_EVIDENCE_AUDIT_2026-09-01.md`. |
+| **Complete** | All main-paper numbers and claims are traceable to immutable artifacts. | `scripts/audit_tmlr_claims.py` verifies 38 numerical and boundary checks and regenerates `docs/TMLR_CLAIM_EVIDENCE_AUDIT_2026-09-01.md`. |
 
 ## Explicitly out of scope for this paper
 
@@ -136,8 +136,8 @@ represented as completed evidence.
 
 ## Submission-policy gate
 
-- [ ] Use the official TMLR LaTeX style and template without format changes.
-- [ ] Keep the manuscript and every supplement anonymous during double-blind
+- [x] Use the official TMLR LaTeX style and template without format changes.
+- [x] Keep the manuscript and every supplement anonymous during double-blind
       review.
 - [ ] Ensure every author has a complete, active OpenReview profile and all
       required conflicts and disclosures are entered.
@@ -149,13 +149,18 @@ represented as completed evidence.
 - [ ] Identify any prior public version only if it is a preprint or explicitly
       non-archival workshop version, and do not link the anonymous submission
       to an identified copy.
-- [ ] Put every result needed to understand the main claim in the paper body;
+- [x] Put every result needed to understand the main claim in the paper body;
       appendix and supplement review are discretionary.
-- [ ] Include a concise broader-impact discussion of unsafe degradation
+- [x] Include a concise broader-impact discussion of unsafe degradation
       policies, resource use, simulated health signals, and mitigations.
-- [ ] Keep anonymized supplementary material in PDF or ZIP format and at or
-      below the current 100 MB limit.
+- [x] Keep anonymized supplementary material in PDF or ZIP format and at or
+      below the current 100 MB limit. The audited ZIP is 18,616,087 bytes.
+- [ ] Confirm that all authors accept the CC BY 4.0 license applying from
+      submission onward.
 - [ ] Recheck the official policy pages immediately before submission.
+
+Machine-audited submission details and the remaining human-only gates are in
+[`TMLR_SUBMISSION_READINESS_2026-09-01.md`](TMLR_SUBMISSION_READINESS_2026-09-01.md).
 
 ## Writing guardrails
 

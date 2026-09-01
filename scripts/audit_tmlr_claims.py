@@ -42,7 +42,12 @@ def close(actual: float, expected: float, label: str, tolerance: float = 1e-10) 
 
 
 def rel(path: Path) -> str:
-    return path.relative_to(REPOSITORY).as_posix()
+    try:
+        return path.relative_to(REPOSITORY).as_posix()
+    except ValueError:
+        # Reports may be written outside the extracted anonymous supplement.
+        # Emit only the filename so machine-local paths never enter logs.
+        return path.name
 
 
 def max_trip(cells: dict, policy: str) -> float:
@@ -113,6 +118,11 @@ def main() -> None:
         phase="inherited_confirmatory",
         contrast="hybrid_vs_physics_z0",
     )
+    original_monolithic = row(
+        reacher_contrasts,
+        phase="inherited_confirmatory",
+        contrast="monolithic_vs_physics_z0",
+    )
     extension_selected = row(
         reacher_contrasts,
         phase="post_confirmatory_extension",
@@ -138,6 +148,9 @@ def main() -> None:
         ("Reacher inherited CI low", float(original_primary["bootstrap_95_ci_lower"]), 0.4744752393432859),
         ("Reacher inherited CI high", float(original_primary["bootstrap_95_ci_upper"]), 0.9784987106636537),
         ("Reacher original hybrid mean", float(original_hybrid["mean_reward_per_task"]), 0.7970240266978742),
+        ("Reacher monolithic mean", float(original_monolithic["mean_reward_per_task"]), -9.067785000846065),
+        ("Reacher monolithic CI low", float(original_monolithic["bootstrap_95_ci_lower"]), -9.507488386291085),
+        ("Reacher monolithic CI high", float(original_monolithic["bootstrap_95_ci_upper"]), -8.629553291699162),
         ("Reacher selected mean", float(extension_selected["mean_reward_per_task"]), 0.6919715990702785),
         ("Reacher selected CI low", float(extension_selected["bootstrap_95_ci_lower"]), 0.43446918971675674),
         ("Reacher selected CI high", float(extension_selected["bootstrap_95_ci_upper"]), 0.961789445773937),
@@ -171,12 +184,14 @@ def main() -> None:
     trips = {
         "original_physics": max_trip(original_cells, "physics_z1_5"),
         "original_hybrid": max_trip(original_cells, "hybrid_z1_5"),
+        "original_monolithic": max_trip(original_cells, "monolithic_recurrent"),
         "extension_selected": max_trip(extension_cells, "selected_calibrated_margin"),
         "extension_inherited": max_trip(extension_cells, "inherited_physics_z1_5"),
     }
     expected_trips = {
         "original_physics": 0.023,
         "original_hybrid": 0.014,
+        "original_monolithic": 0.236,
         "extension_selected": 0.016,
         "extension_inherited": 0.019,
     }
@@ -197,6 +212,7 @@ def main() -> None:
         "$+0.965$", "$[0.733,1.196]$", "2.15\\%",
         "$+0.736$", "$[0.524,0.950]$", "1.3\\%",
         "$+0.721$", "$[0.474,0.978]$", "2.3\\%", "1.4\\%",
+        "$-9.068$", "$[-9.507,-8.630]$", "23.6\\%",
         "$+0.692$", "$[0.434,0.962]$", "1.6\\%", "1.9\\%",
         "$-0.008$", "$[-0.121,0.108]$", "not that calibration was necessary",
     ]
@@ -229,6 +245,7 @@ artifacts and the corrected policy/result boundaries are present in source.
 | Reacher inherited physics margin | +0.721, CI [0.474, 0.978], 54/100 positive | `{rel(reacher_contrast_path)}` | PASS |
 | Reacher inherited physics maximum trip rate | 2.30% (original gate failure) | `{rel(original_cells_path)}` | PASS |
 | Reacher original hybrid comparator | +0.797; maximum trip rate 1.40% | `{rel(reacher_contrast_path)}`; `{rel(original_cells_path)}` | PASS |
+| Reacher monolithic recurrent comparator | -9.068, CI [-9.507, -8.630]; maximum trip rate 23.60% | `{rel(reacher_contrast_path)}`; `{rel(original_cells_path)}` | PASS; bounded to tested model and budget |
 | Reacher selected margin | +0.692, CI [0.434, 0.962], 52/100 positive, exact sign p=0.764 | `{rel(reacher_contrast_path)}` | PASS |
 | Reacher selected maximum trip rate | 1.60% on extension lifetimes | `{rel(extension_cells_path)}` | PASS |
 | Inherited margin on the same extension sample | 1.90% | `{rel(extension_cells_path)}` | PASS |
